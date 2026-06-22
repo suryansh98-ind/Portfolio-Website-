@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.amansoni.design)",
+      "WebFetch(domain:suryanshdesign.framer.website)",
+      "Bash(npm install *)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
