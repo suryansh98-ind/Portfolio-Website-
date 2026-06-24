@@ -37,6 +37,22 @@ The preview server is configured in `.claude/launch.json` as `"portfolio-dev"` a
 3. An inline footer (does **not** import the main `Footer.tsx`) — the main footer uses hash anchors (`#work`, `#about`) that break on sub-pages
 4. `ThemeProvider` wraps a `*Content` inner component, exported as the default
 
+**Lightbox pattern** (`CaseStudyMyHormonz.tsx`) — a local `Lightbox` component lets users click any screen image to view it full-size:
+- State: `const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)` in the `*Content` component
+- Rendered via `<AnimatePresence>` at the end of the content div
+- Add `onClick={() => setLightbox({ src, alt })}` and `cursor-zoom-in` to the image container div
+- Lightbox closes on X button, backdrop click, or Escape key; locks body scroll while open
+- Use this pattern for any future case study that includes inline screen images
+
+**MyHormonz image sections** — `CaseStudyMyHormonz.tsx` has two dedicated visual sections:
+- **05 / Process** (`id="cs-process"`) — 5 sketch images in a `grid-cols-2 sm:grid-cols-5` grid, `aspect-ratio: 3/4`, `object-cover object-top`, lightbox-enabled
+- **08 / Screens** (`id="cs-screens"`) — three sub-rows:
+  - Mid-fi: 5 phone screenshots, `flex + md:grid-cols-5`, `aspect-ratio: 9/19`, `object-cover object-top`
+  - Final UI: 5 phone mockups, same grid, `object-contain` (phone frame visible)
+  - Admin Dashboard: 5 desktop screenshots, `flex + md:grid-cols-3`, `aspect-ratio: 16/10`, `object-cover object-top`
+  - All rows lightbox-enabled
+- Section tracker (`MH_SECTIONS`) includes `cs-process` and `cs-screens`; Platform section (`cs-platform`) is intentionally excluded from the tracker
+
 **Case study hero images** — each case study uses a real cover image instead of a gradient banner:
 - Images live in `public/` and are rendered with `next/image` (`fill`, `object-cover`, `object-left-top`)
 - `object-left-top` is intentional — landscape cover images have important content on the left; centering clips it on narrow viewports

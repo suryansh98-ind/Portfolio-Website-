@@ -11,7 +11,7 @@ const caseStudies = [
   {
     id: '01',
     title: 'MyHormonz',
-    year: '2025',
+    year: '2026',
     type: 'Health Tech · B2C',
     role: 'Senior Product Designer',
     description: 'Hormone health platform — 3 surfaces designed from scratch in 45 days. The core challenge was making clinical data feel approachable to people who aren\'t doctors.',

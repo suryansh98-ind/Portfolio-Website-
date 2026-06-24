@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -145,7 +145,9 @@ const MH_SECTIONS = [
   { id: 'cs-problem', label: 'Problem' },
   { id: 'cs-role', label: 'My Role' },
   { id: 'cs-decisions', label: 'Decisions' },
+  { id: 'cs-process', label: 'Process' },
   { id: 'cs-features', label: 'Features' },
+  { id: 'cs-screens', label: 'Screens' },
   { id: 'cs-outcome', label: 'Outcome' },
   { id: 'cs-reflection', label: 'Reflection' },
 ]
@@ -187,8 +189,53 @@ function SectionTracker() {
   )
 }
 
+// ─── Full-screen image lightbox ───────────────────────────────────────────────
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.18 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-6 md:p-12 bg-black/90 backdrop-blur-md"
+      onClick={onClose}
+    >
+      <button
+        onClick={(e) => { e.stopPropagation(); onClose() }}
+        className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors duration-200 z-10"
+        aria-label="Close"
+      >
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+        </svg>
+      </button>
+      <motion.div
+        initial={{ scale: 0.96, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.96, opacity: 0 }}
+        transition={{ duration: 0.18 }}
+        className="relative w-full h-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Image src={src} alt={alt} fill className="object-contain" sizes="90vw" />
+      </motion.div>
+    </motion.div>
+  )
+}
+
 // ─── The full page content (inside ThemeProvider) ─────────────────────────────
 function MyHormonzContent() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950">
       <ReadingProgressBar />
@@ -277,7 +324,7 @@ function MyHormonzContent() {
                 { value: '3', label: 'Surfaces', sub: 'App · Admin · Web' },
                 { value: '10+', label: 'Modules', sub: 'User App' },
                 { value: '45', label: 'Days', sub: 'Timeline' },
-                { value: 'HIPAA', label: 'Compliant', sub: 'Approved by legal' },
+                { value: 'HIPAA', label: 'Secured', sub: 'Privacy by design' },
               ].map((kpi) => (
                 <div
                   key={kpi.label}
@@ -372,7 +419,7 @@ function MyHormonzContent() {
               {[
                 { label: 'Problem', text: 'A hormone health startup needed 3 product surfaces in 45 days — patient app, practitioner admin, marketing site — with HIPAA compliance designed in from the start.' },
                 { label: 'What I did', text: 'Led design of all 3 surfaces as senior designer, mentoring a junior. Built the design system first so 45 days was possible. Core challenge: make lab data feel approachable without losing clinical credibility.' },
-                { label: 'Outcome', text: '3 surfaces delivered. Marketing site live on Vercel. HIPAA design approved by legal without a single revision.' },
+                { label: 'Outcome', text: '3 surfaces delivered. Marketing site live on Vercel. HIPAA design cleared compliance review without a single revision.' },
               ].map((item) => (
                 <div key={item.label} className="flex-1 min-w-0">
                   <p className="font-dm-sans text-[10px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 mb-1.5 font-medium">{item.label}</p>
@@ -583,9 +630,9 @@ function MyHormonzContent() {
                 summary:
                   'Treat compliance as a design feature — surface it exactly when it matters most.',
                 detail:
-                  'Most health apps bury consent in terms of service. We surfaced it at the precise moment users share sensitive health data — with explicit consent modals, plain-language data explanations, and permission micro-copy written to feel like care, not legal cover. The design was approved by the legal team without a single revision. For the client, this was a first.',
+                  'Most health apps bury consent in terms of service. We surfaced it at the precise moment users share sensitive health data — with explicit consent modals, plain-language data explanations, and permission micro-copy written to feel like care, not legal cover. The design passed compliance review without a single revision. For the client, this was a first.',
                 impact:
-                  'Legal approved without revision. Users experience consent as trust-building, not friction.',
+                  'Zero compliance revisions. Users experience consent as trust-building, not friction.',
               },
               {
                 number: '03',
@@ -656,13 +703,75 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          05 / PLATFORM ARCHITECTURE
+          05 / PROCESS
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="cs-process" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+
+          <FadeIn className="mb-12">
+            <p className="section-label mb-3">05 / Process</p>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+                Thinking before<br />
+                <span
+                  className="text-transparent bg-clip-text"
+                  style={{ backgroundImage: 'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)' }}
+                >
+                  building.
+                </span>
+              </h2>
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
+                Three surfaces in 45 days — every flow mapped on paper before Figma opened.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* All 5 sketches — same grid, same size */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            {[
+              { src: '/mh-sketch-flow-hormone.jpg', label: 'Hormone tracking flow' },
+              { src: '/mh-sketch-flow-homepage.jpg', label: 'Homepage & health card flow' },
+              { src: '/mh-sketch-flow-period.jpg', label: 'Period prediction flow' },
+              { src: '/mh-sketch-flow-meal.jpg', label: 'Meal logging flow' },
+              { src: '/mh-sketch-wireframe.jpg', label: 'Screen layout wireframes' },
+            ].map((sketch, i) => (
+              <FadeIn key={sketch.src} delay={i * 0.06}>
+                <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.06] rounded-xl overflow-hidden">
+                  <div
+                    className="relative w-full cursor-zoom-in"
+                    style={{ aspectRatio: '3 / 4' }}
+                    onClick={() => setLightbox({ src: sketch.src, alt: sketch.label })}
+                  >
+                    <Image
+                      src={sketch.src}
+                      alt={sketch.label}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1200px) 20vw, 240px"
+                    />
+                  </div>
+                  <div className="px-3 py-2.5 border-t border-zinc-100 dark:border-white/[0.05]">
+                    <p className="font-dm-sans text-[10px] text-zinc-400 dark:text-zinc-600 tracking-[0.08em] uppercase">
+                      {sketch.label}
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          06 / PLATFORM ARCHITECTURE
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-platform" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-12">
-            <p className="section-label mb-3">05 / Platform</p>
+            <p className="section-label mb-3">06 / Platform</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               3 surfaces,<br />
               <span className="text-blue-600 dark:text-blue-400">one design language.</span>
@@ -770,13 +879,13 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          06 / FEATURE BREAKDOWN
+          07 / FEATURE BREAKDOWN
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-features" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-12">
-            <p className="section-label mb-3">06 / Features</p>
+            <p className="section-label mb-3">07 / Features</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 10+ modules.
@@ -879,14 +988,141 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          07 / OUTCOME
+          08 / SCREENS
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="cs-screens" className="py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+
+          <FadeIn className="mb-12">
+            <p className="section-label mb-3">08 / Screens</p>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+                Structure first,<br />
+                <span
+                  className="text-transparent bg-clip-text"
+                  style={{ backgroundImage: 'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)' }}
+                >
+                  colour second.
+                </span>
+              </h2>
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
+                The same 5 screens — first as grayscale structure, then as shipped product.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Mid-fi row */}
+          <FadeIn className="mb-4">
+            <p className="section-label">Mid-fi — UX structure</p>
+          </FadeIn>
+          <div className="flex gap-3 overflow-x-auto pb-4 mb-12 md:grid md:grid-cols-5 md:overflow-visible">
+            {[
+              { src: '/mh-midfi-home.png', label: 'Home' },
+              { src: '/mh-midfi-track.png', label: 'Track' },
+              { src: '/mh-midfi-nutrition.png', label: 'Nutrition' },
+              { src: '/mh-midfi-periods.png', label: 'Period Tracking' },
+              { src: '/mh-midfi-reports.png', label: 'Hormone Reports' },
+            ].map((screen) => (
+              <div key={screen.src} className="flex-shrink-0 w-[160px] md:w-auto flex flex-col gap-2">
+                <div
+                  className="relative w-full rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.06] shadow-sm bg-zinc-50 dark:bg-zinc-900 cursor-zoom-in"
+                  style={{ aspectRatio: '9 / 19' }}
+                  onClick={() => setLightbox({ src: screen.src, alt: screen.label })}
+                >
+                  <Image
+                    src={screen.src}
+                    alt={screen.label}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 160px, (max-width: 1200px) 20vw, 224px"
+                  />
+                </div>
+                <p className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.06em] uppercase text-center">
+                  {screen.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Final UI row */}
+          <FadeIn className="mb-4">
+            <p className="section-label">Final UI — Shipped design</p>
+          </FadeIn>
+          <div className="flex gap-3 overflow-x-auto pb-4 md:grid md:grid-cols-5 md:overflow-visible">
+            {[
+              { src: '/mh-final-home.png', label: 'Home' },
+              { src: '/mh-final-track.png', label: 'Track' },
+              { src: '/mh-final-nutrition.png', label: 'Nutrition' },
+              { src: '/mh-final-periods.png', label: 'Period Tracking' },
+              { src: '/mh-final-report.png', label: 'Hormone Report' },
+            ].map((screen) => (
+              <div key={screen.src} className="flex-shrink-0 w-[160px] md:w-auto flex flex-col gap-2">
+                <div
+                  className="relative w-full rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.06] shadow-sm bg-zinc-50 dark:bg-zinc-900 cursor-zoom-in"
+                  style={{ aspectRatio: '9 / 19' }}
+                  onClick={() => setLightbox({ src: screen.src, alt: screen.label })}
+                >
+                  <Image
+                    src={screen.src}
+                    alt={screen.label}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 160px, (max-width: 1200px) 20vw, 224px"
+                  />
+                </div>
+                <p className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.06em] uppercase text-center">
+                  {screen.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Admin Dashboard row */}
+          <FadeIn className="mb-4 mt-14">
+            <p className="section-label">Admin Dashboard — Ops platform</p>
+          </FadeIn>
+          <div className="flex gap-3 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
+            {[
+              { src: '/mh-admin-dashboard.png', label: 'Dashboard overview' },
+              { src: '/mh-admin-users.png', label: 'User management' },
+              { src: '/mh-admin-subscriptions.png', label: 'Subscription management' },
+              { src: '/mh-admin-content.png', label: 'Content management' },
+              { src: '/mh-admin-notifications.png', label: 'Notification management' },
+            ].map((screen) => (
+              <div key={screen.src} className="flex-shrink-0 w-[280px] md:w-auto flex flex-col gap-2">
+                <div
+                  className="relative w-full rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.06] shadow-sm bg-white dark:bg-zinc-900 cursor-zoom-in"
+                  style={{ aspectRatio: '16 / 10' }}
+                  onClick={() => setLightbox({ src: screen.src, alt: screen.label })}
+                >
+                  <Image
+                    src={screen.src}
+                    alt={screen.label}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 280px, (max-width: 1200px) 33vw, 380px"
+                  />
+                </div>
+                <p className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.06em] uppercase text-center">
+                  {screen.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          09 / OUTCOME
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-outcome" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">07 / Outcome</p>
+              <p className="section-label mb-3">09 / Outcome</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What shipped
               </h2>
@@ -899,7 +1135,7 @@ function MyHormonzContent() {
                   { value: '3', label: 'Surfaces delivered', sub: 'App · Admin · Website' },
                   { value: '10+', label: 'Modules designed', sub: 'User App only' },
                   { value: '45', label: 'Days total', sub: 'All 3 surfaces' },
-                  { value: '0', label: 'Legal revisions', sub: 'HIPAA design approved as-is' },
+                  { value: '0', label: 'Compliance revisions', sub: 'HIPAA design, zero revisions' },
                 ].map((stat, i) => (
                   <FadeIn key={stat.label} delay={i * 0.07}>
                     <div className="bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5">
@@ -933,7 +1169,7 @@ function MyHormonzContent() {
                     'Marketing website is live on Vercel — the first user touchpoint for the platform, conversion-optimised and HIPAA-credible.',
                     'User App and Admin Panel in active development, with complete Figma handoffs and a documented design system ready to extend.',
                     'Design system built and documented — the junior designer can continue developing new modules independently, without breaking coherence.',
-                    'HIPAA-compliant data interactions approved by legal without a single revision — a first for the client team on any project.',
+                    'HIPAA-compliant data interactions passed compliance review without a single revision — a first for the client team on any project.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[8px]" style={{ backgroundColor: '#CA1670' }} />
@@ -952,14 +1188,14 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          08 / REFLECTION
+          10 / REFLECTION
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-reflection" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">08 / Reflection</p>
+              <p className="section-label mb-3">10 / Reflection</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I learned
               </h2>
@@ -1127,6 +1363,9 @@ function MyHormonzContent() {
           </div>
         </div>
       </footer>
+      <AnimatePresence>
+        {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
+      </AnimatePresence>
     </div>
   )
 }
