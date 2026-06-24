@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import ThemeProvider, { useTheme } from '@/contexts/ThemeContext'
 
 const EASE = [0.25, 0.1, 0.25, 1]
@@ -60,7 +61,7 @@ function CaseStudyNavbar() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="font-syne font-bold text-[15px] tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          className="font-plus-jakarta font-bold text-[15px] tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
         >
           Suryansh Thakur
         </Link>
@@ -68,7 +69,7 @@ function CaseStudyNavbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="hidden sm:flex items-center gap-2 font-inter text-[13px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
+            className="hidden sm:flex items-center gap-2 font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M13 7H1M6 2L1 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -119,7 +120,7 @@ function FadeIn({
 function SectionDivider() {
   return <div className="border-t border-zinc-100 dark:border-white/[0.05]" />
 }
-const GRADIENT = 'linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #F97316 100%)'
+const GRADIENT = 'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)'
 
 function ReadingProgressBar() {
   const [progress, setProgress] = useState(0)
@@ -173,7 +174,7 @@ function SectionTracker() {
           onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           className="group flex items-center gap-2.5 justify-end"
         >
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 font-inter text-[11px] text-zinc-400 dark:text-zinc-500 whitespace-nowrap">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-500 whitespace-nowrap">
             {label}
           </span>
           <div
@@ -202,11 +203,11 @@ function MyHormonzContent() {
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute top-[-10%] right-[-5%] w-[600px] h-[500px] rounded-full opacity-[0.05] dark:opacity-[0.07]"
-            style={{ background: 'radial-gradient(circle, #EC4899 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #CA1670 0%, transparent 70%)' }}
           />
           <div
             className="absolute bottom-0 left-[-5%] w-[400px] h-[400px] rounded-full opacity-[0.03]"
-            style={{ background: 'radial-gradient(circle, #F97316 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #A01258 0%, transparent 70%)' }}
           />
         </div>
 
@@ -221,7 +222,7 @@ function MyHormonzContent() {
           >
             <Link
               href="/"
-              className="flex items-center gap-1.5 font-inter text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
+              className="flex items-center gap-1.5 font-dm-sans text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
             >
               <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
                 <path d="M9 5.5H1M4 2L1 5.5l3 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -229,7 +230,7 @@ function MyHormonzContent() {
               All Work
             </Link>
             <span className="text-zinc-300 dark:text-zinc-700 text-[11px]">/</span>
-            <span className="font-inter text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600">
+            <span className="font-dm-sans text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600">
               Health Tech · B2C · 2025
             </span>
           </motion.div>
@@ -240,7 +241,7 @@ function MyHormonzContent() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.2 }}
-              className="font-syne font-extrabold text-[clamp(36px,7vw,80px)] leading-[1.0] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50 mb-6"
+              className="font-plus-jakarta font-extrabold text-[clamp(36px,7vw,80px)] leading-[1.0] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50 mb-6"
             >
               Designing clarity into
               <br />
@@ -248,7 +249,7 @@ function MyHormonzContent() {
                 className="text-transparent bg-clip-text"
                 style={{
                   backgroundImage:
-                    'linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #F97316 100%)',
+                    'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)',
                 }}
               >
                 hormone health.
@@ -259,7 +260,7 @@ function MyHormonzContent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: EASE, delay: 0.35 }}
-              className="font-inter font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[600px] mb-10"
+              className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[600px] mb-10"
             >
               A hormone wellness platform built for calm, not confusion — designed so every
               data point comes with meaning. 3 surfaces, 10+ modules, one core principle.
@@ -283,14 +284,14 @@ function MyHormonzContent() {
                   className="flex flex-col gap-1 bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.07] rounded-xl px-5 py-3.5"
                 >
                   <div className="flex items-baseline gap-1.5">
-                    <span className="font-syne font-extrabold text-[22px] text-zinc-900 dark:text-zinc-50 leading-none lining-nums">
+                    <span className="font-plus-jakarta font-extrabold text-[22px] text-zinc-900 dark:text-zinc-50 leading-none lining-nums">
                       {kpi.value}
                     </span>
-                    <span className="font-syne font-bold text-[13px] text-zinc-400 dark:text-zinc-600 leading-none">
+                    <span className="font-plus-jakarta font-bold text-[13px] text-zinc-400 dark:text-zinc-600 leading-none">
                       {kpi.label}
                     </span>
                   </div>
-                  <span className="font-inter text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.04em]">
+                  <span className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.04em]">
                     {kpi.sub}
                   </span>
                 </div>
@@ -298,50 +299,29 @@ function MyHormonzContent() {
             </motion.div>
           </div>
 
-          {/* Hero gradient banner */}
+          {/* Hero image banner */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.62 }}
             className="relative w-full rounded-2xl overflow-hidden"
-            style={{
-              height: 'clamp(220px, 36vw, 440px)',
-              background:
-                'linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #F97316 100%)',
-            }}
+            style={{ height: 'clamp(200px, 40vw, 480px)' }}
           >
-            {/* Texture */}
-            <div
-              className="absolute inset-0 opacity-[0.08]"
-              style={{
-                backgroundImage: `linear-gradient(45deg, rgba(255,255,255,0.3) 25%, transparent 25%),
-                  linear-gradient(-45deg, rgba(255,255,255,0.3) 25%, transparent 25%),
-                  linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.3) 75%),
-                  linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.3) 75%)`,
-                backgroundSize: '20px 20px',
-                backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-              }}
+            <Image
+              src="/mh tumbnail.png"
+              alt="MyHormonz case study cover"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              priority
             />
-            {/* Glow orb */}
-            <div
-              className="absolute top-[-30%] right-[10%] w-[400px] h-[400px] rounded-full opacity-30"
-              style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)' }}
-            />
-
-            <div className="absolute inset-0 flex items-end justify-between p-7 md:p-10">
-              <div className="flex flex-col gap-1.5">
-                <span className="font-inter text-[10px] md:text-[11px] font-medium text-white/50 tracking-[0.12em] uppercase">
-                  Case Study
-                </span>
-                <span className="font-syne font-extrabold text-[clamp(26px,5vw,56px)] text-white leading-none">
-                  MyHormonz
-                </span>
-              </div>
+            {/* Website Live button — top right */}
+            <div className="absolute top-5 right-5">
               <a
                 href={MYHORMONZ_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white font-inter font-medium text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-200 flex-shrink-0"
+                className="flex items-center gap-2 bg-white text-zinc-900 hover:bg-zinc-100 font-dm-sans font-semibold text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full shadow-md transition-all duration-200 flex-shrink-0"
               >
                 Website Live ↗
               </a>
@@ -367,10 +347,10 @@ function MyHormonzContent() {
                 { label: 'Read', value: '7 min' },
               ].map((item) => (
                 <div key={item.label} className="flex flex-col gap-1.5">
-                  <span className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600">
+                  <span className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600">
                     {item.label}
                   </span>
-                  <span className="font-inter text-[14px] font-medium text-zinc-800 dark:text-zinc-200">
+                  <span className="font-dm-sans text-[14px] font-medium text-zinc-800 dark:text-zinc-200">
                     {item.value}
                   </span>
                 </div>
@@ -386,7 +366,7 @@ function MyHormonzContent() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/[0.07] rounded-2xl p-5 sm:p-7">
             <div className="flex-shrink-0">
-              <span className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 font-medium">TL;DR</span>
+              <span className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 font-medium">TL;DR</span>
             </div>
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 flex-1 min-w-0">
               {[
@@ -395,8 +375,8 @@ function MyHormonzContent() {
                 { label: 'Outcome', text: '3 surfaces delivered. Marketing site live on Vercel. HIPAA design approved by legal without a single revision.' },
               ].map((item) => (
                 <div key={item.label} className="flex-1 min-w-0">
-                  <p className="font-inter text-[10px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 mb-1.5 font-medium">{item.label}</p>
-                  <p className="font-inter text-[13px] text-zinc-700 dark:text-zinc-300 leading-[1.65]">{item.text}</p>
+                  <p className="font-dm-sans text-[10px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 mb-1.5 font-medium">{item.label}</p>
+                  <p className="font-dm-sans text-[13px] text-zinc-700 dark:text-zinc-300 leading-[1.65]">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -412,14 +392,14 @@ function MyHormonzContent() {
 
             <FadeIn>
               <p className="section-label mb-3">01 / Context</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 The brief
               </h2>
             </FadeIn>
 
             <div className="space-y-5">
               <FadeIn delay={0.08}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   MyHormonz is a hormone health platform for people who want to understand what
                   their lab results actually mean — whether they're managing a chronic condition,
                   trying to improve energy, or just want to stop Googling their numbers at 2am.
@@ -427,7 +407,7 @@ function MyHormonzContent() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.14}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   The scope: three surfaces designed from scratch. A consumer wellness app with
                   10+ modules, a backend admin panel for the operations team, and a conversion-focused
                   marketing website. All in 45 days. All HIPAA-compliant. The design challenge
@@ -435,7 +415,7 @@ function MyHormonzContent() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   The medical provider panel was scoped and planned but ultimately excluded
                   from this engagement, allowing full focus on the user product, admin infrastructure,
                   and the live marketing site.
@@ -457,7 +437,7 @@ function MyHormonzContent() {
 
             <FadeIn>
               <p className="section-label mb-3">02 / Problem</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 The design problem
               </h2>
             </FadeIn>
@@ -465,15 +445,15 @@ function MyHormonzContent() {
             <div>
               <FadeIn delay={0.1}>
                 <blockquote
-                  className="font-syne font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
-                  style={{ borderLeft: '3px solid #EC4899' }}
+                  className="font-plus-jakarta font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
+                  style={{ borderLeft: '3px solid #CA1670' }}
                 >
                   "Users weren't failing to understand the data — they were anxious because
                   the data gave no interpretation. A number without meaning is just noise."
                 </blockquote>
               </FadeIn>
               <FadeIn delay={0.18}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
                   When users viewed their hormone reports, raw clinical values like
                   "23.4 nmol/L" triggered alarm rather than understanding. The platform
                   had the data. It lacked the interpretive layer between data and meaning —
@@ -481,7 +461,7 @@ function MyHormonzContent() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.24}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   The core design challenge:{' '}
                   <span className="text-zinc-900 dark:text-zinc-200 font-medium">
                     make clarity the first feeling, not panic.
@@ -506,7 +486,7 @@ function MyHormonzContent() {
 
             <FadeIn>
               <p className="section-label mb-3">03 / Role</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I owned
               </h2>
             </FadeIn>
@@ -540,10 +520,10 @@ function MyHormonzContent() {
               ].map((item, i) => (
                 <FadeIn key={item.title} delay={Math.floor(i / 2) * 0.08 + 0.05}>
                   <div className="bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5 h-full">
-                    <h3 className="font-syne font-bold text-[15px] text-zinc-900 dark:text-zinc-100 mb-2">
+                    <h3 className="font-plus-jakarta font-bold text-[15px] text-zinc-900 dark:text-zinc-100 mb-2">
                       {item.title}
                     </h3>
-                    <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
+                    <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
                       {item.desc}
                     </p>
                   </div>
@@ -565,19 +545,19 @@ function MyHormonzContent() {
           <FadeIn className="mb-14">
             <p className="section-label mb-3">04 / Design Decisions</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="font-syne font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 4 decisions that<br />
                 <span
                   className="text-transparent bg-clip-text"
                   style={{
                     backgroundImage:
-                      'linear-gradient(135deg, #EC4899 0%, #F43F5E 60%, #F97316 100%)',
+                      'linear-gradient(135deg, #CA1670 0%, #E02080 60%, #A01258 100%)',
                   }}
                 >
                   defined the product.
                 </span>
               </h2>
-              <p className="font-inter text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[320px] leading-relaxed md:text-right">
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[320px] leading-relaxed md:text-right">
                 Each was a deliberate trade-off, made intentionally — not a preference.
               </p>
             </div>
@@ -636,7 +616,7 @@ function MyHormonzContent() {
 
                     {/* Number */}
                     <div className="flex-shrink-0 select-none">
-                      <span className="font-syne font-extrabold text-[52px] leading-none text-zinc-100 dark:text-zinc-800 lining-nums">
+                      <span className="font-plus-jakarta font-extrabold text-[52px] leading-none text-zinc-100 dark:text-zinc-800 lining-nums">
                         {decision.number}
                       </span>
                     </div>
@@ -644,23 +624,23 @@ function MyHormonzContent() {
                     {/* Content */}
                     <div className="flex-1 min-w-0">
                       <span
-                        className="inline-block font-inter text-[11px] font-medium tracking-[0.08em] uppercase mb-3"
-                        style={{ color: '#EC4899' }}
+                        className="inline-block font-dm-sans text-[11px] font-medium tracking-[0.08em] uppercase mb-3"
+                        style={{ color: '#CA1670' }}
                       >
                         {decision.tag}
                       </span>
-                      <h3 className="font-syne font-bold text-[clamp(18px,2.5vw,24px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em] mb-3">
+                      <h3 className="font-plus-jakarta font-bold text-[clamp(18px,2.5vw,24px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em] mb-3">
                         {decision.title}
                       </h3>
-                      <p className="font-inter font-medium text-[15px] text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
+                      <p className="font-dm-sans font-medium text-[15px] text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
                         {decision.summary}
                       </p>
-                      <p className="font-inter font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.85] mb-6">
+                      <p className="font-dm-sans font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.85] mb-6">
                         {decision.detail}
                       </p>
                       <div className="flex items-start gap-3 pt-5 border-t border-zinc-100 dark:border-white/[0.05]">
-                        <div className="w-1.5 h-1.5 rounded-full bg-pink-400 dark:bg-pink-500 flex-shrink-0 mt-[5px]" />
-                        <span className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500">
+                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[5px]" style={{ backgroundColor: '#CA1670' }} />
+                        <span className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500">
                           {decision.impact}
                         </span>
                       </div>
@@ -683,7 +663,7 @@ function MyHormonzContent() {
 
           <FadeIn className="mb-12">
             <p className="section-label mb-3">05 / Platform</p>
-            <h2 className="font-syne font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               3 surfaces,<br />
               <span className="text-blue-600 dark:text-blue-400">one design language.</span>
             </h2>
@@ -697,7 +677,7 @@ function MyHormonzContent() {
                 platform: 'iOS · Android',
                 status: 'In Development',
                 isLive: false,
-                gradient: 'linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #F97316 100%)',
+                gradient: 'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)',
                 desc: 'The core product. A personal hormone health companion with 10+ modules — hormone tracking, AI correlation, wellness scoring, sleep, nutrition, stress management, CBT, and gamification.',
                 tags: ['Hormone Optimisation', 'AI Correlation', 'Health Score', 'Sleep + Nutrition', 'CBT Toolkit', 'Gamification'],
               },
@@ -738,7 +718,7 @@ function MyHormonzContent() {
                       }}
                     />
                     <div className="absolute inset-0 flex items-end justify-between px-5 pb-4">
-                      <span className="font-syne font-extrabold text-[38px] leading-none text-white/15 select-none lining-nums">
+                      <span className="font-plus-jakarta font-extrabold text-[38px] leading-none text-white/15 select-none lining-nums">
                         {surface.number}
                       </span>
                       {surface.isLive ? (
@@ -746,12 +726,12 @@ function MyHormonzContent() {
                           href={surface.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-inter text-[10px] font-medium tracking-[0.08em] uppercase px-3 py-1 rounded-full backdrop-blur-sm border bg-green-500/20 border-green-400/40 text-green-200 hover:bg-green-500/30 transition-colors"
+                          className="font-dm-sans text-[10px] font-medium tracking-[0.08em] uppercase px-3 py-1 rounded-full backdrop-blur-sm border bg-green-500/20 border-green-400/40 text-green-200 hover:bg-green-500/30 transition-colors"
                         >
                           Live ↗
                         </a>
                       ) : (
-                        <span className="font-inter text-[10px] font-medium tracking-[0.08em] uppercase px-3 py-1 rounded-full backdrop-blur-sm border bg-blue-500/20 border-blue-400/40 text-blue-200">
+                        <span className="font-dm-sans text-[10px] font-medium tracking-[0.08em] uppercase px-3 py-1 rounded-full backdrop-blur-sm border bg-blue-500/20 border-blue-400/40 text-blue-200">
                           In Dev
                         </span>
                       )}
@@ -760,20 +740,20 @@ function MyHormonzContent() {
 
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-1">
-                    <span className="font-inter text-[10px] text-zinc-400 dark:text-zinc-600 tracking-[0.1em] uppercase mb-1">
+                    <span className="font-dm-sans text-[10px] text-zinc-400 dark:text-zinc-600 tracking-[0.1em] uppercase mb-1">
                       {surface.platform}
                     </span>
-                    <h3 className="font-syne font-bold text-[19px] text-zinc-900 dark:text-zinc-100 mb-3">
+                    <h3 className="font-plus-jakarta font-bold text-[19px] text-zinc-900 dark:text-zinc-100 mb-3">
                       {surface.title}
                     </h3>
-                    <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7] mb-5 flex-1">
+                    <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7] mb-5 flex-1">
                       {surface.desc}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {surface.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="font-inter text-[11px] text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.07] px-2.5 py-1 rounded-full"
+                          className="font-dm-sans text-[11px] text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.07] px-2.5 py-1 rounded-full"
                         >
                           {tag}
                         </span>
@@ -798,20 +778,20 @@ function MyHormonzContent() {
           <FadeIn className="mb-12">
             <p className="section-label mb-3">06 / Features</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="font-syne font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 10+ modules.
                 <br />
                 <span
                   className="text-transparent bg-clip-text"
                   style={{
                     backgroundImage:
-                      'linear-gradient(135deg, #EC4899 0%, #F43F5E 60%, #F97316 100%)',
+                      'linear-gradient(135deg, #CA1670 0%, #E02080 60%, #A01258 100%)',
                   }}
                 >
                   All intentional.
                 </span>
               </h2>
-              <p className="font-inter text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
                 Every module in the User App, with the design rationale behind it.
               </p>
             </div>
@@ -878,15 +858,15 @@ function MyHormonzContent() {
               <FadeIn key={module.num} delay={Math.floor(i / 3) * 0.07 + 0.05}>
                 <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.07] rounded-xl p-5 h-full">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-syne font-bold text-[11px] text-pink-500 dark:text-pink-400 tracking-[0.1em]">
+                    <span className="font-plus-jakarta font-bold text-[11px] tracking-[0.1em]" style={{ color: '#CA1670' }}>
                       {module.num}
                     </span>
                     <div className="h-px flex-1 bg-zinc-100 dark:bg-white/[0.05]" />
                   </div>
-                  <h3 className="font-syne font-bold text-[14px] text-zinc-900 dark:text-zinc-100 mb-2">
+                  <h3 className="font-plus-jakarta font-bold text-[14px] text-zinc-900 dark:text-zinc-100 mb-2">
                     {module.title}
                   </h3>
-                  <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
+                  <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
                     {module.desc}
                   </p>
                 </div>
@@ -907,7 +887,7 @@ function MyHormonzContent() {
 
             <FadeIn>
               <p className="section-label mb-3">07 / Outcome</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What shipped
               </h2>
             </FadeIn>
@@ -924,10 +904,10 @@ function MyHormonzContent() {
                   <FadeIn key={stat.label} delay={i * 0.07}>
                     <div className="bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5">
                       <div
-                        className="font-syne font-extrabold text-[38px] leading-none mb-1.5 lining-nums"
+                        className="font-plus-jakarta font-extrabold text-[38px] leading-none mb-1.5 lining-nums"
                         style={{
                           backgroundImage:
-                            'linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #F97316 100%)',
+                            'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)',
                           WebkitBackgroundClip: 'text',
                           WebkitTextFillColor: 'transparent',
                           backgroundClip: 'text',
@@ -935,10 +915,10 @@ function MyHormonzContent() {
                       >
                         {stat.value}
                       </div>
-                      <div className="font-inter font-medium text-[13px] text-zinc-800 dark:text-zinc-200 mb-0.5">
+                      <div className="font-dm-sans font-medium text-[13px] text-zinc-800 dark:text-zinc-200 mb-0.5">
                         {stat.label}
                       </div>
-                      <div className="font-inter text-[11px] text-zinc-400 dark:text-zinc-600">
+                      <div className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600">
                         {stat.sub}
                       </div>
                     </div>
@@ -956,8 +936,8 @@ function MyHormonzContent() {
                     'HIPAA-compliant data interactions approved by legal without a single revision — a first for the client team on any project.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-pink-400 dark:bg-pink-500 flex-shrink-0 mt-[8px]" />
-                      <p className="font-inter text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.75]">
+                      <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[8px]" style={{ backgroundColor: '#CA1670' }} />
+                      <p className="font-dm-sans text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.75]">
                         {point}
                       </p>
                     </div>
@@ -980,7 +960,7 @@ function MyHormonzContent() {
 
             <FadeIn>
               <p className="section-label mb-3">08 / Reflection</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I learned
               </h2>
             </FadeIn>
@@ -988,15 +968,15 @@ function MyHormonzContent() {
             <div className="space-y-6">
               <FadeIn delay={0.08}>
                 <blockquote
-                  className="font-syne font-semibold text-[clamp(18px,2.5vw,24px)] text-zinc-800 dark:text-zinc-200 leading-[1.4] tracking-[-0.01em] pl-6 md:pl-8"
-                  style={{ borderLeft: '3px solid #EC4899' }}
+                  className="font-plus-jakarta font-semibold text-[clamp(18px,2.5vw,24px)] text-zinc-800 dark:text-zinc-200 leading-[1.4] tracking-[-0.01em] pl-6 md:pl-8"
+                  style={{ borderLeft: '3px solid #CA1670' }}
                 >
                   "Health products punish designers for being clever. Clarity is the only
                   feature that matters when someone is anxious about their body."
                 </blockquote>
               </FadeIn>
               <FadeIn delay={0.14}>
-                <p className="font-inter font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
                   Designing for health changes what "good" means. Visual sophistication mattered
                   far less than emotional safety. Every decision — typography scale, colour choice,
                   copy tone — had to answer one question first: <em>does this feel safe?</em> That
@@ -1005,7 +985,7 @@ function MyHormonzContent() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="font-inter font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
                   Mentoring through a high-output engagement also sharpened my ability to articulate
                   decisions rather than just make them. When you have to explain why "insight before
                   data" isn't just a nice principle but a structural choice that affects every screen
@@ -1025,31 +1005,31 @@ function MyHormonzContent() {
       <section className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <FadeIn>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-50 via-white to-pink-50/30 dark:from-zinc-900 dark:via-zinc-900 dark:to-pink-900/[0.08] border border-zinc-200 dark:border-white/[0.07] px-6 py-14 sm:px-12 sm:py-16 md:p-16 text-center">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-50 via-white to-[#CA1670]/[0.06] dark:from-zinc-900 dark:via-zinc-900 dark:to-[#CA1670]/[0.08] border border-zinc-200 dark:border-white/[0.07] px-6 py-14 sm:px-12 sm:py-16 md:p-16 text-center">
               {/* Glow */}
               <div
                 className="absolute top-[-60%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-[0.05] pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #EC4899 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle, #CA1670 0%, transparent 70%)' }}
               />
 
               <div className="relative">
-                <p className="section-label mb-5" style={{ color: '#EC4899' }}>
+                <p className="section-label mb-5" style={{ color: '#CA1670' }}>
                   Want to see the full process?
                 </p>
-                <h2 className="font-syne font-extrabold text-[clamp(28px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05] mb-5">
+                <h2 className="font-plus-jakarta font-extrabold text-[clamp(28px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05] mb-5">
                   Case studies don&apos;t show
                   <br />
                   <span
                     className="text-transparent bg-clip-text"
                     style={{
                       backgroundImage:
-                        'linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #F97316 100%)',
+                        'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)',
                     }}
                   >
                     everything.
                   </span>
                 </h2>
-                <p className="font-inter font-light text-[clamp(15px,1.8vw,17px)] text-zinc-600 dark:text-zinc-400 leading-[1.75] max-w-[480px] mx-auto mb-10">
+                <p className="font-dm-sans font-light text-[clamp(15px,1.8vw,17px)] text-zinc-600 dark:text-zinc-400 leading-[1.75] max-w-[480px] mx-auto mb-10">
                   If you&apos;re a recruiter or client who wants to walk through the full Figma
                   files, see the research artefacts, or dig into the design decisions — I&apos;m happy
                   to talk through it.
@@ -1058,7 +1038,7 @@ function MyHormonzContent() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
                     href="mailto:vsuryansh.98@gmail.com"
-                    className="flex items-center justify-center gap-2.5 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-inter font-semibold text-[14px] px-8 py-4 rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-all duration-200 min-w-0"
+                    className="flex items-center justify-center gap-2.5 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-dm-sans font-semibold text-[14px] px-8 py-4 rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-all duration-200 min-w-0"
                   >
                     <svg width="15" height="15" viewBox="0 0 16 16" fill="none" className="flex-shrink-0">
                       <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -1068,7 +1048,7 @@ function MyHormonzContent() {
                   </a>
                   <Link
                     href="/"
-                    className="flex items-center gap-2 border border-zinc-300 dark:border-white/[0.1] text-zinc-600 dark:text-zinc-400 hover:border-zinc-500 dark:hover:border-white/25 hover:text-zinc-900 dark:hover:text-zinc-200 font-inter font-medium text-[14px] px-8 py-4 rounded-full transition-all duration-200"
+                    className="flex items-center gap-2 border border-zinc-300 dark:border-white/[0.1] text-zinc-600 dark:text-zinc-400 hover:border-zinc-500 dark:hover:border-white/25 hover:text-zinc-900 dark:hover:text-zinc-200 font-dm-sans font-medium text-[14px] px-8 py-4 rounded-full transition-all duration-200"
                   >
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                       <path d="M12 6.5H1M5 2L1 6.5l4 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -1090,11 +1070,11 @@ function MyHormonzContent() {
         <a href="/work/kamelion" className="block group">
           <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-10 flex items-center justify-between gap-6">
             <div>
-              <p className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 mb-2 font-medium">Next Case Study</p>
-              <h3 className="font-syne font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
+              <p className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 mb-2 font-medium">Next Case Study</p>
+              <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
                 Kamelion
               </h3>
-              <p className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">AI Product · B2C · Senior Product Designer</p>
+              <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">AI Product · B2C · Senior Product Designer</p>
             </div>
             <div className="flex-shrink-0 w-11 h-11 rounded-full border border-zinc-200 dark:border-white/10 flex items-center justify-center group-hover:border-zinc-400 dark:group-hover:border-white/25 transition-all duration-200">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
@@ -1108,10 +1088,10 @@ function MyHormonzContent() {
             <footer className="border-t border-zinc-100 dark:border-white/[0.05] bg-white dark:bg-zinc-950">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8 flex flex-col items-center md:flex-row md:justify-between gap-5">
           <div className="flex flex-col items-center md:items-start gap-0.5">
-            <span className="font-syne font-bold text-[14px] text-zinc-800 dark:text-zinc-200 tracking-tight">
+            <span className="font-plus-jakarta font-bold text-[14px] text-zinc-800 dark:text-zinc-200 tracking-tight">
               Suryansh Thakur
             </span>
-            <span className="font-inter text-[12px] text-zinc-400 dark:text-zinc-600">
+            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">
               Senior Product Designer
             </span>
           </div>
@@ -1119,7 +1099,7 @@ function MyHormonzContent() {
           <div className="flex items-center gap-5">
             <a
               href="mailto:vsuryansh.98@gmail.com"
-              className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
+              className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
             >
               Email
             </a>
@@ -1127,13 +1107,13 @@ function MyHormonzContent() {
               href="https://www.linkedin.com/in/suryansh-thakur-65443b154/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors flex items-center gap-1"
+              className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors flex items-center gap-1"
             >
               LinkedIn <span className="text-[10px]">↗</span>
             </a>
             <Link
               href="/"
-              className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
+              className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
             >
               All Work
             </Link>
@@ -1141,7 +1121,7 @@ function MyHormonzContent() {
 
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 opacity-60" />
-            <span className="font-inter text-[12px] text-zinc-400 dark:text-zinc-600">
+            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">
               © {new Date().getFullYear()} Suryansh Thakur
             </span>
           </div>

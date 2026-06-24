@@ -45,10 +45,10 @@ export default function ProcessSection() {
         >
           <p className="section-label mb-4">04 / Process</p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-syne font-extrabold text-[clamp(36px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(36px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               How I work.
             </h2>
-            <p className="font-inter text-[15px] text-zinc-500 dark:text-zinc-500 max-w-[340px] leading-relaxed md:text-right">
+            <p className="font-dm-sans text-[15px] text-zinc-500 dark:text-zinc-500 max-w-[340px] leading-relaxed md:text-right">
               Roughly in this order. Sometimes I skip ahead. Sometimes I go back.
             </p>
           </div>
@@ -68,12 +68,12 @@ export default function ProcessSection() {
                 <div className="absolute left-[22px] top-[62px] w-px h-[calc(100%-32px)] bg-gradient-to-b from-blue-200 dark:from-blue-400/20 to-transparent" />
               )}
               <div className="relative z-10 flex-shrink-0 w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/[0.08] flex flex-col items-center justify-center">
-                <span className="font-syne font-bold text-[9px] text-blue-600 dark:text-blue-400 leading-none">{step.number}</span>
+                <span className="font-plus-jakarta font-bold text-[9px] text-blue-600 dark:text-blue-400 leading-none">{step.number}</span>
                 <span className="text-zinc-400 dark:text-zinc-500 text-[13px] leading-none mt-0.5">{step.icon}</span>
               </div>
               <div className="pt-1 pb-2">
-                <h3 className="font-syne font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">{step.title}</h3>
-                <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.65]">{step.description}</p>
+                <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">{step.title}</h3>
+                <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.65]">{step.description}</p>
               </div>
             </motion.div>
           ))}
@@ -92,12 +92,12 @@ export default function ProcessSection() {
                 className="relative flex flex-col items-center gap-0 p-6"
               >
                 <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-white/[0.08] flex flex-col items-center justify-center">
-                  <span className="font-syne font-bold text-[10px] text-blue-600 dark:text-blue-400">{step.number}</span>
+                  <span className="font-plus-jakarta font-bold text-[10px] text-blue-600 dark:text-blue-400">{step.number}</span>
                   <span className="text-zinc-400 dark:text-zinc-500 text-[16px] leading-none">{step.icon}</span>
                 </div>
                 <div className="mt-6 text-center">
-                  <h3 className="font-syne font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-2">{step.title}</h3>
-                  <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.65]">{step.description}</p>
+                  <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-2">{step.title}</h3>
+                  <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.65]">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -111,16 +111,16 @@ export default function ProcessSection() {
           transition={{ duration: 0.65, ease: EASE, delay: 0.7 }}
           className="mt-16 pt-12 border-t border-zinc-100 dark:border-white/[0.05] flex flex-col md:flex-row items-start gap-8"
         >
-          <div className="font-syne font-extrabold text-[60px] text-blue-200 dark:text-blue-400/20 leading-none flex-shrink-0 select-none">"</div>
+          <div className="font-plus-jakarta font-extrabold text-[60px] text-blue-200 dark:text-blue-400/20 leading-none flex-shrink-0 select-none">"</div>
           <div className="flex-1">
-            <blockquote className="font-syne font-semibold text-[clamp(18px,2.5vw,24px)] text-zinc-700 dark:text-zinc-300 leading-[1.4] tracking-[-0.01em]">
+            <blockquote className="font-plus-jakarta font-semibold text-[clamp(18px,2.5vw,24px)] text-zinc-700 dark:text-zinc-300 leading-[1.4] tracking-[-0.01em]">
               Most design problems turn out to be communication problems. Someone didn&apos;t ask the right question early enough, so now we&apos;re redesigning the wrong thing beautifully.
             </blockquote>
-            <p className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 mt-4">
+            <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-4">
               — My approach to product design
             </p>
           </div>
-          <div className="font-syne font-extrabold text-[60px] text-blue-200 dark:text-blue-400/20 leading-none flex-shrink-0 select-none">"</div>
+          <div className="font-plus-jakarta font-extrabold text-[60px] text-blue-200 dark:text-blue-400/20 leading-none flex-shrink-0 select-none">"</div>
         </motion.div>
       </div>
     </section>

@@ -78,10 +78,10 @@ export default function WhatIDoSection() {
         >
           <p className="section-label mb-4">03 / Expertise</p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-syne font-extrabold text-[clamp(36px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(36px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               What I actually do.
             </h2>
-            <p className="font-inter text-[15px] text-zinc-500 dark:text-zinc-500 max-w-[360px] leading-relaxed md:text-right">
+            <p className="font-dm-sans text-[15px] text-zinc-500 dark:text-zinc-500 max-w-[360px] leading-relaxed md:text-right">
               Not just wireframes — research, systems, and sometimes the code itself.
             </p>
           </div>
@@ -100,17 +100,17 @@ export default function WhatIDoSection() {
               <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-400/[0.08] border border-blue-200 dark:border-blue-400/25 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:bg-blue-100 dark:group-hover:bg-blue-400/20 transition-colors">
                 {service.icon}
               </div>
-              <h3 className="font-syne font-bold text-[20px] text-zinc-900 dark:text-zinc-50 tracking-tight mb-3">
+              <h3 className="font-plus-jakarta font-bold text-[20px] text-zinc-900 dark:text-zinc-50 tracking-tight mb-3">
                 {service.title}
               </h3>
-              <p className="font-inter text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.7] mb-6">
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.7] mb-6">
                 {service.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {service.highlights.map((tag) => (
                   <span
                     key={tag}
-                    className="font-inter text-[11px] text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.07] px-2.5 py-1 rounded-full"
+                    className="font-dm-sans text-[11px] text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.07] px-2.5 py-1 rounded-full"
                   >
                     {tag}
                   </span>

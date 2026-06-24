@@ -7,10 +7,10 @@ import Image from 'next/image'
 const EASE = [0.25, 0.1, 0.25, 1]
 
 const highlights = [
-  { number: '3.5+', label: 'Years of experience' },
+  { number: '4+', label: 'Years of experience' },
   { number: '10+', label: 'Products shipped' },
-  { number: '2', label: 'SaaS companies' },
-  { number: '∞', label: 'Hours in Figma' },
+  { number: '1', label: 'SaaS company' },
+  { number: '∞', label: 'Hours of thinking' },
 ]
 
 const skills = [
@@ -45,7 +45,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 28 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-              className="font-syne font-extrabold text-[clamp(30px,4vw,44px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.1] mb-8"
+              className="font-plus-jakarta font-extrabold text-[clamp(30px,4vw,44px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.1] mb-8"
             >
               Design is the easy part.
               Getting it{' '}
@@ -64,7 +64,7 @@ export default function AboutSection() {
                 `At some point I got tired of handing off Figma files and watching things come back wrong. So I learned to build. Now I use Claude Code to take my designs into actual code — which means fewer translation errors and a much shorter distance between what I designed and what users see.`,
                 `I ask a lot of questions before opening Figma. Who is this actually for? What are they trying to do? What's the thing nobody's said out loud yet? Five minutes of that usually saves a week of revision.`,
               ].map((text, i) => (
-                <p key={i} className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.75]">
+                <p key={i} className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.75]">
                   {text}
                 </p>
               ))}
@@ -78,7 +78,7 @@ export default function AboutSection() {
             >
               <a
                 href="mailto:vsuryansh.98@gmail.com"
-                className="font-inter font-medium text-[13px] text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center gap-2 transition-colors"
+                className="font-dm-sans font-medium text-[13px] text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center gap-2 transition-colors"
               >
                 Get in touch
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -90,7 +90,7 @@ export default function AboutSection() {
                 href="https://www.linkedin.com/in/suryansh-thakur-65443b154/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-inter font-medium text-[13px] text-zinc-500 dark:text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300 flex items-center gap-1.5 transition-colors"
+                className="font-dm-sans font-medium text-[13px] text-zinc-500 dark:text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300 flex items-center gap-1.5 transition-colors"
               >
                 LinkedIn ↗
               </a>
@@ -132,10 +132,10 @@ export default function AboutSection() {
                   transition={{ duration: 0.55, ease: EASE, delay: 0.2 + i * 0.08 }}
                   className="bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5"
                 >
-                  <div className="font-syne font-extrabold text-[40px] text-blue-600 dark:text-blue-400 leading-none mb-2 lining-nums">
+                  <div className="font-plus-jakarta font-extrabold text-[40px] text-blue-600 dark:text-blue-400 leading-none mb-2 lining-nums">
                     {item.number}
                   </div>
-                  <div className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-tight">
+                  <div className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-tight">
                     {item.label}
                   </div>
                 </motion.div>
@@ -163,7 +163,7 @@ export default function AboutSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.35, ease: EASE, delay: 0.35 + i * 0.04 }}
-                  className="font-inter text-[12px] text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/[0.07] hover:border-blue-300 dark:hover:border-blue-400/25 hover:text-zinc-900 dark:hover:text-zinc-200 px-3 py-1.5 rounded-full transition-colors duration-200"
+                  className="font-dm-sans text-[12px] text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/[0.07] hover:border-blue-300 dark:hover:border-blue-400/25 hover:text-zinc-900 dark:hover:text-zinc-200 px-3 py-1.5 rounded-full transition-colors duration-200"
                 >
                   {skill}
                 </motion.span>
@@ -182,7 +182,7 @@ export default function AboutSection() {
               <div className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse" />
               <span className="text-blue-600 dark:text-blue-400 text-[11px] font-medium tracking-[0.12em] uppercase">Currently</span>
             </div>
-            <p className="font-inter text-[14px] text-zinc-700 dark:text-zinc-300 leading-relaxed">
+            <p className="font-dm-sans text-[14px] text-zinc-700 dark:text-zinc-300 leading-relaxed">
               Looking for a full-time role where design has a real seat at the table.
               Also open to freelance if the project is interesting enough.
             </p>

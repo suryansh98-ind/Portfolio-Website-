@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const EASE = [0.25, 0.1, 0.25, 1]
 
@@ -15,7 +16,8 @@ const caseStudies = [
     role: 'Senior Product Designer',
     description: 'Hormone health platform — 3 surfaces designed from scratch in 45 days. The core challenge was making clinical data feel approachable to people who aren\'t doctors.',
     tags: ['UX Strategy', 'Mobile Design', 'User Research', 'B2C'],
-    gradient: 'linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #F97316 100%)',
+    gradient: 'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)',
+    image: '/mh tumbnail.png',
     pattern: false,
     href: '/work/myhormonz',
   },
@@ -27,7 +29,8 @@ const caseStudies = [
     role: 'Senior Product Designer',
     description: 'Teen wellbeing app, sole designer. I designed how the product logic actually works — when to show what, how personality tests feed into content, what gets unlocked when. It\'s live on both stores.',
     tags: ['UX Research', 'Product Design', 'Design System', 'AI'],
-    gradient: 'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
+    gradient: 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
+    image: '/kamelion-thumbnail.png',
     pattern: true,
     href: '/work/kamelion',
   },
@@ -39,7 +42,8 @@ const caseStudies = [
     role: 'Product Designer',
     description: 'Adobe needed to see OKRs they didn\'t own. The platform had no concept for that. I designed one — from discovery to handoff in 7 days — that separated visibility from accountability.',
     tags: ['B2B SaaS', 'Dashboard Design', 'Data Viz', 'OKR'],
-    gradient: 'linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #6366F1 100%)',
+    gradient: 'linear-gradient(135deg, #15C679 0%, #0090D0 50%, #0057D7 100%)',
+    image: '/qr-thumbnail.png',
     pattern: true,
     href: '/work/quantive-results',
   },
@@ -51,7 +55,8 @@ const caseStudies = [
     role: 'Product Designer',
     description: 'Analysts were screenshotting charts and pasting them into Slack to discuss anomalies. I brought the conversation back into the tool — in-chart annotations anchored to the actual data.',
     tags: ['Data Design', 'Feature Design', 'B2B SaaS', 'Analytics'],
-    gradient: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 60%, #EC4899 100%)',
+    gradient: 'linear-gradient(135deg, #417AEA 0%, #15C679 100%)',
+    image: '/qs-thumbnail.png',
     pattern: false,
     href: '/work/quantive-signals',
   },
@@ -66,37 +71,49 @@ function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: 
       {/* Thumbnail */}
       <div
         className="relative h-[180px] md:h-[220px] overflow-hidden"
-        style={{ background: study.gradient }}
+        style={study.image ? undefined : { background: study.gradient }}
       >
-        {study.pattern && (
-          <div
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px)`,
-              backgroundSize: '24px 24px',
-            }}
+        {study.image ? (
+          <Image
+            src={study.image}
+            alt={study.title}
+            fill
+            className="object-cover object-left-top"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
+        ) : (
+          <>
+            {study.pattern && (
+              <div
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px)`,
+                  backgroundSize: '24px 24px',
+                }}
+              />
+            )}
+            {!study.pattern && (
+              <div
+                className="absolute inset-0 opacity-10"
+                style={{
+                  backgroundImage: `linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%),
+                    linear-gradient(-45deg, rgba(255,255,255,0.2) 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.2) 75%),
+                    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.2) 75%)`,
+                  backgroundSize: '20px 20px',
+                  backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
+                }}
+              />
+            )}
+            <div className="absolute top-5 left-6">
+              <span className="font-plus-jakarta font-extrabold text-[72px] leading-none opacity-15 text-white select-none lining-nums">
+                {study.id}
+              </span>
+            </div>
+          </>
         )}
-        {!study.pattern && (
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(255,255,255,0.2) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.2) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.2) 75%)`,
-              backgroundSize: '20px 20px',
-              backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-            }}
-          />
-        )}
-        <div className="absolute top-5 left-6">
-          <span className="font-syne font-extrabold text-[72px] leading-none opacity-15 text-white select-none lining-nums">
-            {study.id}
-          </span>
-        </div>
         <div className="absolute top-5 right-5">
-          <span className="font-inter text-[11px] font-medium bg-black/25 backdrop-blur-sm text-white/80 px-3 py-1 rounded-full border border-white/10">
+          <span className="font-dm-sans text-[11px] font-medium bg-black/25 backdrop-blur-sm text-white/80 px-3 py-1 rounded-full border border-white/10">
             {study.year}
           </span>
         </div>
@@ -108,7 +125,7 @@ function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: 
           <motion.div
             variants={{ hover: { scale: 1, opacity: 1 } }}
             initial={{ scale: 0.8, opacity: 0 }}
-            className="bg-white/20 backdrop-blur-sm border border-white/25 text-white font-inter font-medium text-[13px] px-5 py-2.5 rounded-full"
+            className="bg-white/20 backdrop-blur-sm border border-white/25 text-white font-dm-sans font-medium text-[13px] px-5 py-2.5 rounded-full"
           >
             {study.href ? 'View Case Study ↗' : 'Coming Soon'}
           </motion.div>
@@ -124,7 +141,7 @@ function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: 
               <span className="section-label opacity-40">·</span>
               <span className="section-label">{study.role}</span>
             </div>
-            <h3 className="font-syne font-bold text-[22px] text-zinc-900 dark:text-zinc-50 tracking-tight">
+            <h3 className="font-plus-jakarta font-bold text-[22px] text-zinc-900 dark:text-zinc-50 tracking-tight">
               {study.title}
             </h3>
           </div>
@@ -138,7 +155,7 @@ function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: 
           </motion.div>
         </div>
 
-        <p className="font-inter text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.65] mb-5">
+        <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.65] mb-5">
           {study.description}
         </p>
 
@@ -146,7 +163,7 @@ function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: 
           {study.tags.map((tag) => (
             <span
               key={tag}
-              className="font-inter text-[11px] text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.07] px-3 py-1 rounded-full"
+              className="font-dm-sans text-[11px] text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.07] px-3 py-1 rounded-full"
             >
               {tag}
             </span>
@@ -205,17 +222,17 @@ export default function WorkSection() {
         >
           <div>
             <p className="section-label mb-4">01 / Work</p>
-            <h2 className="font-syne font-extrabold text-[clamp(36px,5vw,56px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(36px,5vw,56px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               Selected Work
             </h2>
-            <p className="font-inter text-[16px] text-zinc-500 dark:text-zinc-500 mt-3 max-w-[420px] leading-relaxed">
+            <p className="font-dm-sans text-[16px] text-zinc-500 dark:text-zinc-500 mt-3 max-w-[420px] leading-relaxed">
               End-to-end product design across B2B and B2C SaaS — from research to shipped product.
             </p>
           </div>
           <div className="flex items-center gap-3 text-zinc-400 dark:text-zinc-600">
-            <span className="font-inter text-[13px]">4 case studies</span>
+            <span className="font-dm-sans text-[13px]">4 case studies</span>
             <div className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
-            <span className="font-inter text-[13px]">2023 — 2025</span>
+            <span className="font-dm-sans text-[13px]">2023 — 2025</span>
           </div>
         </motion.div>
 

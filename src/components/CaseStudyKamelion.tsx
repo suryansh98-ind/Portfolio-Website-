@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import ThemeProvider, { useTheme } from '@/contexts/ThemeContext'
 
 const EASE = [0.25, 0.1, 0.25, 1]
@@ -60,14 +61,14 @@ function CaseStudyNavbar() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="font-syne font-bold text-[15px] tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          className="font-plus-jakarta font-bold text-[15px] tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
         >
           Suryansh Thakur
         </Link>
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="hidden sm:flex items-center gap-2 font-inter text-[13px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
+            className="hidden sm:flex items-center gap-2 font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M13 7H1M6 2L1 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -117,7 +118,7 @@ function FadeIn({
 function Divider() {
   return <div className="border-t border-zinc-100 dark:border-white/[0.05]" />
 }
-const GRADIENT = 'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)'
+const GRADIENT = 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)'
 
 function ReadingProgressBar() {
   const [progress, setProgress] = useState(0)
@@ -172,7 +173,7 @@ function SectionTracker() {
           onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           className="group flex items-center gap-2.5 justify-end"
         >
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 font-inter text-[11px] text-zinc-400 dark:text-zinc-500 whitespace-nowrap">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-500 whitespace-nowrap">
             {label}
           </span>
           <div
@@ -201,11 +202,11 @@ function KamelionContent() {
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute top-[-10%] right-[-5%] w-[600px] h-[500px] rounded-full opacity-[0.05] dark:opacity-[0.07]"
-            style={{ background: 'radial-gradient(circle, #4F46E5 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #258E5B 0%, transparent 70%)' }}
           />
           <div
             className="absolute bottom-0 left-[-5%] w-[400px] h-[400px] rounded-full opacity-[0.03]"
-            style={{ background: 'radial-gradient(circle, #06B6D4 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #91D16F 0%, transparent 70%)' }}
           />
         </div>
 
@@ -220,7 +221,7 @@ function KamelionContent() {
           >
             <Link
               href="/"
-              className="flex items-center gap-1.5 font-inter text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
+              className="flex items-center gap-1.5 font-dm-sans text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
             >
               <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
                 <path d="M9 5.5H1M4 2L1 5.5l3 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -228,7 +229,7 @@ function KamelionContent() {
               All Work
             </Link>
             <span className="text-zinc-300 dark:text-zinc-700 text-[11px]">/</span>
-            <span className="font-inter text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600">
+            <span className="font-dm-sans text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600">
               AI Product · EdTech · 2025
             </span>
           </motion.div>
@@ -238,7 +239,7 @@ function KamelionContent() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.18 }}
-            className="font-inter text-[14px] md:text-[15px] text-zinc-400 dark:text-zinc-600 italic mb-4"
+            className="font-dm-sans text-[14px] md:text-[15px] text-zinc-400 dark:text-zinc-600 italic mb-4"
           >
             Most wellbeing apps talk at teenagers.
           </motion.p>
@@ -249,14 +250,14 @@ function KamelionContent() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.24 }}
-              className="font-syne font-extrabold text-[clamp(36px,7vw,80px)] leading-[1.0] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50 mb-6"
+              className="font-plus-jakarta font-extrabold text-[clamp(36px,7vw,80px)] leading-[1.0] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50 mb-6"
             >
               I designed one that{' '}
               <span
                 className="text-transparent bg-clip-text"
                 style={{
                   backgroundImage:
-                    'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
+                    'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
                 }}
               >
                 listens.
@@ -267,7 +268,7 @@ function KamelionContent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: EASE, delay: 0.36 }}
-              className="font-inter font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[620px] mb-10"
+              className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[620px] mb-10"
             >
               A student wellbeing platform built around who each teenager actually is —
               not who we want them to be. 2 surfaces, 7 modules, personality-driven,
@@ -292,14 +293,14 @@ function KamelionContent() {
                   className="flex flex-col gap-1 bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.07] rounded-xl px-5 py-3.5"
                 >
                   <div className="flex items-baseline gap-1.5">
-                    <span className="font-syne font-extrabold text-[22px] text-zinc-900 dark:text-zinc-50 leading-none lining-nums">
+                    <span className="font-plus-jakarta font-extrabold text-[22px] text-zinc-900 dark:text-zinc-50 leading-none lining-nums">
                       {kpi.value}
                     </span>
-                    <span className="font-syne font-bold text-[13px] text-zinc-400 dark:text-zinc-600 leading-none">
+                    <span className="font-plus-jakarta font-bold text-[13px] text-zinc-400 dark:text-zinc-600 leading-none">
                       {kpi.label}
                     </span>
                   </div>
-                  <span className="font-inter text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.04em]">
+                  <span className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.04em]">
                     {kpi.sub}
                   </span>
                 </div>
@@ -307,65 +308,45 @@ function KamelionContent() {
             </motion.div>
           </div>
 
-          {/* Hero gradient banner */}
+          {/* Hero image banner */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.62 }}
             className="relative w-full rounded-2xl overflow-hidden"
-            style={{
-              height: 'clamp(220px, 36vw, 440px)',
-              background:
-                'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
-            }}
+            style={{ height: 'clamp(200px, 40vw, 480px)' }}
           >
-            {/* Dot texture */}
-            <div
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)`,
-                backgroundSize: '24px 24px',
-              }}
+            <Image
+              src="/kamelion-thumbnail.png"
+              alt="Kamelion case study cover"
+              fill
+              className="object-cover object-left-top"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              priority
             />
-            {/* Glow orb */}
-            <div
-              className="absolute top-[-20%] right-[15%] w-[500px] h-[500px] rounded-full opacity-20"
-              style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%)' }}
-            />
-
-            <div className="absolute inset-0 flex items-end justify-between p-7 md:p-10">
-              <div className="flex flex-col gap-1.5">
-                <span className="font-inter text-[10px] md:text-[11px] font-medium text-white/50 tracking-[0.12em] uppercase">
-                  Case Study
-                </span>
-                <span className="font-syne font-extrabold text-[clamp(26px,5vw,56px)] text-white leading-none">
-                  Kamelion
-                </span>
-              </div>
-              <div className="flex flex-col gap-2 items-end">
-                <a
-                  href={APP_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white font-inter font-medium text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-200 flex-shrink-0"
-                >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.13-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.73zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                  </svg>
-                  App Store ↗
-                </a>
-                <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white font-inter font-medium text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-200 flex-shrink-0"
-                >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3.18 23.76c.3.17.64.24.99.2l12.6-7.27-2.79-2.79-10.8 9.86zm-1.7-20.35C1.17 3.83 1 4.28 1 4.82v14.36c0 .54.17.99.48 1.31l.07.07 8.04-8.04v-.19L1.55 4.33l-.07.08zm18.39 8.98l-2.27-1.31-2.97 2.97 2.97 2.97 2.28-1.32c.65-.38.65-.99 0-1.31h-.01zm-17.5 9.48l10.62-6.13-2.79-2.79-7.83 8.92z"/>
-                  </svg>
-                  Play Store ↗
-                </a>
-              </div>
+            <div className="absolute top-5 right-5 flex flex-col gap-2 items-end">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white text-zinc-900 hover:bg-zinc-100 font-dm-sans font-semibold text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full shadow-md transition-all duration-200 flex-shrink-0"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.13-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.73zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                App Store ↗
+              </a>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white text-zinc-900 hover:bg-zinc-100 font-dm-sans font-semibold text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full shadow-md transition-all duration-200 flex-shrink-0"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3.18 23.76c.3.17.64.24.99.2l12.6-7.27-2.79-2.79-10.8 9.86zm-1.7-20.35C1.17 3.83 1 4.28 1 4.82v14.36c0 .54.17.99.48 1.31l.07.07 8.04-8.04v-.19L1.55 4.33l-.07.08zm18.39 8.98l-2.27-1.31-2.97 2.97 2.97 2.97 2.28-1.32c.65-.38.65-.99 0-1.31h-.01zm-17.5 9.48l10.62-6.13-2.79-2.79-7.83 8.92z"/>
+                </svg>
+                Play Store ↗
+              </a>
             </div>
           </motion.div>
         </div>
@@ -388,10 +369,10 @@ function KamelionContent() {
                 { label: 'Status', value: 'Live · iOS + Android' },
               ].map((item) => (
                 <div key={item.label} className="flex flex-col gap-1.5">
-                  <span className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600">
+                  <span className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600">
                     {item.label}
                   </span>
-                  <span className="font-inter text-[14px] font-medium text-zinc-800 dark:text-zinc-200">
+                  <span className="font-dm-sans text-[14px] font-medium text-zinc-800 dark:text-zinc-200">
                     {item.value}
                   </span>
                 </div>
@@ -407,7 +388,7 @@ function KamelionContent() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/[0.07] rounded-2xl p-5 sm:p-7">
             <div className="flex-shrink-0">
-              <span className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 font-medium">TL;DR</span>
+              <span className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 font-medium">TL;DR</span>
             </div>
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 flex-1 min-w-0">
               {[
@@ -416,8 +397,8 @@ function KamelionContent() {
                 { label: 'Outcome', text: 'Shipped live on both app stores. The product logic I designed is what runs the personalization engine today.' },
               ].map((item) => (
                 <div key={item.label} className="flex-1 min-w-0">
-                  <p className="font-inter text-[10px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 mb-1.5 font-medium">{item.label}</p>
-                  <p className="font-inter text-[13px] text-zinc-700 dark:text-zinc-300 leading-[1.65]">{item.text}</p>
+                  <p className="font-dm-sans text-[10px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 mb-1.5 font-medium">{item.label}</p>
+                  <p className="font-dm-sans text-[13px] text-zinc-700 dark:text-zinc-300 leading-[1.65]">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -433,24 +414,24 @@ function KamelionContent() {
 
             <FadeIn>
               <p className="section-label mb-3">01 / Context</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 The brief
               </h2>
             </FadeIn>
 
             <div className="space-y-5">
               <FadeIn delay={0.08}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   Kamelion is a student wellbeing platform built for UK secondary school students. The premise is simple but difficult to execute: teenagers don't want to be told they need help. Any product that approaches mental health and personal growth as something clinical, scheduled, or parent-approved will be immediately dismissed. It has to feel like something they chose.
                 </p>
               </FadeIn>
               <FadeIn delay={0.14}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   The platform needed two surfaces — a student-facing app with AI-personalised learning, gamified growth, and a structured community, plus an admin panel for school staff to monitor wellbeing trends and manage content. I was brought in as the sole designer to own everything: UX architecture, the complete design system, and the interaction logic for how each module actually works — not just what it looks like.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   30 days. No design handoffs before me. No second designer to check the work. The app is now live on both the App Store and Google Play.
                 </p>
               </FadeIn>
@@ -470,7 +451,7 @@ function KamelionContent() {
 
             <FadeIn>
               <p className="section-label mb-3">02 / Problem</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 The real challenge
               </h2>
             </FadeIn>
@@ -478,26 +459,26 @@ function KamelionContent() {
             <div>
               <FadeIn delay={0.1}>
                 <blockquote
-                  className="font-syne font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
-                  style={{ borderLeft: '3px solid #4F46E5' }}
+                  className="font-plus-jakarta font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
+                  style={{ borderLeft: '3px solid #258E5B' }}
                 >
                   "Every competitor — Calm, Headspace, Wysa — tracked feelings without explaining them, gave content without momentum, built community without safety structure. Students had no reason to return."
                 </blockquote>
               </FadeIn>
               <FadeIn delay={0.18}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
                   The problem with wellbeing apps for teenagers isn't that they're badly designed. It's that they're designed for the wrong moment. They assume a student will set aside twenty minutes, open an app, and consciously engage with their mental health. That moment doesn't exist at 14.
                 </p>
               </FadeIn>
               <FadeIn delay={0.24}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
                   The real challenge:{' '}
                   <span className="text-zinc-900 dark:text-zinc-200 font-medium">design for return, not just for use.</span>{' '}
                   A student might open the app once out of curiosity. Getting them to come back the next day — and the day after — requires designing every interaction as a reason to return. The growth has to feel visible. The progress has to feel real. And critically: missing a day can't feel like failure.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   That constraint — design growth as something you can see — shaped every module, every gamification decision, every piece of copy in the app.
                 </p>
               </FadeIn>
@@ -517,14 +498,14 @@ function KamelionContent() {
 
             <FadeIn>
               <p className="section-label mb-3">03 / Role</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I owned
               </h2>
             </FadeIn>
 
             <div>
               <FadeIn delay={0.06}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-8">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-8">
                   Sole designer means there's no hand to pass things to. Every decision — product logic, UX architecture, visual design, interaction states, edge cases, developer handoff — was mine. That scope shapes how you work: you can't design surface-level. You have to design how things actually function.
                 </p>
               </FadeIn>
@@ -557,10 +538,10 @@ function KamelionContent() {
                 ].map((item, i) => (
                   <FadeIn key={item.title} delay={Math.floor(i / 2) * 0.08 + 0.05}>
                     <div className="bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5 h-full">
-                      <h3 className="font-syne font-bold text-[15px] text-zinc-900 dark:text-zinc-100 mb-2">
+                      <h3 className="font-plus-jakarta font-bold text-[15px] text-zinc-900 dark:text-zinc-100 mb-2">
                         {item.title}
                       </h3>
-                      <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
+                      <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
                         {item.desc}
                       </p>
                     </div>
@@ -583,18 +564,18 @@ function KamelionContent() {
           <FadeIn className="mb-14">
             <p className="section-label mb-3">04 / Design Decisions</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="font-syne font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 4 decisions that earned<br />
                 <span
                   className="text-transparent bg-clip-text"
                   style={{
-                    backgroundImage: 'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
+                    backgroundImage: 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
                   }}
                 >
                   the daily return.
                 </span>
               </h2>
-              <p className="font-inter text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
                 Each decision was a direct response to a specific failure mode in competing products.
               </p>
             </div>
@@ -639,29 +620,29 @@ function KamelionContent() {
                 <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.07] rounded-2xl p-7 md:p-10">
                   <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
                     <div className="flex-shrink-0 select-none">
-                      <span className="font-syne font-extrabold text-[52px] leading-none text-zinc-100 dark:text-zinc-800 lining-nums">
+                      <span className="font-plus-jakarta font-extrabold text-[52px] leading-none text-zinc-100 dark:text-zinc-800 lining-nums">
                         {decision.number}
                       </span>
                     </div>
                     <div className="flex-1 min-w-0">
                       <span
-                        className="inline-block font-inter text-[11px] font-medium tracking-[0.08em] uppercase mb-3"
-                        style={{ color: '#4F46E5' }}
+                        className="inline-block font-dm-sans text-[11px] font-medium tracking-[0.08em] uppercase mb-3"
+                        style={{ color: '#258E5B' }}
                       >
                         {decision.tag}
                       </span>
-                      <h3 className="font-syne font-bold text-[clamp(18px,2.5vw,24px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em] mb-3">
+                      <h3 className="font-plus-jakarta font-bold text-[clamp(18px,2.5vw,24px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em] mb-3">
                         {decision.title}
                       </h3>
-                      <p className="font-inter font-medium text-[15px] text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
+                      <p className="font-dm-sans font-medium text-[15px] text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
                         {decision.summary}
                       </p>
-                      <p className="font-inter font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.85] mb-6">
+                      <p className="font-dm-sans font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.85] mb-6">
                         {decision.detail}
                       </p>
                       <div className="flex items-start gap-3 pt-5 border-t border-zinc-100 dark:border-white/[0.05]">
-                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400 flex-shrink-0 mt-[5px]" />
-                        <span className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500">
+                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[5px]" style={{ backgroundColor: '#258E5B' }} />
+                        <span className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500">
                           {decision.impact}
                         </span>
                       </div>
@@ -685,18 +666,18 @@ function KamelionContent() {
           <FadeIn className="mb-14">
             <p className="section-label mb-3">05 / The Logic Layer</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="font-syne font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 Designing how things work,<br />
                 <span
                   className="text-transparent bg-clip-text"
                   style={{
-                    backgroundImage: 'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
+                    backgroundImage: 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
                   }}
                 >
                   not just how they look.
                 </span>
               </h2>
-              <p className="font-inter text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
                 The invisible layer — conditional logic, interaction rules, and state design that make the product feel personal.
               </p>
             </div>
@@ -738,24 +719,24 @@ function KamelionContent() {
                   <div className="flex items-center gap-3 mb-4">
                     <span
                       className="text-[22px] leading-none"
-                      style={{ color: '#4F46E5' }}
+                      style={{ color: '#258E5B' }}
                     >
                       {module.icon}
                     </span>
                     <div>
-                      <h3 className="font-syne font-bold text-[17px] text-zinc-900 dark:text-zinc-100">
+                      <h3 className="font-plus-jakarta font-bold text-[17px] text-zinc-900 dark:text-zinc-100">
                         {module.title}
                       </h3>
-                      <p className="font-inter text-[12px] text-zinc-400 dark:text-zinc-600">
+                      <p className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">
                         {module.subtitle}
                       </p>
                     </div>
                   </div>
-                  <p className="font-inter font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.75] mb-5 flex-1">
+                  <p className="font-dm-sans font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.75] mb-5 flex-1">
                     {module.desc}
                   </p>
                   <div className="pt-4 border-t border-zinc-100 dark:border-white/[0.05]">
-                    <p className="font-inter text-[12px] text-indigo-500 dark:text-indigo-400 leading-relaxed">
+                    <p className="font-dm-sans text-[12px] leading-relaxed" style={{ color: '#258E5B' }}>
                       <span className="font-medium">Logic: </span>{module.logic}
                     </p>
                   </div>
@@ -776,12 +757,12 @@ function KamelionContent() {
 
           <FadeIn className="mb-12">
             <p className="section-label mb-3">06 / Platform</p>
-            <h2 className="font-syne font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               2 surfaces.<br />
               <span
                 className="text-transparent bg-clip-text"
                 style={{
-                  backgroundImage: 'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
+                  backgroundImage: 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
                 }}
               >
                 Zero overlap in feel.
@@ -796,7 +777,7 @@ function KamelionContent() {
                 number: '01',
                 title: 'Student App',
                 platform: 'iOS · Android',
-                gradient: 'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
+                gradient: 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
                 isLive: true,
                 desc: 'A personal wellbeing companion designed to feel like something a teenager chose — not something a school assigned. Personality-driven, gamified, and built to earn the daily return.',
                 tags: ['Personality Engine', 'AI Learning Paths', 'Mental Gyms', 'Challenges', 'Journaling', 'Coins + Leaderboard', 'Community'],
@@ -825,29 +806,29 @@ function KamelionContent() {
                       }}
                     />
                     <div className="absolute inset-0 flex items-end justify-between px-5 pb-4">
-                      <span className="font-syne font-extrabold text-[38px] leading-none text-white/15 select-none lining-nums">
+                      <span className="font-plus-jakarta font-extrabold text-[38px] leading-none text-white/15 select-none lining-nums">
                         {surface.number}
                       </span>
-                      <span className="font-inter text-[10px] font-medium tracking-[0.08em] uppercase px-3 py-1 rounded-full backdrop-blur-sm border bg-green-500/20 border-green-400/40 text-green-200">
+                      <span className="font-dm-sans text-[10px] font-medium tracking-[0.08em] uppercase px-3 py-1 rounded-full backdrop-blur-sm border bg-green-500/20 border-green-400/40 text-green-200">
                         Live ↗
                       </span>
                     </div>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <span className="font-inter text-[10px] text-zinc-400 dark:text-zinc-600 tracking-[0.1em] uppercase mb-1">
+                    <span className="font-dm-sans text-[10px] text-zinc-400 dark:text-zinc-600 tracking-[0.1em] uppercase mb-1">
                       {surface.platform}
                     </span>
-                    <h3 className="font-syne font-bold text-[19px] text-zinc-900 dark:text-zinc-100 mb-3">
+                    <h3 className="font-plus-jakarta font-bold text-[19px] text-zinc-900 dark:text-zinc-100 mb-3">
                       {surface.title}
                     </h3>
-                    <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7] mb-5 flex-1">
+                    <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7] mb-5 flex-1">
                       {surface.desc}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {surface.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="font-inter text-[11px] text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.07] px-2.5 py-1 rounded-full"
+                          className="font-dm-sans text-[11px] text-zinc-500 dark:text-zinc-500 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.07] px-2.5 py-1 rounded-full"
                         >
                           {tag}
                         </span>
@@ -861,10 +842,10 @@ function KamelionContent() {
 
           {/* Module breakdown */}
           <FadeIn className="mb-8">
-            <h3 className="font-syne font-bold text-[22px] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em]">
+            <h3 className="font-plus-jakarta font-bold text-[22px] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em]">
               7 modules. All connected.
             </h3>
-            <p className="font-inter text-[14px] text-zinc-500 dark:text-zinc-500 mt-2 max-w-[500px] leading-relaxed">
+            <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 mt-2 max-w-[500px] leading-relaxed">
               Each module in the student app feeds into the others — the Health Score, the AI engine, the coin system. Nothing is isolated.
             </p>
           </FadeIn>
@@ -910,15 +891,15 @@ function KamelionContent() {
               <FadeIn key={module.num} delay={Math.floor(i / 3) * 0.07 + 0.05}>
                 <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.07] rounded-xl p-5 h-full">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-syne font-bold text-[11px] text-indigo-500 dark:text-indigo-400 tracking-[0.1em]">
+                    <span className="font-plus-jakarta font-bold text-[11px] tracking-[0.1em]" style={{ color: '#258E5B' }}>
                       {module.num}
                     </span>
                     <div className="h-px flex-1 bg-zinc-100 dark:bg-white/[0.05]" />
                   </div>
-                  <h3 className="font-syne font-bold text-[14px] text-zinc-900 dark:text-zinc-100 mb-2">
+                  <h3 className="font-plus-jakarta font-bold text-[14px] text-zinc-900 dark:text-zinc-100 mb-2">
                     {module.title}
                   </h3>
-                  <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
+                  <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
                     {module.desc}
                   </p>
                 </div>
@@ -939,7 +920,7 @@ function KamelionContent() {
 
             <FadeIn>
               <p className="section-label mb-3">07 / Outcome</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What it shipped
               </h2>
             </FadeIn>
@@ -958,20 +939,15 @@ function KamelionContent() {
                   <FadeIn key={stat.label} delay={i * 0.06}>
                     <div className="bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5">
                       <div
-                        className="font-syne font-extrabold text-[32px] leading-none mb-1.5 lining-nums"
-                        style={{
-                          backgroundImage: 'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent',
-                          backgroundClip: 'text',
-                        }}
+                        className="font-plus-jakarta font-extrabold text-[32px] leading-none mb-1.5 lining-nums"
+                        style={{ color: '#258E5B' }}
                       >
                         {stat.value}
                       </div>
-                      <div className="font-inter font-medium text-[13px] text-zinc-800 dark:text-zinc-200 mb-0.5">
+                      <div className="font-dm-sans font-medium text-[13px] text-zinc-800 dark:text-zinc-200 mb-0.5">
                         {stat.label}
                       </div>
-                      <div className="font-inter text-[11px] text-zinc-400 dark:text-zinc-600">
+                      <div className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600">
                         {stat.sub}
                       </div>
                     </div>
@@ -989,8 +965,8 @@ function KamelionContent() {
                     'Admin panel adopted with zero training sessions — the clearest signal that a product designed for non-designers actually succeeded.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400 flex-shrink-0 mt-[8px]" />
-                      <p className="font-inter text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.75]">
+                      <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[8px]" style={{ backgroundColor: '#258E5B' }} />
+                      <p className="font-dm-sans text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.75]">
                         {point}
                       </p>
                     </div>
@@ -1013,7 +989,7 @@ function KamelionContent() {
 
             <FadeIn>
               <p className="section-label mb-3">08 / Reflection</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I learned
               </h2>
             </FadeIn>
@@ -1021,19 +997,19 @@ function KamelionContent() {
             <div className="space-y-6">
               <FadeIn delay={0.08}>
                 <blockquote
-                  className="font-syne font-semibold text-[clamp(18px,2.5vw,24px)] text-zinc-800 dark:text-zinc-200 leading-[1.4] tracking-[-0.01em] pl-6 md:pl-8"
-                  style={{ borderLeft: '3px solid #4F46E5' }}
+                  className="font-plus-jakarta font-semibold text-[clamp(18px,2.5vw,24px)] text-zinc-800 dark:text-zinc-200 leading-[1.4] tracking-[-0.01em] pl-6 md:pl-8"
+                  style={{ borderLeft: '3px solid #258E5B' }}
                 >
                   "Being the sole designer means you have to hold the whole product in your head at once. Every screen you design, you're also the reviewer, the QA, the product manager, and the person who has to live with the decision."
                 </blockquote>
               </FadeIn>
               <FadeIn delay={0.14}>
-                <p className="font-inter font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
                   Kamelion taught me the difference between designing a product and designing how a product works. Most portfolios show screens. The thing that actually matters — the conditional logic, the interaction rules, the state design for what happens when a 14-year-old gets a quiz wrong at 8am — is invisible. That invisible layer is the real design work.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="font-inter font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
                   Working without another designer also clarified what good judgment looks like under pressure. You can't debate every decision. You develop a faster inner framework for what matters and what doesn't. That speed — without losing quality — is something I now carry into every project.
                 </p>
               </FadeIn>
@@ -1054,10 +1030,10 @@ function KamelionContent() {
           <FadeIn className="mb-10">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.07]">
               <div className="flex-1">
-                <p className="font-syne font-bold text-[17px] text-zinc-900 dark:text-zinc-100 mb-1">
+                <p className="font-plus-jakarta font-bold text-[17px] text-zinc-900 dark:text-zinc-100 mb-1">
                   Kamelion is live on both stores.
                 </p>
-                <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500">
+                <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500">
                   Download it, use it — the product speaks for itself.
                 </p>
               </div>
@@ -1066,7 +1042,7 @@ function KamelionContent() {
                   href={APP_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-inter font-medium text-[13px] px-5 py-3 rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-all duration-200"
+                  className="flex items-center gap-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-dm-sans font-medium text-[13px] px-5 py-3 rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-all duration-200"
                 >
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.13-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.73zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -1077,7 +1053,7 @@ function KamelionContent() {
                   href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 border border-zinc-300 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-white/25 font-inter font-medium text-[13px] px-5 py-3 rounded-full transition-all duration-200"
+                  className="flex items-center gap-2 border border-zinc-300 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-white/25 font-dm-sans font-medium text-[13px] px-5 py-3 rounded-full transition-all duration-200"
                 >
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3.18 23.76c.3.17.64.24.99.2l12.6-7.27-2.79-2.79-10.8 9.86zm-1.7-20.35C1.17 3.83 1 4.28 1 4.82v14.36c0 .54.17.99.48 1.31l.07.07 8.04-8.04v-.19L1.55 4.33l-.07.08zm18.39 8.98l-2.27-1.31-2.97 2.97 2.97 2.97 2.28-1.32c.65-.38.65-.99 0-1.31h-.01zm-17.5 9.48l10.62-6.13-2.79-2.79-7.83 8.92z"/>
@@ -1090,36 +1066,36 @@ function KamelionContent() {
 
           {/* Main CTA card */}
           <FadeIn>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-50 via-white to-indigo-50/30 dark:from-zinc-900 dark:via-zinc-900 dark:to-indigo-900/[0.08] border border-zinc-200 dark:border-white/[0.07] px-6 py-14 sm:px-12 sm:py-16 md:p-16 text-center">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-50 via-white to-[#258E5B]/[0.06] dark:from-zinc-900 dark:via-zinc-900 dark:to-[#258E5B]/[0.08] border border-zinc-200 dark:border-white/[0.07] px-6 py-14 sm:px-12 sm:py-16 md:p-16 text-center">
               {/* Glow */}
               <div
                 className="absolute top-[-60%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-[0.05] pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #4F46E5 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle, #258E5B 0%, transparent 70%)' }}
               />
 
               <div className="relative">
-                <p className="section-label mb-5" style={{ color: '#4F46E5' }}>
+                <p className="section-label mb-5" style={{ color: '#258E5B' }}>
                   Want to see the full process?
                 </p>
-                <h2 className="font-syne font-extrabold text-[clamp(28px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05] mb-5">
+                <h2 className="font-plus-jakarta font-extrabold text-[clamp(28px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05] mb-5">
                   The Figma files go much<br />
                   <span
                     className="text-transparent bg-clip-text"
                     style={{
-                      backgroundImage: 'linear-gradient(135deg, #4F46E5 0%, #2563EB 50%, #06B6D4 100%)',
+                      backgroundImage: 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
                     }}
                   >
                     deeper than this.
                   </span>
                 </h2>
-                <p className="font-inter font-light text-[clamp(15px,1.8vw,17px)] text-zinc-600 dark:text-zinc-400 leading-[1.75] max-w-[480px] mx-auto mb-10">
+                <p className="font-dm-sans font-light text-[clamp(15px,1.8vw,17px)] text-zinc-600 dark:text-zinc-400 leading-[1.75] max-w-[480px] mx-auto mb-10">
                   State diagrams, logic flows, the full design system, and the edge cases that made this product actually work — it&apos;s all in the file. If you want a walkthrough, let&apos;s talk.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
                     href="mailto:vsuryansh.98@gmail.com"
-                    className="flex items-center justify-center gap-2.5 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-inter font-semibold text-[14px] px-8 py-4 rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-all duration-200"
+                    className="flex items-center justify-center gap-2.5 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-dm-sans font-semibold text-[14px] px-8 py-4 rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-all duration-200"
                   >
                     <svg width="15" height="15" viewBox="0 0 16 16" fill="none" className="flex-shrink-0">
                       <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -1129,7 +1105,7 @@ function KamelionContent() {
                   </a>
                   <Link
                     href="/"
-                    className="flex items-center gap-2 border border-zinc-300 dark:border-white/[0.1] text-zinc-600 dark:text-zinc-400 hover:border-zinc-500 dark:hover:border-white/25 hover:text-zinc-900 dark:hover:text-zinc-200 font-inter font-medium text-[14px] px-8 py-4 rounded-full transition-all duration-200"
+                    className="flex items-center gap-2 border border-zinc-300 dark:border-white/[0.1] text-zinc-600 dark:text-zinc-400 hover:border-zinc-500 dark:hover:border-white/25 hover:text-zinc-900 dark:hover:text-zinc-200 font-dm-sans font-medium text-[14px] px-8 py-4 rounded-full transition-all duration-200"
                   >
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                       <path d="M12 6.5H1M5 2L1 6.5l4 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -1151,11 +1127,11 @@ function KamelionContent() {
         <a href="/work/quantive-results" className="block group">
           <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-10 flex items-center justify-between gap-6">
             <div>
-              <p className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 mb-2 font-medium">Next Case Study</p>
-              <h3 className="font-syne font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
+              <p className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 mb-2 font-medium">Next Case Study</p>
+              <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
                 Quantive Results
               </h3>
-              <p className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">B2B SaaS · Enterprise · Product Designer</p>
+              <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">B2B SaaS · Enterprise · Product Designer</p>
             </div>
             <div className="flex-shrink-0 w-11 h-11 rounded-full border border-zinc-200 dark:border-white/10 flex items-center justify-center group-hover:border-zinc-400 dark:group-hover:border-white/25 transition-all duration-200">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
@@ -1169,17 +1145,17 @@ function KamelionContent() {
             <footer className="border-t border-zinc-100 dark:border-white/[0.05] bg-white dark:bg-zinc-950">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8 flex flex-col items-center md:flex-row md:justify-between gap-5">
           <div className="flex flex-col items-center md:items-start gap-0.5">
-            <span className="font-syne font-bold text-[14px] text-zinc-800 dark:text-zinc-200 tracking-tight">
+            <span className="font-plus-jakarta font-bold text-[14px] text-zinc-800 dark:text-zinc-200 tracking-tight">
               Suryansh Thakur
             </span>
-            <span className="font-inter text-[12px] text-zinc-400 dark:text-zinc-600">
+            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">
               Senior Product Designer
             </span>
           </div>
           <div className="flex items-center gap-5">
             <a
               href="mailto:vsuryansh.98@gmail.com"
-              className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
+              className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
             >
               Email
             </a>
@@ -1187,20 +1163,20 @@ function KamelionContent() {
               href="https://www.linkedin.com/in/suryansh-thakur-65443b154/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors flex items-center gap-1"
+              className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors flex items-center gap-1"
             >
               LinkedIn <span className="text-[10px]">↗</span>
             </a>
             <Link
               href="/"
-              className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
+              className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
             >
               All Work
             </Link>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 opacity-60" />
-            <span className="font-inter text-[12px] text-zinc-400 dark:text-zinc-600">
+            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">
               © {new Date().getFullYear()} Suryansh Thakur
             </span>
           </div>

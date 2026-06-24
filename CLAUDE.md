@@ -37,6 +37,25 @@ The preview server is configured in `.claude/launch.json` as `"portfolio-dev"` a
 3. An inline footer (does **not** import the main `Footer.tsx`) — the main footer uses hash anchors (`#work`, `#about`) that break on sub-pages
 4. `ThemeProvider` wraps a `*Content` inner component, exported as the default
 
+**Case study hero images** — each case study uses a real cover image instead of a gradient banner:
+- Images live in `public/` and are rendered with `next/image` (`fill`, `object-cover`, `object-left-top`)
+- `object-left-top` is intentional — landscape cover images have important content on the left; centering clips it on narrow viewports
+- Height: `clamp(200px, 40vw, 480px)` via inline style
+- A white solid pill button (App Store/Play Store or "Shipped at X") sits at `top-5 right-5` over the image
+- Do **not** add text overlays — the cover image has its own branding
+
+**Case study color conventions:**
+- MyHormonz: primary `#CA1670`, gradient `linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)`
+- Kamelion: primary `#258E5B`, secondary `#91D16F`, gradient `linear-gradient(135deg, #258E5B 0%, #91D16F 100%)`
+- Quantive Results: primary `#15C679`, accent `#0057D7`. Gradient (`linear-gradient(135deg, #15C679 0%, #0057D7 100%)`) used **only** on the first heading and CTA text; everything else solid `#15C679`
+- Quantive Signals: primary `#417AEA`, secondary `#15C679`, gradient `linear-gradient(135deg, #417AEA 0%, #15C679 100%)` used throughout
+
+**WorkSection thumbnails** — the `caseStudies` array in `WorkSection.tsx` supports an optional `image` field. When set, the card renders a `next/image` instead of the gradient+pattern fallback. All four studies currently have images:
+- `'/mh tumbnail.png'` (note: space in filename)
+- `'/kamelion-thumbnail.png'`
+- `'/qr-thumbnail.png'`
+- `'/qs-thumbnail.png'`
+
 **Animations** (`src/lib/animations.ts`): shared Framer Motion variants (`fadeInUp`, `fadeIn`, `scaleIn`, `staggerContainer`, etc.) and the shared `EASE = [0.25, 0.1, 0.25, 1]` constant. Case study files define their own local `EASE` constant instead of importing from this file — keep that pattern consistent within each file.
 
 **Typography:**
@@ -48,6 +67,6 @@ The preview server is configured in `.claude/launch.json` as `"portfolio-dev"` a
 **Adding a new case study:**
 1. Create `src/components/CaseStudy<Name>.tsx` — copy the structure from an existing one; include local `FadeIn`, `CaseStudyNavbar`, inline footer, and `ThemeProvider` wrapper
 2. Create `app/work/<slug>/page.tsx` — server component with `export const metadata` and a single render of the component
-3. Update the `caseStudies` array in `src/components/WorkSection.tsx` — add `href: '/work/<slug>'` to enable the card link; `href: undefined` renders a "Coming Soon" overlay instead
+3. Update the `caseStudies` array in `src/components/WorkSection.tsx` — add `href: '/work/<slug>'` to enable the card link; `href: undefined` renders a "Coming Soon" overlay instead. Add `image: '/filename.png'` (saved to `public/`) to use a real thumbnail instead of the gradient fallback
 
 **Fonts** are loaded in `app/layout.tsx` via `next/font/google` (Syne + Inter) and injected as CSS variables `--font-syne` / `--font-inter`.

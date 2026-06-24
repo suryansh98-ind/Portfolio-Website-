@@ -62,7 +62,7 @@ export default function WhoIHelpSection() {
           className="mb-16"
         >
           <p className="section-label mb-4">05 / Who I help</p>
-          <h2 className="font-syne font-extrabold text-[clamp(36px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+          <h2 className="font-plus-jakarta font-extrabold text-[clamp(36px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
             Who I work best with.
           </h2>
         </motion.div>
@@ -77,13 +77,13 @@ export default function WhoIHelpSection() {
               className={`bg-gradient-to-b ${a.lightGradient} ${a.darkGradient} border ${a.lightBorder} ${a.darkBorder} rounded-2xl p-7`}
             >
               <div className="mb-5">
-                <h3 className="font-syne font-bold text-[22px] text-zinc-900 dark:text-zinc-50 mb-1">{a.title}</h3>
-                <p className="font-inter text-[12px] text-zinc-500 dark:text-zinc-500">{a.subtitle}</p>
+                <h3 className="font-plus-jakarta font-bold text-[22px] text-zinc-900 dark:text-zinc-50 mb-1">{a.title}</h3>
+                <p className="font-dm-sans text-[12px] text-zinc-500 dark:text-zinc-500">{a.subtitle}</p>
               </div>
-              <p className="font-inter text-[14px] text-zinc-600 dark:text-zinc-400 leading-[1.7] mb-6">{a.description}</p>
+              <p className="font-dm-sans text-[14px] text-zinc-600 dark:text-zinc-400 leading-[1.7] mb-6">{a.description}</p>
               <ul className="space-y-2">
                 {a.bullets.map((b) => (
-                  <li key={b} className="flex items-center gap-2.5 font-inter text-[13px] text-zinc-600 dark:text-zinc-400">
+                  <li key={b} className="flex items-center gap-2.5 font-dm-sans text-[13px] text-zinc-600 dark:text-zinc-400">
                     <span className={`w-1 h-1 rounded-full flex-shrink-0 ${a.dotColor}`} />
                     {b}
                   </li>
@@ -107,7 +107,7 @@ export default function WhoIHelpSection() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.35, ease: EASE, delay: 0.5 + i * 0.05 }}
-                className="font-inter text-[13px] text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.07] hover:border-blue-300 dark:hover:border-blue-400/25 hover:text-zinc-900 dark:hover:text-white px-4 py-2 rounded-full transition-colors duration-200 cursor-default"
+                className="font-dm-sans text-[13px] text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.07] hover:border-blue-300 dark:hover:border-blue-400/25 hover:text-zinc-900 dark:hover:text-white px-4 py-2 rounded-full transition-colors duration-200 cursor-default"
               >
                 {p}
               </motion.span>

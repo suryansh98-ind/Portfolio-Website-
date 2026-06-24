@@ -48,7 +48,7 @@ export default function HeroSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-600 dark:bg-blue-400 opacity-60" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-400" />
             </span>
-            <span className="font-inter text-[11px] md:text-[12px] tracking-[0.08em] md:tracking-[0.12em] uppercase text-zinc-500 dark:text-zinc-400">
+            <span className="font-dm-sans text-[11px] md:text-[12px] tracking-[0.08em] md:tracking-[0.12em] uppercase text-zinc-500 dark:text-zinc-400">
               Open to full-time opportunities
             </span>
           </motion.div>
@@ -61,9 +61,9 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, ease: EASE, delay: 0.25 }}
-                className="overflow-hidden"
+                className="mb-[0.12em]"
               >
-                <h1 className="font-syne font-extrabold text-[clamp(36px,10vw,96px)] leading-[1.0] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50">
+                <h1 className="font-plus-jakarta font-extrabold text-[clamp(36px,10vw,96px)] leading-[1.15] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50">
                   Designing
                 </h1>
               </motion.div>
@@ -72,9 +72,9 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, ease: EASE, delay: 0.35 }}
-                className="overflow-hidden"
+                className=""
               >
-                <h1 className="font-syne font-extrabold text-[clamp(36px,10vw,96px)] leading-[1.0] tracking-[-0.03em] text-stroke">
+                <h1 className="font-plus-jakarta font-extrabold text-[clamp(36px,10vw,96px)] leading-[1.15] tracking-[-0.03em] text-stroke">
                   products
                 </h1>
               </motion.div>
@@ -83,9 +83,9 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, ease: EASE, delay: 0.45 }}
-                className="overflow-hidden"
+                className=""
               >
-                <h1 className="font-syne font-extrabold text-[clamp(36px,10vw,96px)] leading-[1.0] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50">
+                <h1 className="font-plus-jakarta font-extrabold text-[clamp(36px,10vw,96px)] leading-[1.15] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50">
                   people{' '}
                   <span className="text-blue-600 dark:text-blue-400">love.</span>
                 </h1>
@@ -107,7 +107,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: EASE, delay: 0.7 }}
-            className="font-inter font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.65] max-w-[560px]"
+            className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.65] max-w-[560px]"
           >
             3.5 years shipping{' '}
             <span className="text-zinc-900 dark:text-zinc-200 font-medium">B2B and B2C products</span>{' '}
@@ -126,7 +126,7 @@ export default function HeroSection() {
               onClick={handleWorkClick}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center justify-center gap-3 bg-blue-600 dark:bg-blue-400 text-white dark:text-zinc-950 font-inter font-semibold text-[14px] px-7 py-4 rounded-full hover:bg-blue-700 dark:hover:bg-blue-300 transition-colors duration-200"
+              className="flex items-center justify-center gap-3 bg-blue-600 dark:bg-blue-400 text-white dark:text-zinc-950 font-dm-sans font-semibold text-[14px] px-7 py-4 rounded-full hover:bg-blue-700 dark:hover:bg-blue-300 transition-colors duration-200"
             >
               View my work
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -138,7 +138,7 @@ export default function HeroSection() {
               href="mailto:vsuryansh.98@gmail.com"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center justify-center gap-2 border border-zinc-200 dark:border-white/10 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400 dark:hover:border-white/25 hover:text-zinc-900 dark:hover:text-zinc-200 font-inter font-medium text-[14px] px-7 py-4 rounded-full transition-all duration-200"
+              className="flex items-center justify-center gap-2 border border-zinc-200 dark:border-white/10 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400 dark:hover:border-white/25 hover:text-zinc-900 dark:hover:text-zinc-200 font-dm-sans font-medium text-[14px] px-7 py-4 rounded-full transition-all duration-200"
             >
               Say hello ↗
             </motion.a>
@@ -159,7 +159,7 @@ export default function HeroSection() {
             ].map((item) => (
               <div key={item.label} className="flex flex-col gap-1">
                 <span className="section-label">{item.label}</span>
-                <span className="font-inter text-[13px] text-zinc-700 dark:text-zinc-300">{item.value}</span>
+                <span className="font-dm-sans text-[13px] text-zinc-700 dark:text-zinc-300">{item.value}</span>
               </div>
             ))}
           </motion.div>

@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import ThemeProvider, { useTheme } from '@/contexts/ThemeContext'
 
 const EASE = [0.25, 0.1, 0.25, 1]
@@ -57,14 +58,14 @@ function CaseStudyNavbar() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="font-syne font-bold text-[15px] tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          className="font-plus-jakarta font-bold text-[15px] tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
         >
           Suryansh Thakur
         </Link>
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="hidden sm:flex items-center gap-2 font-inter text-[13px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
+            className="hidden sm:flex items-center gap-2 font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M13 7H1M6 2L1 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -114,7 +115,7 @@ function FadeIn({
 function Divider() {
   return <div className="border-t border-zinc-100 dark:border-white/[0.05]" />
 }
-const GRADIENT = 'linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #6366F1 100%)'
+const GRADIENT = '#15C679'
 
 function ReadingProgressBar() {
   const [progress, setProgress] = useState(0)
@@ -168,7 +169,7 @@ function SectionTracker() {
           onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           className="group flex items-center gap-2.5 justify-end"
         >
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 font-inter text-[11px] text-zinc-400 dark:text-zinc-500 whitespace-nowrap">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-500 whitespace-nowrap">
             {label}
           </span>
           <div
@@ -196,11 +197,11 @@ function QuantiveResultsContent() {
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute top-[-10%] right-[-5%] w-[600px] h-[500px] rounded-full opacity-[0.05] dark:opacity-[0.06]"
-            style={{ background: 'radial-gradient(circle, #0D9488 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #15C679 0%, transparent 70%)' }}
           />
           <div
             className="absolute bottom-0 left-[-5%] w-[400px] h-[400px] rounded-full opacity-[0.03]"
-            style={{ background: 'radial-gradient(circle, #6366F1 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #0057D7 0%, transparent 70%)' }}
           />
         </div>
 
@@ -215,7 +216,7 @@ function QuantiveResultsContent() {
           >
             <Link
               href="/"
-              className="flex items-center gap-1.5 font-inter text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
+              className="flex items-center gap-1.5 font-dm-sans text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
             >
               <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
                 <path d="M9 5.5H1M4 2L1 5.5l3 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -223,7 +224,7 @@ function QuantiveResultsContent() {
               All Work
             </Link>
             <span className="text-zinc-300 dark:text-zinc-700 text-[11px]">/</span>
-            <span className="font-inter text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600">
+            <span className="font-dm-sans text-[11px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600">
               B2B SaaS · Enterprise · 2023
             </span>
           </motion.div>
@@ -233,7 +234,7 @@ function QuantiveResultsContent() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.18 }}
-            className="font-inter text-[14px] md:text-[15px] text-zinc-400 dark:text-zinc-600 italic mb-4"
+            className="font-dm-sans text-[14px] md:text-[15px] text-zinc-400 dark:text-zinc-600 italic mb-4"
           >
             Adobe. 10,000 people. One OKR system. One missing concept.
           </motion.p>
@@ -244,17 +245,14 @@ function QuantiveResultsContent() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.24 }}
-              className="font-syne font-extrabold text-[clamp(32px,6.5vw,76px)] leading-[1.02] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50 mb-6"
+              className="font-plus-jakarta font-extrabold text-[clamp(32px,6.5vw,76px)] leading-[1.02] tracking-[-0.03em] text-zinc-900 dark:text-zinc-50 mb-6"
             >
               Everyone needed to see
               <br />
               the strategy. Not everyone{' '}
               <span
                 className="text-transparent bg-clip-text"
-                style={{
-                  backgroundImage:
-                    'linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #6366F1 100%)',
-                }}
+                style={{ backgroundImage: 'linear-gradient(135deg, #15C679 0%, #0057D7 100%)' }}
               >
                 should own it.
               </span>
@@ -264,7 +262,7 @@ function QuantiveResultsContent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: EASE, delay: 0.36 }}
-              className="font-inter font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[620px] mb-10"
+              className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[620px] mb-10"
             >
               A feature designed from discovery to handoff for Adobe's leadership teams —
               separating visibility from accountability inside Quantive Results, an enterprise OKR platform.
@@ -288,14 +286,14 @@ function QuantiveResultsContent() {
                   className="flex flex-col gap-1 bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.07] rounded-xl px-5 py-3.5"
                 >
                   <div className="flex items-baseline gap-1.5">
-                    <span className="font-syne font-extrabold text-[22px] text-zinc-900 dark:text-zinc-50 leading-none lining-nums">
+                    <span className="font-plus-jakarta font-extrabold text-[22px] text-zinc-900 dark:text-zinc-50 leading-none lining-nums">
                       {kpi.value}
                     </span>
-                    <span className="font-syne font-bold text-[13px] text-zinc-400 dark:text-zinc-600 leading-none">
+                    <span className="font-plus-jakarta font-bold text-[13px] text-zinc-400 dark:text-zinc-600 leading-none">
                       {kpi.label}
                     </span>
                   </div>
-                  <span className="font-inter text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.04em]">
+                  <span className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600 tracking-[0.04em]">
                     {kpi.sub}
                   </span>
                 </div>
@@ -303,48 +301,27 @@ function QuantiveResultsContent() {
             </motion.div>
           </div>
 
-          {/* Hero gradient banner */}
+          {/* Hero image banner */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.62 }}
             className="relative w-full rounded-2xl overflow-hidden"
-            style={{
-              height: 'clamp(220px, 36vw, 440px)',
-              background: 'linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #6366F1 100%)',
-            }}
+            style={{ height: 'clamp(200px, 40vw, 480px)' }}
           >
-            {/* Texture */}
-            <div
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)`,
-                backgroundSize: '24px 24px',
-              }}
+            <Image
+              src="/qr-thumbnail.png"
+              alt="Quantive Results case study cover"
+              fill
+              className="object-cover object-left-top"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              priority
             />
-            <div
-              className="absolute top-[-20%] left-[10%] w-[500px] h-[500px] rounded-full opacity-20"
-              style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)' }}
-            />
-
-            <div className="absolute inset-0 flex items-end justify-between p-7 md:p-10">
-              <div className="flex flex-col gap-1.5">
-                <span className="font-inter text-[10px] md:text-[11px] font-medium text-white/50 tracking-[0.12em] uppercase">
-                  Feature Case Study
-                </span>
-                <span className="font-syne font-extrabold text-[clamp(22px,4vw,48px)] text-white leading-none">
-                  Quantive Results
-                </span>
-                <span className="font-inter text-[13px] text-white/60 mt-1">
-                  The Watch Feature — OKR Visibility without Ownership
-                </span>
-              </div>
-              <div className="flex flex-col items-end gap-2 flex-shrink-0">
-                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                  <span className="font-inter font-medium text-white text-[12px]">Shipped at Quantive</span>
-                </div>
-                <span className="font-inter text-[11px] text-white/50">Client: Adobe</span>
+            {/* Website Live button — top right */}
+            <div className="absolute top-5 right-5">
+              <div className="flex items-center gap-2 bg-white text-zinc-900 font-dm-sans font-semibold text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full shadow-md">
+                <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#15C679' }} />
+                Shipped at Quantive
               </div>
             </div>
           </motion.div>
@@ -369,10 +346,10 @@ function QuantiveResultsContent() {
                 { label: 'Read', value: '6 min' },
               ].map((item) => (
                 <div key={item.label} className="flex flex-col gap-1.5">
-                  <span className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600">
+                  <span className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600">
                     {item.label}
                   </span>
-                  <span className="font-inter text-[14px] font-medium text-zinc-800 dark:text-zinc-200">
+                  <span className="font-dm-sans text-[14px] font-medium text-zinc-800 dark:text-zinc-200">
                     {item.value}
                   </span>
                 </div>
@@ -388,7 +365,7 @@ function QuantiveResultsContent() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/[0.07] rounded-2xl p-5 sm:p-7">
             <div className="flex-shrink-0">
-              <span className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 font-medium">TL;DR</span>
+              <span className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 font-medium">TL;DR</span>
             </div>
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 flex-1 min-w-0">
               {[
@@ -397,8 +374,8 @@ function QuantiveResultsContent() {
                 { label: 'Outcome', text: '+40% OKR visibility among leadership, −28% unnecessary participant additions. Shipped to Adobe, zero revisions after handoff.' },
               ].map((item) => (
                 <div key={item.label} className="flex-1 min-w-0">
-                  <p className="font-inter text-[10px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 mb-1.5 font-medium">{item.label}</p>
-                  <p className="font-inter text-[13px] text-zinc-700 dark:text-zinc-300 leading-[1.65]">{item.text}</p>
+                  <p className="font-dm-sans text-[10px] tracking-[0.1em] uppercase text-zinc-400 dark:text-zinc-600 mb-1.5 font-medium">{item.label}</p>
+                  <p className="font-dm-sans text-[13px] text-zinc-700 dark:text-zinc-300 leading-[1.65]">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -414,24 +391,24 @@ function QuantiveResultsContent() {
 
             <FadeIn>
               <p className="section-label mb-3">01 / Context</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 The brief
               </h2>
             </FadeIn>
 
             <div className="space-y-5">
               <FadeIn delay={0.08}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   I was a Product Designer at Quantive, a company that built Quantive Results — an enterprise OKR (Objectives and Key Results) platform used by large organisations to align strategy across hundreds of teams. Adobe was one of those organisations, running Quantive Results across a 10,000-person workforce.
                 </p>
               </FadeIn>
               <FadeIn delay={0.14}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   The ask from Adobe was intentionally broad: <span className="text-zinc-900 dark:text-zinc-200 font-medium">they had a problem with how visibility worked in the platform, and they needed it solved.</span> That was the brief. No wireframes, no feature spec, no reference design. Adobe's program managers and leadership were being pulled into OKR structures they had no part in — and they needed a way out. Everything from discovery to solution to handoff was mine to define.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   7 days. One designer. The feature shipped and is in use today.
                 </p>
               </FadeIn>
@@ -451,7 +428,7 @@ function QuantiveResultsContent() {
 
             <FadeIn>
               <p className="section-label mb-3">02 / Problem</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 Visibility was the same as ownership
               </h2>
             </FadeIn>
@@ -459,24 +436,24 @@ function QuantiveResultsContent() {
             <div>
               <FadeIn delay={0.1}>
                 <blockquote
-                  className="font-syne font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
-                  style={{ borderLeft: '3px solid #0D9488' }}
+                  className="font-plus-jakarta font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
+                  style={{ borderLeft: '3px solid #15C679' }}
                 >
                   "In Quantive Results, you either owned an OKR or you couldn't see it. There was no middle ground. Adobe's teams were drowning in accountability for OKRs they had nothing to do with."
                 </blockquote>
               </FadeIn>
               <FadeIn delay={0.18}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
                   Quantive Results had two participation states: you were a participant in an OKR (with all the accountability, notifications, and responsibility that carries) or you were invisible to it. In a company of 10,000 people running hundreds of OKRs across departments, this binary created a real operational problem.
                 </p>
               </FadeIn>
               <FadeIn delay={0.24}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
                   Program managers and leadership at Adobe needed to monitor OKRs across teams they didn't directly own — to spot blockers, track cross-functional dependencies, and stay informed on strategy execution. But the only way to see an OKR was to be added as a participant. Which meant they were receiving accountability emails, appearing in responsibility reports, and being treated by the system as owners of work they had nothing to do with.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   The system was conflating <span className="text-zinc-900 dark:text-zinc-200 font-medium">visibility with ownership</span> — and Adobe's teams were paying the operational cost every week. What the platform was missing wasn't a feature. It was a concept.
                 </p>
               </FadeIn>
@@ -496,14 +473,14 @@ function QuantiveResultsContent() {
 
             <FadeIn>
               <p className="section-label mb-3">03 / My Process</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 Discovery to handoff
               </h2>
             </FadeIn>
 
             <div>
               <FadeIn delay={0.06}>
-                <p className="font-inter font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-10">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-10">
                   Adobe gave me a problem, not a solution. That's the ideal brief — but it requires a sharper process. Here's what the 7 days actually looked like.
                 </p>
               </FadeIn>
@@ -539,15 +516,15 @@ function QuantiveResultsContent() {
                   <FadeIn key={item.step} delay={i * 0.07}>
                     <div className="flex flex-col md:flex-row gap-5 md:gap-8 bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-6">
                       <div className="flex-shrink-0">
-                        <span className="font-syne font-extrabold text-[36px] leading-none text-zinc-200 dark:text-zinc-800 select-none lining-nums">
+                        <span className="font-plus-jakarta font-extrabold text-[36px] leading-none text-zinc-200 dark:text-zinc-800 select-none lining-nums">
                           {item.step}
                         </span>
                       </div>
                       <div>
-                        <h3 className="font-syne font-bold text-[15px] text-zinc-900 dark:text-zinc-100 mb-2">
+                        <h3 className="font-plus-jakarta font-bold text-[15px] text-zinc-900 dark:text-zinc-100 mb-2">
                           {item.title}
                         </h3>
-                        <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.75]">
+                        <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.75]">
                           {item.desc}
                         </p>
                       </div>
@@ -571,19 +548,15 @@ function QuantiveResultsContent() {
           <FadeIn className="mb-14">
             <p className="section-label mb-3">04 / Design Decisions</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="font-syne font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 4 decisions that defined<br />
                 <span
-                  className="text-transparent bg-clip-text"
-                  style={{
-                    backgroundImage:
-                      'linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #6366F1 100%)',
-                  }}
+                  style={{ color: '#15C679' }}
                 >
                   the Watch feature.
                 </span>
               </h2>
-              <p className="font-inter text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
                 Each decision was a trade-off between power and simplicity — in an enterprise system where the wrong choice has real operational cost.
               </p>
             </div>
@@ -628,29 +601,29 @@ function QuantiveResultsContent() {
                 <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.07] rounded-2xl p-7 md:p-10">
                   <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
                     <div className="flex-shrink-0 select-none">
-                      <span className="font-syne font-extrabold text-[52px] leading-none text-zinc-100 dark:text-zinc-800 lining-nums">
+                      <span className="font-plus-jakarta font-extrabold text-[52px] leading-none text-zinc-100 dark:text-zinc-800 lining-nums">
                         {decision.number}
                       </span>
                     </div>
                     <div className="flex-1 min-w-0">
                       <span
-                        className="inline-block font-inter text-[11px] font-medium tracking-[0.08em] uppercase mb-3"
-                        style={{ color: '#0D9488' }}
+                        className="inline-block font-dm-sans text-[11px] font-medium tracking-[0.08em] uppercase mb-3"
+                        style={{ color: '#15C679' }}
                       >
                         {decision.tag}
                       </span>
-                      <h3 className="font-syne font-bold text-[clamp(17px,2.2vw,22px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em] mb-3">
+                      <h3 className="font-plus-jakarta font-bold text-[clamp(17px,2.2vw,22px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em] mb-3">
                         {decision.title}
                       </h3>
-                      <p className="font-inter font-medium text-[15px] text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
+                      <p className="font-dm-sans font-medium text-[15px] text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
                         {decision.summary}
                       </p>
-                      <p className="font-inter font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.85] mb-6">
+                      <p className="font-dm-sans font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.85] mb-6">
                         {decision.detail}
                       </p>
                       <div className="flex items-start gap-3 pt-5 border-t border-zinc-100 dark:border-white/[0.05]">
-                        <div className="w-1.5 h-1.5 rounded-full bg-teal-500 dark:bg-teal-400 flex-shrink-0 mt-[5px]" />
-                        <span className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500">
+                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[5px]" style={{ backgroundColor: '#15C679' }} />
+                        <span className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500">
                           {decision.impact}
                         </span>
                       </div>
@@ -665,16 +638,16 @@ function QuantiveResultsContent() {
           <FadeIn delay={0.1} className="mt-10">
             <div className="bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-white/[0.07] rounded-2xl p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="font-syne font-extrabold text-[56px] text-teal-200 dark:text-teal-400/20 leading-none flex-shrink-0 select-none">"</div>
+                <div className="font-plus-jakarta font-extrabold text-[56px] text-green-200 dark:text-green-400/20 leading-none flex-shrink-0 select-none">"</div>
                 <div className="flex-1">
-                  <blockquote className="font-syne font-semibold text-[clamp(17px,2.2vw,22px)] text-zinc-700 dark:text-zinc-300 leading-[1.4] tracking-[-0.01em]">
+                  <blockquote className="font-plus-jakarta font-semibold text-[clamp(17px,2.2vw,22px)] text-zinc-700 dark:text-zinc-300 leading-[1.4] tracking-[-0.01em]">
                     The hardest part wasn't the UI. It was defining a new participation state inside a system where every existing state carried accountability weight.
                   </blockquote>
-                  <p className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 mt-4">
+                  <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-4">
                     — On designing the Watch feature for Quantive Results
                   </p>
                 </div>
-                <div className="font-syne font-extrabold text-[56px] text-teal-200 dark:text-teal-400/20 leading-none flex-shrink-0 select-none self-end hidden md:block">"</div>
+                <div className="font-plus-jakarta font-extrabold text-[56px] text-green-200 dark:text-green-400/20 leading-none flex-shrink-0 select-none self-end hidden md:block">"</div>
               </div>
             </div>
           </FadeIn>
@@ -691,15 +664,11 @@ function QuantiveResultsContent() {
 
           <FadeIn className="mb-12">
             <p className="section-label mb-3">05 / The Feature</p>
-            <h2 className="font-syne font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               The Watch layer —
               <br />
               <span
-                className="text-transparent bg-clip-text"
-                style={{
-                  backgroundImage:
-                    'linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #6366F1 100%)',
-                }}
+                style={{ color: '#15C679' }}
               >
                 what it is and how it works.
               </span>
@@ -742,14 +711,14 @@ function QuantiveResultsContent() {
               <FadeIn key={item.title} delay={Math.floor(i / 3) * 0.08 + 0.05}>
                 <div className="bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.07] rounded-xl p-5 h-full">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-[20px] leading-none" style={{ color: '#0D9488' }}>
+                    <span className="text-[20px] leading-none" style={{ color: '#15C679' }}>
                       {item.icon}
                     </span>
-                    <h3 className="font-syne font-bold text-[14px] text-zinc-900 dark:text-zinc-100">
+                    <h3 className="font-plus-jakarta font-bold text-[14px] text-zinc-900 dark:text-zinc-100">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="font-inter text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
+                  <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 leading-[1.7]">
                     {item.desc}
                   </p>
                 </div>
@@ -770,7 +739,7 @@ function QuantiveResultsContent() {
 
             <FadeIn>
               <p className="section-label mb-3">06 / Outcome</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 Measured at 8 weeks post-launch
               </h2>
             </FadeIn>
@@ -788,21 +757,15 @@ function QuantiveResultsContent() {
                   <FadeIn key={stat.label} delay={i * 0.06}>
                     <div className="bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5">
                       <div
-                        className="font-syne font-extrabold text-[32px] leading-none mb-1.5 lining-nums"
-                        style={{
-                          backgroundImage:
-                            'linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #6366F1 100%)',
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent',
-                          backgroundClip: 'text',
-                        }}
+                        className="font-plus-jakarta font-extrabold text-[32px] leading-none mb-1.5 lining-nums"
+                        style={{ color: '#15C679' }}
                       >
                         {stat.value}
                       </div>
-                      <div className="font-inter font-medium text-[13px] text-zinc-800 dark:text-zinc-200 mb-0.5">
+                      <div className="font-dm-sans font-medium text-[13px] text-zinc-800 dark:text-zinc-200 mb-0.5">
                         {stat.label}
                       </div>
-                      <div className="font-inter text-[11px] text-zinc-400 dark:text-zinc-600">
+                      <div className="font-dm-sans text-[11px] text-zinc-400 dark:text-zinc-600">
                         {stat.sub}
                       </div>
                     </div>
@@ -819,8 +782,8 @@ function QuantiveResultsContent() {
                     'Feature presented directly to Adobe\'s product team, shipped within the quarter, no design revisions required after handoff.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-teal-500 dark:bg-teal-400 flex-shrink-0 mt-[8px]" />
-                      <p className="font-inter text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.75]">
+                      <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[8px]" style={{ backgroundColor: '#15C679' }} />
+                      <p className="font-dm-sans text-[15px] text-zinc-600 dark:text-zinc-400 leading-[1.75]">
                         {point}
                       </p>
                     </div>
@@ -843,7 +806,7 @@ function QuantiveResultsContent() {
 
             <FadeIn>
               <p className="section-label mb-3">07 / Reflection</p>
-              <h2 className="font-syne font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I'd do differently
               </h2>
             </FadeIn>
@@ -851,19 +814,19 @@ function QuantiveResultsContent() {
             <div className="space-y-6">
               <FadeIn delay={0.08}>
                 <blockquote
-                  className="font-syne font-semibold text-[clamp(18px,2.5vw,24px)] text-zinc-800 dark:text-zinc-200 leading-[1.4] tracking-[-0.01em] pl-6 md:pl-8"
-                  style={{ borderLeft: '3px solid #0D9488' }}
+                  className="font-plus-jakarta font-semibold text-[clamp(18px,2.5vw,24px)] text-zinc-800 dark:text-zinc-200 leading-[1.4] tracking-[-0.01em] pl-6 md:pl-8"
+                  style={{ borderLeft: '3px solid #15C679' }}
                 >
                   "The best designs solve the problem you can see. The best designers also solve the problem that will appear three weeks after launch."
                 </blockquote>
               </FadeIn>
               <FadeIn delay={0.14}>
-                <p className="font-inter font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
                   The notification design for watchers was the weakest part of V1. Watchers received the same update digest as participants, just with accountability language removed. In the first two weeks, several users who were watching 15+ OKRs had noisy inboxes — they were getting event-triggered notifications every time any watched OKR had an update, which defeated the "lightweight ambient awareness" the feature was supposed to provide.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="font-inter font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
+                <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
                   In retrospect, I'd have designed a separate watcher digest from the start — a weekly summary format rather than event-triggered notifications. One email on Friday morning: "Here's what's changed across the OKRs you're watching this week." That would have made watching feel genuinely lighter. The feature solves visibility without ownership — the notifications should have felt the same way. This is the lesson: the participation state was right. The communication model should have matched it better.
                 </p>
               </FadeIn>
@@ -880,35 +843,32 @@ function QuantiveResultsContent() {
       <section className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <FadeIn>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-white to-teal-50/40 dark:from-zinc-900 dark:via-zinc-900 dark:to-teal-900/[0.08] border border-zinc-200 dark:border-white/[0.07] px-6 py-14 sm:px-12 sm:py-16 md:p-16 text-center">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-white to-[#15C679]/[0.06] dark:from-zinc-900 dark:via-zinc-900 dark:to-[#15C679]/[0.08] border border-zinc-200 dark:border-white/[0.07] px-6 py-14 sm:px-12 sm:py-16 md:p-16 text-center">
               <div
                 className="absolute top-[-60%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-[0.05] pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #0D9488 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle, #15C679 0%, transparent 70%)' }}
               />
               <div className="relative">
-                <p className="section-label mb-5" style={{ color: '#0D9488' }}>
+                <p className="section-label mb-5" style={{ color: '#15C679' }}>
                   Want to see the Figma?
                 </p>
-                <h2 className="font-syne font-extrabold text-[clamp(28px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05] mb-5">
+                <h2 className="font-plus-jakarta font-extrabold text-[clamp(28px,5vw,52px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05] mb-5">
                   7 days leaves a lot of
                   <br />
                   <span
                     className="text-transparent bg-clip-text"
-                    style={{
-                      backgroundImage:
-                        'linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #6366F1 100%)',
-                    }}
+                    style={{ backgroundImage: 'linear-gradient(135deg, #15C679 0%, #0057D7 100%)' }}
                   >
                     work off this page.
                   </span>
                 </h2>
-                <p className="font-inter font-light text-[clamp(15px,1.8vw,17px)] text-zinc-600 dark:text-zinc-400 leading-[1.75] max-w-[480px] mx-auto mb-10">
+                <p className="font-dm-sans font-light text-[clamp(15px,1.8vw,17px)] text-zinc-600 dark:text-zinc-400 leading-[1.75] max-w-[480px] mx-auto mb-10">
                   The full Figma file has every state, every edge case, the watcher management panel, the notification spec, and the annotations I presented to Adobe. If you want to walk through it, I&apos;m happy to.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
                     href="mailto:vsuryansh.98@gmail.com"
-                    className="flex items-center justify-center gap-2.5 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-inter font-semibold text-[14px] px-8 py-4 rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-all duration-200"
+                    className="flex items-center justify-center gap-2.5 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-dm-sans font-semibold text-[14px] px-8 py-4 rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-all duration-200"
                   >
                     <svg width="15" height="15" viewBox="0 0 16 16" fill="none" className="flex-shrink-0">
                       <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -918,7 +878,7 @@ function QuantiveResultsContent() {
                   </a>
                   <Link
                     href="/"
-                    className="flex items-center gap-2 border border-zinc-300 dark:border-white/[0.1] text-zinc-600 dark:text-zinc-400 hover:border-zinc-500 dark:hover:border-white/25 hover:text-zinc-900 dark:hover:text-zinc-200 font-inter font-medium text-[14px] px-8 py-4 rounded-full transition-all duration-200"
+                    className="flex items-center gap-2 border border-zinc-300 dark:border-white/[0.1] text-zinc-600 dark:text-zinc-400 hover:border-zinc-500 dark:hover:border-white/25 hover:text-zinc-900 dark:hover:text-zinc-200 font-dm-sans font-medium text-[14px] px-8 py-4 rounded-full transition-all duration-200"
                   >
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                       <path d="M12 6.5H1M5 2L1 6.5l4 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -937,11 +897,11 @@ function QuantiveResultsContent() {
         <a href="/work/quantive-signals" className="block group">
           <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-10 flex items-center justify-between gap-6">
             <div>
-              <p className="font-inter text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 mb-2 font-medium">Next Case Study</p>
-              <h3 className="font-syne font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
+              <p className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 mb-2 font-medium">Next Case Study</p>
+              <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
                 Quantive Signals
               </h3>
-              <p className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">B2B SaaS · Analytics · Product Designer</p>
+              <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">B2B SaaS · Analytics · Product Designer</p>
             </div>
             <div className="flex-shrink-0 w-11 h-11 rounded-full border border-zinc-200 dark:border-white/10 flex items-center justify-center group-hover:border-zinc-400 dark:group-hover:border-white/25 transition-all duration-200">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
@@ -956,17 +916,17 @@ function QuantiveResultsContent() {
       <footer className="border-t border-zinc-100 dark:border-white/[0.05] bg-white dark:bg-zinc-950">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8 flex flex-col items-center md:flex-row md:justify-between gap-5">
           <div className="flex flex-col items-center md:items-start gap-0.5">
-            <span className="font-syne font-bold text-[14px] text-zinc-800 dark:text-zinc-200 tracking-tight">Suryansh Thakur</span>
-            <span className="font-inter text-[12px] text-zinc-400 dark:text-zinc-600">Senior Product Designer</span>
+            <span className="font-plus-jakarta font-bold text-[14px] text-zinc-800 dark:text-zinc-200 tracking-tight">Suryansh Thakur</span>
+            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">Senior Product Designer</span>
           </div>
           <div className="flex items-center gap-5">
-            <a href="mailto:vsuryansh.98@gmail.com" className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">Email</a>
-            <a href="https://www.linkedin.com/in/suryansh-thakur-65443b154/" target="_blank" rel="noopener noreferrer" className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors flex items-center gap-1">LinkedIn <span className="text-[10px]">↗</span></a>
-            <Link href="/" className="font-inter text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">All Work</Link>
+            <a href="mailto:vsuryansh.98@gmail.com" className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">Email</a>
+            <a href="https://www.linkedin.com/in/suryansh-thakur-65443b154/" target="_blank" rel="noopener noreferrer" className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors flex items-center gap-1">LinkedIn <span className="text-[10px]">↗</span></a>
+            <Link href="/" className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">All Work</Link>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 opacity-60" />
-            <span className="font-inter text-[12px] text-zinc-400 dark:text-zinc-600">© {new Date().getFullYear()} Suryansh Thakur</span>
+            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">© {new Date().getFullYear()} Suryansh Thakur</span>
           </div>
         </div>
       </footer>

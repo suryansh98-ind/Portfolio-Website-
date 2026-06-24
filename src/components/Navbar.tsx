@@ -66,7 +66,7 @@ export default function Navbar() {
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-syne font-bold text-[15px] tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          className="font-plus-jakarta font-bold text-[15px] tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
         >
           Suryansh Thakur
         </button>
@@ -77,7 +77,7 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => handleNav(link.href)}
-              className="font-inter text-[14px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
+              className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
             >
               {link.label}
             </button>
@@ -98,7 +98,7 @@ export default function Navbar() {
             href="mailto:vsuryansh.98@gmail.com"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-1.5 bg-blue-50 dark:bg-blue-400/10 border border-blue-200 dark:border-blue-400/25 text-blue-600 dark:text-blue-400 font-inter font-medium text-[13px] px-4 py-2 rounded-full hover:bg-blue-100 dark:hover:bg-blue-400/20 transition-all duration-200"
+            className="flex items-center gap-1.5 bg-blue-50 dark:bg-blue-400/10 border border-blue-200 dark:border-blue-400/25 text-blue-600 dark:text-blue-400 font-dm-sans font-medium text-[13px] px-4 py-2 rounded-full hover:bg-blue-100 dark:hover:bg-blue-400/20 transition-all duration-200"
           >
             Say Hello
             <span className="text-[10px]">↗</span>
@@ -138,14 +138,14 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => handleNav(link.href)}
-              className="font-inter text-[16px] text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white text-left transition-colors"
+              className="font-dm-sans text-[16px] text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white text-left transition-colors"
             >
               {link.label}
             </button>
           ))}
           <a
             href="mailto:vsuryansh.98@gmail.com"
-            className="font-inter font-medium text-[14px] text-blue-600 dark:text-blue-400 mt-2"
+            className="font-dm-sans font-medium text-[14px] text-blue-600 dark:text-blue-400 mt-2"
           >
             Say Hello ↗
           </a>
