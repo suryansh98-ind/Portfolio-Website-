@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -141,6 +141,7 @@ const QR_SECTIONS = [
   { id: 'cs-process', label: 'Process' },
   { id: 'cs-decisions', label: 'Decisions' },
   { id: 'cs-feature', label: 'The Feature' },
+  { id: 'cs-screens', label: 'Screens' },
   { id: 'cs-outcome', label: 'Outcome' },
   { id: 'cs-reflection', label: 'Reflection' },
 ]
@@ -182,8 +183,42 @@ function SectionTracker() {
   )
 }
 
+// ─── Lightbox ─────────────────────────────────────────────────────────────────
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+  return (
+    <motion.div
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      transition={{ duration: 0.18 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-6 md:p-12 bg-black/90 backdrop-blur-md"
+      onClick={onClose}
+    >
+      <button onClick={(e) => { e.stopPropagation(); onClose() }}
+        className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors duration-200 z-10"
+        aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+        </svg>
+      </button>
+      <motion.div initial={{ scale: 0.96, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.96, opacity: 0 }} transition={{ duration: 0.18 }}
+        className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
+        <Image src={src} alt={alt} fill className="object-contain" sizes="90vw" />
+      </motion.div>
+    </motion.div>
+  )
+}
+
 // ─── Page content ─────────────────────────────────────────────────────────────
 function QuantiveResultsContent() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950">
       <ReadingProgressBar />
@@ -731,14 +766,115 @@ function QuantiveResultsContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          06 / OUTCOME
+          06 / SCREENS
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="cs-screens" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+
+          <FadeIn className="mb-14">
+            <p className="section-label mb-3">06 / Screens</p>
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              The Watch feature —{' '}
+              <span style={{ color: '#15C679' }}>shipped.</span>
+            </h2>
+            <p className="font-dm-sans text-[15px] text-zinc-500 dark:text-zinc-500 mt-4 max-w-[540px] leading-relaxed">
+              Three flows: watching an OKR, filtering to see what you watch, and saving it as a personal view.
+            </p>
+          </FadeIn>
+
+          <div className="space-y-16">
+
+            {/* Flow 1 */}
+            <FadeIn>
+              <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Watching an OKR</h3>
+              <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+                The Watch toggle lives in the OKR header. One click starts watching — no owner action required. Owners can also add watchers in bulk.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { src: '/qr-screen-1-watch-dropdown.png', alt: 'Watch OKR dropdown' },
+                  { src: '/qr-screen-2-watch-on.png', alt: 'Watch toggle turned on' },
+                  { src: '/qr-screen-3-search-watcher.png', alt: 'Adding a watcher by search' },
+                  { src: '/qr-screen-4-watchers-list.png', alt: 'Watchers list' },
+                ].map((screen) => (
+                  <div
+                    key={screen.src}
+                    className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                    style={{ aspectRatio: '16/10' }}
+                    onClick={() => setLightbox({ src: screen.src, alt: screen.alt })}
+                  >
+                    <Image src={screen.src} alt={screen.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+
+            {/* Flow 2 */}
+            <FadeIn>
+              <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Filtering to see watched OKRs</h3>
+              <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+                The "OKRs Watched By" filter lets any user surface exactly the OKRs they're watching — across all sessions.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                {[
+                  { src: '/qr-screen-5-all-okrs.png', alt: 'All OKRs view' },
+                  { src: '/qr-screen-6-filter-open.png', alt: 'Opening the filter panel' },
+                  { src: '/qr-screen-7-filter-watched.png', alt: 'Selecting OKRs Watched By filter' },
+                  { src: '/qr-screen-8-filter-user.png', alt: 'Filtering by current user' },
+                  { src: '/qr-screen-9-filter-results.png', alt: 'Filtered results showing watched OKRs' },
+                ].map((screen) => (
+                  <div
+                    key={screen.src}
+                    className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                    style={{ aspectRatio: '16/10' }}
+                    onClick={() => setLightbox({ src: screen.src, alt: screen.alt })}
+                  >
+                    <Image src={screen.src} alt={screen.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+
+            {/* Flow 3 */}
+            <FadeIn>
+              <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Saving as a custom OKR view</h3>
+              <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+                Save any filtered view as a named OKR view — persistent, personal, accessible in one click from the sidebar.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { src: '/qr-screen-10-save-view.png', alt: 'Save As dialog' },
+                  { src: '/qr-screen-11-name-view.png', alt: 'Naming the view My Watched OKRs' },
+                  { src: '/qr-screen-12-view-saved.png', alt: 'View saved with confirmation toast' },
+                  { src: '/qr-screen-13-okr-views.png', alt: 'My Watched OKRs in OKR views list' },
+                ].map((screen) => (
+                  <div
+                    key={screen.src}
+                    className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                    style={{ aspectRatio: '16/10' }}
+                    onClick={() => setLightbox({ src: screen.src, alt: screen.alt })}
+                  >
+                    <Image src={screen.src} alt={screen.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+
+          </div>
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          07 / OUTCOME
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-outcome" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">06 / Outcome</p>
+              <p className="section-label mb-3">07 / Outcome</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 Measured at 8 weeks post-launch
               </h2>
@@ -805,7 +941,7 @@ function QuantiveResultsContent() {
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">07 / Reflection</p>
+              <p className="section-label mb-3">08 / Reflection</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I'd do differently
               </h2>
@@ -930,6 +1066,11 @@ function QuantiveResultsContent() {
           </div>
         </div>
       </footer>
+      <AnimatePresence>
+        {lightbox && (
+          <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
+        )}
+      </AnimatePresence>
     </div>
   )
 }
