@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -141,6 +141,7 @@ const QS_SECTIONS = [
   { id: 'cs-hardpart', label: 'The Hard Part' },
   { id: 'cs-decisions', label: 'Decisions' },
   { id: 'cs-feature', label: 'The Feature' },
+  { id: 'cs-screens', label: 'Screens' },
   { id: 'cs-outcome', label: 'Outcome' },
   { id: 'cs-reflection', label: 'Reflection' },
 ]
@@ -183,7 +184,40 @@ function SectionTracker() {
 }
 
 // ─── Page content ─────────────────────────────────────────────────────────────
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+  return (
+    <motion.div
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      transition={{ duration: 0.18 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-6 md:p-12 bg-black/90 backdrop-blur-md"
+      onClick={onClose}
+    >
+      <button onClick={(e) => { e.stopPropagation(); onClose() }}
+        className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors duration-200 z-10"
+        aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+        </svg>
+      </button>
+      <motion.div initial={{ scale: 0.96, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.96, opacity: 0 }} transition={{ duration: 0.18 }}
+        className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
+        <Image src={src} alt={alt} fill className="object-contain" sizes="90vw" />
+      </motion.div>
+    </motion.div>
+  )
+}
+
 function QuantiveSignalsContent() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950">
       <ReadingProgressBar />
@@ -717,14 +751,83 @@ function QuantiveSignalsContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          06 / OUTCOME
+          06 / SCREENS
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="cs-screens" className="py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+
+          <FadeIn className="mb-14">
+            <p className="section-label mb-3">06 / Screens</p>
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              The comment feature —{' '}
+              <span style={{ background: GRADIENT, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>shipped.</span>
+            </h2>
+          </FadeIn>
+
+          {/* Flow 1 */}
+          <FadeIn className="mb-12">
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Commenting on a data point</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              Click any data point on the KPI chart to open a context menu, write a comment, and see it appear pinned to that point.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                { src: '/qs-screen-1-all-kpis.png', alt: 'All KPIs screen' },
+                { src: '/qs-screen-2-datapoint-click.png', alt: 'Right-click context menu on data point' },
+                { src: '/qs-screen-3-write-comment.png', alt: 'Writing a comment on the data point' },
+                { src: '/qs-screen-4-comment-added.png', alt: 'Comment added — tooltip with view all comments' },
+                { src: '/qs-screen-5-comment-thread.png', alt: 'Comment thread in side drawer' },
+              ].map((screen) => (
+                <div
+                  key={screen.src}
+                  className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                  style={{ aspectRatio: '16/10' }}
+                  onClick={() => setLightbox({ src: screen.src, alt: screen.alt })}
+                >
+                  <Image src={screen.src} alt={screen.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Flow 2 */}
+          <FadeIn>
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Viewing and editing a comment thread</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              Open the full thread from any comment tooltip, see all replies in a side drawer, and edit or remove your own comments inline.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                { src: '/qs-screen-6-comment-overlay.png', alt: 'Multiple comments overlay on chart' },
+                { src: '/qs-screen-7-thread-drawer.png', alt: 'Full comment thread in side drawer' },
+                { src: '/qs-screen-8-edit-comment.png', alt: 'Editing a comment in the side drawer' },
+              ].map((screen) => (
+                <div
+                  key={screen.src}
+                  className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                  style={{ aspectRatio: '16/10' }}
+                  onClick={() => setLightbox({ src: screen.src, alt: screen.alt })}
+                >
+                  <Image src={screen.src} alt={screen.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          07 / OUTCOME
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-outcome" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">06 / Outcome</p>
+              <p className="section-label mb-3">07 / Outcome</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 Measured at 8 weeks post-launch
               </h2>
@@ -790,14 +893,14 @@ function QuantiveSignalsContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          07 / REFLECTION
+          08 / REFLECTION
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-reflection" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">07 / Reflection</p>
+              <p className="section-label mb-3">08 / Reflection</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I&apos;d redesign
               </h2>
@@ -886,6 +989,10 @@ function QuantiveSignalsContent() {
           </FadeIn>
         </div>
       </section>
+
+      <AnimatePresence>
+        {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
+      </AnimatePresence>
 
       {/* NEXT CASE STUDY */}
       <div className="border-t border-zinc-100 dark:border-white/[0.05]">

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -141,10 +141,12 @@ function ReadingProgressBar() {
 const KM_SECTIONS = [
   { id: 'cs-context', label: 'Context' },
   { id: 'cs-problem', label: 'Problem' },
+  { id: 'cs-research', label: 'Research' },
   { id: 'cs-role', label: 'My Role' },
   { id: 'cs-decisions', label: 'Decisions' },
   { id: 'cs-logic', label: 'Logic Layer' },
   { id: 'cs-platform', label: 'Platform' },
+  { id: 'cs-screens', label: 'Screens' },
   { id: 'cs-outcome', label: 'Outcome' },
   { id: 'cs-reflection', label: 'Reflection' },
 ]
@@ -187,7 +189,61 @@ function SectionTracker() {
 }
 
 // ─── Page content ─────────────────────────────────────────────────────────────
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+  return (
+    <motion.div
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      transition={{ duration: 0.18 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-6 md:p-12 bg-black/90 backdrop-blur-md"
+      onClick={onClose}
+    >
+      <button onClick={(e) => { e.stopPropagation(); onClose() }}
+        className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors duration-200 z-10"
+        aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+        </svg>
+      </button>
+      <motion.div initial={{ scale: 0.96, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.96, opacity: 0 }} transition={{ duration: 0.18 }}
+        className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
+        <Image src={src} alt={alt} fill className="object-contain" sizes="90vw" />
+      </motion.div>
+    </motion.div>
+  )
+}
+
+function LioNarrator({ col, row, quote }: { col: 0|1|2|3|4; row: 0|1|2|3; quote: string }) {
+  const x = col === 0 ? 0 : (col / 4) * 100
+  const y = row === 0 ? 0 : (row / 3) * 100
+  return (
+    <div className="flex items-center gap-4 my-8">
+      <div
+        className="flex-shrink-0 w-[140px] h-[140px]"
+        style={{
+          backgroundImage: 'url(/kamelion-mascot.png)',
+          backgroundSize: '500% 400%',
+          backgroundPosition: `${x}% ${y}%`,
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      <div className="bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.07] rounded-2xl rounded-tl-sm px-5 py-3 max-w-lg">
+        <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-400 italic leading-relaxed">"{quote}"</p>
+      </div>
+    </div>
+  )
+}
+
 function KamelionContent() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950">
       <ReadingProgressBar />
@@ -457,6 +513,9 @@ function KamelionContent() {
             </FadeIn>
 
             <div>
+              <FadeIn>
+                <LioNarrator col={3} row={1} quote="The apps weren't badly designed. They were designed for the wrong moment." />
+              </FadeIn>
               <FadeIn delay={0.1}>
                 <blockquote
                   className="font-plus-jakarta font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
@@ -490,14 +549,106 @@ function KamelionContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          03 / ROLE
+          03 / RESEARCH
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="cs-research" className="py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+
+          <FadeIn className="mb-14">
+            <p className="section-label mb-3">03 / Research</p>
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              Secondary research —{' '}
+              <span style={{ color: '#258E5B' }}>what the market told us.</span>
+            </h2>
+            <p className="font-dm-sans text-[15px] text-zinc-500 dark:text-zinc-500 mt-4 max-w-[560px] leading-relaxed">
+              With limited time for primary research, we leaned on competitive analysis, personas, empathy mapping, and user journey work to frame the design decisions.
+            </p>
+          </FadeIn>
+
+          {/* Market Research */}
+          <FadeIn className="mb-10">
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Market & competitor analysis</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              Mental health awareness among teens is rising, but existing tools skew adult or static. Kamelion targets the gap: teen-focused, gamified, AI-personalised.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                { src: '/kamelion-research-1-secondary.png', alt: 'Secondary analysis — mental health trends among teens' },
+                { src: '/kamelion-research-2-competitor.png', alt: 'Market and competitor analysis' },
+                { src: '/kamelion-research-3-competitor-table.png', alt: 'Competitor feature comparison table' },
+              ].map((item) => (
+                <div
+                  key={item.src}
+                  className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                  style={{ aspectRatio: '16/9' }}
+                  onClick={() => setLightbox({ src: item.src, alt: item.alt })}
+                >
+                  <Image src={item.src} alt={item.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Personas */}
+          <FadeIn className="mb-10">
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">User personas</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              Two primary personas — a stressed 10-year-old looking for calm, and a goal-driven 12-year-old who needs structure without adult-feeling tools.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { src: '/kamelion-research-4-persona-ethan.png', alt: 'Persona — Ethan Brooks, 10 years old' },
+                { src: '/kamelion-research-5-persona-lily.png', alt: 'Persona — Lily Thompson, 12 years old' },
+              ].map((item) => (
+                <div
+                  key={item.src}
+                  className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                  style={{ aspectRatio: '16/9' }}
+                  onClick={() => setLightbox({ src: item.src, alt: item.alt })}
+                >
+                  <Image src={item.src} alt={item.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Synthesis */}
+          <FadeIn>
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Empathy & journey mapping</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              Synthesised research into an empathy map and user journey — highlighting where gamification and personalization could make the biggest difference.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { src: '/kamelion-research-6-empathy-map.png', alt: 'Empathy mapping — thoughts, feelings, actions, pain points' },
+                { src: '/kamelion-research-7-user-journey.png', alt: 'User journey mapping — awareness to retention' },
+              ].map((item) => (
+                <div
+                  key={item.src}
+                  className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                  style={{ aspectRatio: '16/9' }}
+                  onClick={() => setLightbox({ src: item.src, alt: item.alt })}
+                >
+                  <Image src={item.src} alt={item.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          04 / ROLE
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-role" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">03 / Role</p>
+              <p className="section-label mb-3">04 / Role</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I owned
               </h2>
@@ -562,7 +713,7 @@ function KamelionContent() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-14">
-            <p className="section-label mb-3">04 / Design Decisions</p>
+            <p className="section-label mb-3">05 / Design Decisions</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 4 decisions that earned<br />
@@ -579,6 +730,10 @@ function KamelionContent() {
                 Each decision was a direct response to a specific failure mode in competing products.
               </p>
             </div>
+          </FadeIn>
+
+          <FadeIn className="mb-2">
+            <LioNarrator col={4} row={2} quote="Every call I made was a direct response to something already failing in the market." />
           </FadeIn>
 
           <div className="space-y-4">
@@ -664,7 +819,7 @@ function KamelionContent() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-14">
-            <p className="section-label mb-3">05 / The Logic Layer</p>
+            <p className="section-label mb-3">06 / The Logic Layer</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 Designing how things work,<br />
@@ -750,13 +905,13 @@ function KamelionContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          06 / PLATFORM & MODULES
+          07 / PLATFORM & MODULES
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-platform" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-12">
-            <p className="section-label mb-3">06 / Platform</p>
+            <p className="section-label mb-3">07 / Platform</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               2 surfaces.<br />
               <span
@@ -795,7 +950,7 @@ function KamelionContent() {
               <FadeIn key={surface.number} delay={i * 0.1}>
                 <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/[0.07] rounded-2xl overflow-hidden flex flex-col h-full">
                   <div
-                    className="h-[100px] relative flex-shrink-0"
+                    className="h-[120px] relative flex-shrink-0"
                     style={{ background: surface.gradient }}
                   >
                     <div
@@ -805,6 +960,17 @@ function KamelionContent() {
                         backgroundSize: '18px 18px',
                       }}
                     />
+                    {surface.number === '01' && (
+                      <div className="absolute right-4 bottom-0 w-[200px] h-full overflow-hidden">
+                        <Image
+                          src="/kamelion-mascot.png"
+                          alt="Lio the chameleon mascot"
+                          fill
+                          className="object-contain object-right-bottom opacity-90"
+                          sizes="200px"
+                        />
+                      </div>
+                    )}
                     <div className="absolute inset-0 flex items-end justify-between px-5 pb-4">
                       <span className="font-plus-jakarta font-extrabold text-[38px] leading-none text-white/15 select-none lining-nums">
                         {surface.number}
@@ -912,14 +1078,135 @@ function KamelionContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          07 / OUTCOME
+          08 / SCREENS
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="cs-screens" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+
+          <FadeIn className="mb-14">
+            <p className="section-label mb-3">08 / Screens</p>
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              Kamelion —{' '}
+              <span style={{ color: '#258E5B' }}>shipped.</span>
+            </h2>
+          </FadeIn>
+
+          <FadeIn className="mb-2">
+            <LioNarrator col={1} row={2} quote="A month of calls — here's everything that actually shipped." />
+          </FadeIn>
+
+          {/* Mascot */}
+          <FadeIn className="mb-14">
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Meet Lio</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              The chameleon companion who lives throughout the app — mood check-ins, journal prompts, reward moments. Designed to feel like a friend, not a UI element.
+            </p>
+            <div
+              className="relative max-w-2xl rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] bg-zinc-100 dark:bg-zinc-900/60 cursor-zoom-in"
+              style={{ aspectRatio: '5/4' }}
+              onClick={() => setLightbox({ src: '/kamelion-mascot.png', alt: 'Lio — the Kamelion mascot character sheet' })}
+            >
+              <Image
+                src="/kamelion-mascot.png"
+                alt="Lio — the Kamelion mascot character sheet"
+                fill
+                className="object-contain p-4"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+              />
+            </div>
+          </FadeIn>
+
+          {/* Mobile App */}
+          <FadeIn className="mb-14">
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Mobile app</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              Onboarding, Home, Mental Gyms, Journaling, Community, and Challenges — the full mobile experience from first launch to daily use.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {[
+                { src: '/kamelion-onboarding-2-welcome.png', alt: 'Welcome / Login screen' },
+                { src: '/kamelion-onboarding-1-intro.png', alt: 'Lio introduction — personality setup begins' },
+                { src: '/kamelion-onboarding-3-quiz.png', alt: 'Personality quiz — Lio asking questions' },
+                { src: '/kamelion-screen-1-home.png', alt: 'Home screen — mood tracking and mental gyms' },
+                { src: '/kamelion-screen-2-mental-gyms.png', alt: 'Mental Gyms — short course browser' },
+                { src: '/kamelion-screen-3-journals.png', alt: 'Journaling — timeline view' },
+                { src: '/kamelion-screen-4-community.png', alt: 'Community — like-minded groups' },
+                { src: '/kamelion-screen-5-challenges.png', alt: 'Challenges — active and categories' },
+              ].map((screen) => (
+                <div
+                  key={screen.src}
+                  className="relative rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                  style={{ aspectRatio: '9/19' }}
+                  onClick={() => setLightbox({ src: screen.src, alt: screen.alt })}
+                >
+                  <Image src={screen.src} alt={screen.alt} fill className="object-contain" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw" />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Admin Panel */}
+          <FadeIn className="mb-14">
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Admin panel</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              The school-facing dashboard — login, user management, licenses, content, community moderation, revenue, and support, all in one system.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { src: '/kamelion-screen-6-admin-login.png', alt: 'Admin login screen' },
+                { src: '/kamelion-screen-7-admin-dashboard.png', alt: 'Admin dashboard — user overview' },
+                { src: '/kamelion-screen-8-admin-licenses.png', alt: 'Licenses management' },
+                { src: '/kamelion-screen-9-admin-license-create.png', alt: 'Creating a new license' },
+                { src: '/kamelion-screen-10-admin-mental-gym.png', alt: 'Mental gym content creation with quizzes' },
+                { src: '/kamelion-screen-11-admin-challenges.png', alt: 'Challenges management' },
+                { src: '/kamelion-screen-12-admin-community.png', alt: 'Community moderation panel' },
+                { src: '/kamelion-screen-13-admin-revenue.png', alt: 'Revenue and earnings dashboard' },
+                { src: '/kamelion-screen-14-admin-support.png', alt: 'Customer support queries' },
+                { src: '/kamelion-screen-15-admin-personality.png', alt: 'Personality insights and questions' },
+              ].map((screen) => (
+                <div
+                  key={screen.src}
+                  className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                  style={{ aspectRatio: '16/10' }}
+                  onClick={() => setLightbox({ src: screen.src, alt: screen.alt })}
+                >
+                  <Image src={screen.src} alt={screen.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Email */}
+          <FadeIn>
+            <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Onboarding email</h3>
+            <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
+              Welcome email sent to new users — consistent with the app's tone, written by the founder, designed to feel warm not transactional.
+            </p>
+            <div className="max-w-sm">
+              <div
+                className="relative rounded-xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                style={{ aspectRatio: '3/4' }}
+                onClick={() => setLightbox({ src: '/kamelion-screen-16-email.png', alt: 'Kamelion onboarding welcome email' })}
+              >
+                <Image src="/kamelion-screen-16-email.png" alt="Kamelion onboarding welcome email" fill className="object-cover object-top" sizes="400px" />
+              </div>
+            </div>
+          </FadeIn>
+
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          09 / OUTCOME
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-outcome" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">07 / Outcome</p>
+              <p className="section-label mb-3">09 / Outcome</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What it shipped
               </h2>
@@ -981,14 +1268,14 @@ function KamelionContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          08 / REFLECTION
+          10 / REFLECTION
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-reflection" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">08 / Reflection</p>
+              <p className="section-label mb-3">10 / Reflection</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I learned
               </h2>
@@ -1119,6 +1406,10 @@ function KamelionContent() {
         </div>
       </section>
 
+      <AnimatePresence>
+        {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
+      </AnimatePresence>
+
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           FOOTER
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
@@ -1128,7 +1419,7 @@ function KamelionContent() {
           <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-10 flex items-center justify-between gap-6">
             <div>
               <p className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 mb-2 font-medium">Next Case Study</p>
-              <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
+              <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-[#258E5B] transition-all duration-300">
                 Quantive Results
               </h3>
               <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">B2B SaaS · Enterprise · Product Designer</p>

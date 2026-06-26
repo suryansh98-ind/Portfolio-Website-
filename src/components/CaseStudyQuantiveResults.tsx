@@ -141,6 +141,7 @@ const QR_SECTIONS = [
   { id: 'cs-process', label: 'Process' },
   { id: 'cs-decisions', label: 'Decisions' },
   { id: 'cs-feature', label: 'The Feature' },
+  { id: 'cs-components', label: 'Components' },
   { id: 'cs-screens', label: 'Screens' },
   { id: 'cs-outcome', label: 'Outcome' },
   { id: 'cs-reflection', label: 'Reflection' },
@@ -766,13 +767,50 @@ function QuantiveResultsContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          06 / SCREENS
+          06 / COMPONENTS
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="cs-components" className="py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+
+          <FadeIn className="mb-14">
+            <p className="section-label mb-3">06 / Components</p>
+            <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+              Making local components{' '}
+              <span style={{ color: '#15C679' }}>for the feature.</span>
+            </h2>
+          </FadeIn>
+
+          <div className="flex flex-col gap-6">
+            {[
+              { src: '/qr-components-watch-dropdown.png', alt: 'Watch/Unwatch dropdown — 12-state component matrix', caption: 'Watch/Unwatch dropdown states' },
+              { src: '/qr-components-watcher-list.png', alt: 'Watcher List, Icons, and Watch/Unwatch option components', caption: 'Watcher list, icons, and watch toggle variants' },
+              { src: '/qr-components-notification.png', alt: 'In-app notification banner for watcher events', caption: 'In-app notification banner' },
+            ].map((item) => (
+              <FadeIn key={item.src}>
+                <div
+                  className="relative w-full rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] cursor-zoom-in"
+                  style={{ aspectRatio: '16/7' }}
+                  onClick={() => setLightbox({ src: item.src, alt: item.alt })}
+                >
+                  <Image src={item.src} alt={item.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 90vw" />
+                </div>
+                <p className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600 mt-2 text-center">{item.caption}</p>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          07 / SCREENS
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-screens" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-14">
-            <p className="section-label mb-3">06 / Screens</p>
+            <p className="section-label mb-3">07 / Screens</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               The Watch feature —{' '}
               <span style={{ color: '#15C679' }}>shipped.</span>
@@ -867,14 +905,14 @@ function QuantiveResultsContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          07 / OUTCOME
+          08 / OUTCOME
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-outcome" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">07 / Outcome</p>
+              <p className="section-label mb-3">08 / Outcome</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 Measured at 8 weeks post-launch
               </h2>
@@ -890,8 +928,8 @@ function QuantiveResultsContent() {
                   { value: '↓', label: 'Support tickets', sub: '"Wrong participant added" tickets' },
                   { value: '0', label: 'Revisions', sub: 'After stakeholder presentation' },
                 ].map((stat, i) => (
-                  <FadeIn key={stat.label} delay={i * 0.06}>
-                    <div className="bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5">
+                  <FadeIn key={stat.label} delay={i * 0.06} className="h-full">
+                    <div className="bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5 h-full">
                       <div
                         className="font-plus-jakarta font-extrabold text-[32px] leading-none mb-1.5 lining-nums"
                         style={{ color: '#15C679' }}
@@ -934,14 +972,14 @@ function QuantiveResultsContent() {
       <Divider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          07 / REFLECTION
+          09 / REFLECTION
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-reflection" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">08 / Reflection</p>
+              <p className="section-label mb-3">09 / Reflection</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I'd do differently
               </h2>
@@ -1034,7 +1072,7 @@ function QuantiveResultsContent() {
           <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-10 flex items-center justify-between gap-6">
             <div>
               <p className="font-dm-sans text-[10px] tracking-[0.12em] uppercase text-zinc-400 dark:text-zinc-600 mb-2 font-medium">Next Case Study</p>
-              <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
+              <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-[#15C679] transition-all duration-300">
                 Quantive Signals
               </h3>
               <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">B2B SaaS · Analytics · Product Designer</p>
