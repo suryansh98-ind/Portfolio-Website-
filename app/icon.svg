@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style><![CDATA[@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');]]></style>
+  <rect width="32" height="32" rx="7" fill="#18181b"/>
+  <text
+    font-family="'Space Grotesk', 'Plus Jakarta Sans', 'Arial Black', sans-serif"
+    font-weight="700"
+    font-size="20"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    letter-spacing="-1"
+    x="16"
+    y="17"
+  ><tspan fill="#15C679">S</tspan><tspan fill="#ffffff">T</tspan></text>
+</svg>
