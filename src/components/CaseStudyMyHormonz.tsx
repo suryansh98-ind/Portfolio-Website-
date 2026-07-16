@@ -385,7 +385,7 @@ function MyHormonzContent() {
           <FadeIn>
             <div className="flex flex-wrap gap-x-10 gap-y-5 md:gap-x-14">
               {[
-                { label: 'My Role', value: 'Senior Product Designer' },
+                { label: 'My Role', value: 'Product Designer' },
                 { label: 'Timeline', value: '45 Days' },
                 { label: 'Tools', value: 'Figma' },
                 { label: 'Year', value: '2025' },
@@ -1310,7 +1310,7 @@ function MyHormonzContent() {
               <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
                 Kamelion
               </h3>
-              <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">AI Product · B2C · Senior Product Designer</p>
+              <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">AI Product · B2C · Product Designer</p>
             </div>
             <div className="flex-shrink-0 w-11 h-11 rounded-full border border-zinc-200 dark:border-white/10 flex items-center justify-center group-hover:border-zinc-400 dark:group-hover:border-white/25 transition-all duration-200">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
@@ -1328,7 +1328,7 @@ function MyHormonzContent() {
               Suryansh Thakur
             </span>
             <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">
-              Senior Product Designer
+              Product Designer
             </span>
           </div>
 

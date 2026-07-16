@@ -923,7 +923,7 @@ function QuantiveResultsContent() {
                 {[
                   { value: '+40%', label: 'OKR visibility', sub: 'Leadership views of non-owned OKRs' },
                   { value: '−28%', label: 'Unnecessary additions', sub: 'Participant additions dropped' },
-                  { value: '+32%', label: 'Cross-team monitoring', sub: 'OKRs watched outside direct report' },
+                  { value: '↑', label: 'Cross-team monitoring', sub: 'Increased activity in OKRs outside direct reports' },
                   { value: '7', label: 'Days', sub: 'Discovery to handoff' },
                   { value: '↓', label: 'Support tickets', sub: '"Wrong participant added" tickets' },
                   { value: '0', label: 'Revisions', sub: 'After stakeholder presentation' },
@@ -1091,7 +1091,7 @@ function QuantiveResultsContent() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8 flex flex-col items-center md:flex-row md:justify-between gap-5">
           <div className="flex flex-col items-center md:items-start gap-0.5">
             <span className="font-plus-jakarta font-bold text-[14px] text-zinc-800 dark:text-zinc-200 tracking-tight">Suryansh Thakur</span>
-            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">Senior Product Designer</span>
+            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">Product Designer</span>
           </div>
           <div className="flex items-center gap-5">
             <a href="mailto:vsuryansh.98@gmail.com" className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">Email</a>

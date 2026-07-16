@@ -744,7 +744,7 @@ function KamelionContent() {
                 title: 'Micro-learning in the 12-minute window',
                 summary: 'Lessons designed for a school break, not a study session.',
                 detail: 'The context I was designing for wasn\'t a teenager sitting down to self-improve. It was a 10-minute school break, a lunch queue, a moment between lessons. Once that\'s the mental model, every content decision changes. Lessons were capped at 12 minutes. Quizzes were embedded inline — not bolted on at the end. Completion earned coins immediately. The feedback loop had to close within the break. Designing for a context that doesn\'t actually exist is how apps die.',
-                impact: '+38% lesson completion rate versus industry baseline.',
+                impact: 'Session length capped at 12 minutes to match observed break-time usage patterns — no bolted-on end-of-lesson quiz.',
               },
               {
                 number: '02',
@@ -752,7 +752,7 @@ function KamelionContent() {
                 title: 'Gamification without the anxiety mechanic',
                 summary: 'Coins don\'t disappear when you miss a day. That was the whole point.',
                 detail: 'Streaks are a dark pattern disguised as motivation. They feel like they build momentum, but what they actually build is a fear of breaking the chain. For a 14-year-old with exams, social stress, and an unpredictable life, a broken streak isn\'t a design failure — it\'s a Tuesday. I designed the coin system so accumulation is never punished by absence. Leaderboards rank activity, not raw scores. Challenges cost coins to enter, creating intentional commitment without fear. Motivation through achievement, not avoidance.',
-                impact: '+42% weekly active users. Zero anxiety-driven churn mechanics.',
+                impact: 'No mechanic in the system penalizes a missed day — a deliberate move away from the streak-anxiety pattern common in habit apps.',
               },
               {
                 number: '03',
@@ -1216,12 +1216,12 @@ function KamelionContent() {
               {/* Metrics */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
                 {[
-                  { value: '+38%', label: 'Lesson completion', sub: 'vs. industry baseline' },
-                  { value: '+42%', label: 'Weekly active users', sub: 'Within first month' },
-                  { value: '~30%', label: 'Daily journaling', sub: 'Adoption rate' },
-                  { value: '−25%', label: 'Onboarding drop-off', sub: 'vs. v1 prototype' },
+                  { value: '100+', label: 'Downloads', sub: 'App Store + Google Play' },
+                  { value: '7', label: 'Modules', sub: 'Designed end-to-end, all connected' },
+                  { value: '30', label: 'Days', sub: 'Full design timeline, solo' },
                   { value: '0', label: 'Admin training sessions', sub: 'Required post-launch' },
-                  { value: '30', label: 'Days', sub: 'Full design timeline' },
+                  { value: '4', label: 'Core mechanics', sub: 'Fully specced conditional logic' },
+                  { value: '2', label: 'Surfaces', sub: 'Student app + admin panel' },
                 ].map((stat, i) => (
                   <FadeIn key={stat.label} delay={i * 0.06}>
                     <div className="bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/[0.06] rounded-xl p-5">
@@ -1246,10 +1246,10 @@ function KamelionContent() {
               <FadeIn delay={0.2}>
                 <div className="space-y-4">
                   {[
-                    'App is live on both the App Store and Google Play — shipped within the 30-day timeline without a second designer.',
+                    'App is live on both the App Store and Google Play, with 100+ downloads since launch — shipped within the 30-day timeline without a second designer.',
                     'Design system delivered and documented: the engineering team extended it independently without returning to me for component questions.',
                     'Conditional logic for all 4 core mechanics (personality tests, mental gyms, quizzes, challenges) fully specced and handed off — no ambiguity in how the product actually behaves.',
-                    'Admin panel adopted with zero training sessions — the clearest signal that a product designed for non-designers actually succeeded.',
+                    'Admin panel adopted with zero training sessions.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[8px]" style={{ backgroundColor: '#258E5B' }} />
@@ -1440,7 +1440,7 @@ function KamelionContent() {
               Suryansh Thakur
             </span>
             <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">
-              Senior Product Designer
+              Product Designer
             </span>
           </div>
           <div className="flex items-center gap-5">

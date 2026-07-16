@@ -26,7 +26,7 @@ export default function Footer() {
             Suryansh Thakur
           </span>
           <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">
-            Senior Product Designer
+            Product Designer
           </span>
         </div>
 

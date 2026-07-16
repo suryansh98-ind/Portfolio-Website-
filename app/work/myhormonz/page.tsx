@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'MyHormonz Case Study — Suryansh Thakur',
     description:
-      'Senior Product Designer case study: hormone health platform design across user app, admin panel, and live marketing website.',
+      'Product Designer case study: hormone health platform design across user app, admin panel, and live marketing website.',
     type: 'website',
   },
 }

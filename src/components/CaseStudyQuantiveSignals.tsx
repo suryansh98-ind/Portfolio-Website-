@@ -1003,7 +1003,7 @@ function QuantiveSignalsContent() {
               <h3 className="font-plus-jakarta font-bold text-[clamp(20px,3vw,28px)] text-zinc-900 dark:text-zinc-50 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300" style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
                 MyHormonz
               </h3>
-              <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">Health Tech · B2C · Senior Product Designer</p>
+              <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-1">Health Tech · B2C · Product Designer</p>
             </div>
             <div className="flex-shrink-0 w-11 h-11 rounded-full border border-zinc-200 dark:border-white/10 flex items-center justify-center group-hover:border-zinc-400 dark:group-hover:border-white/25 transition-all duration-200">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
@@ -1019,7 +1019,7 @@ function QuantiveSignalsContent() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8 flex flex-col items-center md:flex-row md:justify-between gap-5">
           <div className="flex flex-col items-center md:items-start gap-0.5">
             <span className="font-plus-jakarta font-bold text-[14px] text-zinc-800 dark:text-zinc-200 tracking-tight">Suryansh Thakur</span>
-            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">Senior Product Designer</span>
+            <span className="font-dm-sans text-[12px] text-zinc-400 dark:text-zinc-600">Product Designer</span>
           </div>
           <div className="flex items-center gap-5">
             <a href="mailto:vsuryansh.98@gmail.com" className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">Email</a>

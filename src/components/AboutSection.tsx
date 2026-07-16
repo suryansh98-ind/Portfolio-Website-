@@ -7,7 +7,7 @@ import Image from 'next/image'
 const EASE = [0.25, 0.1, 0.25, 1]
 
 const highlights = [
-  { number: '4+', label: 'Years of experience' },
+  { number: '3.5+', label: 'Years of experience' },
   { number: '10+', label: 'Products shipped' },
   { number: '1', label: 'SaaS company' },
   { number: '∞', label: 'Hours of thinking' },
@@ -60,7 +60,7 @@ export default function AboutSection() {
               className="space-y-4"
             >
               {[
-                `I'm Suryansh. I've spent 4 years building products across B2B and B2C — OKR platforms, health apps, analytics tools, a teen wellbeing app. Enough variety to know that the design problems are usually the same, but the context is everything.`,
+                `I'm Suryansh. I've spent 3.5+ years building products across B2B and B2C — OKR platforms, health apps, analytics tools, a teen wellbeing app. Enough variety to know that the design problems are usually the same, but the context is everything.`,
                 `At some point I got tired of handing off Figma files and watching things come back wrong. So I learned to build. Now I use Claude Code to take my designs into actual code — which means fewer translation errors and a much shorter distance between what I designed and what users see.`,
                 `I ask a lot of questions before opening Figma. Who is this actually for? What are they trying to do? What's the thing nobody's said out loud yet? Five minutes of that usually saves a week of revision.`,
               ].map((text, i) => (
