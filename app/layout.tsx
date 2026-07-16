@@ -35,10 +35,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Suryansh Thakur — Product Designer',
-  description: 'Senior product designer shipping end-to-end across B2B and B2C SaaS. Specializing in design systems, UX strategy, and AI-assisted workflows.',
+  description: 'Product designer shipping end-to-end across B2B and B2C SaaS. Specializing in design systems, UX strategy, and AI-assisted workflows.',
   openGraph: {
     title: 'Suryansh Thakur — Product Designer',
-    description: 'Senior product designer shipping end-to-end across B2B and B2C SaaS.',
+    description: 'Product designer shipping end-to-end across B2B and B2C SaaS.',
     type: 'website',
   },
 }
