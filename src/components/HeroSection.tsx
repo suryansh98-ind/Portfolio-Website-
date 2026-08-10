@@ -110,7 +110,7 @@ export default function HeroSection() {
             className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.65] max-w-[560px]"
           >
             4.5+ years shipping{' '}
-            <span className="text-zinc-900 dark:text-zinc-200 font-medium">B2B and B2C products</span>{' '}
+            <span className="text-zinc-900 dark:text-zinc-200 font-medium">B2B, B2C and SaaS products</span>{' '}
             people keep coming back to. I do the research, the systems, the pixels —
             and the code. One less person in the chain.
           </motion.p>
@@ -153,7 +153,7 @@ export default function HeroSection() {
           >
             {[
               { label: 'Experience', value: '4.5+ years' },
-              { label: 'Focus', value: 'B2B & B2C SaaS' },
+              { label: 'Focus', value: 'B2B, B2C & SaaS' },
               { label: 'Based in', value: 'India' },
               { label: 'Skills', value: 'Design · Systems · AI' },
             ].map((item) => (

@@ -226,7 +226,7 @@ export default function WorkSection() {
               Selected Work
             </h2>
             <p className="font-dm-sans text-[16px] text-zinc-500 dark:text-zinc-500 mt-3 max-w-[420px] leading-relaxed">
-              End-to-end product design across B2B and B2C SaaS — from research to shipped product.
+              End-to-end product design across B2B, B2C and SaaS — from research to shipped product.
             </p>
           </div>
           <div className="flex items-center gap-3 text-zinc-400 dark:text-zinc-600">
