@@ -301,7 +301,7 @@ function QuantiveSignalsContent() {
               transition={{ duration: 0.7, ease: EASE, delay: 0.36 }}
               className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[620px] mb-10"
             >
-              A native annotation and commenting layer for Quantive Signals — an internal feature
+              A native annotation and commenting layer for Quantive Signals - an internal feature
               request from the VP of Product that brought anomaly investigations back into the data
               where they belonged.
             </motion.p>
@@ -355,7 +355,7 @@ function QuantiveSignalsContent() {
               sizes="(max-width: 1200px) 100vw, 1200px"
               priority
             />
-            {/* Shipped badge — top right */}
+            {/* Shipped badge - top right */}
             <div className="absolute top-5 right-5">
               <div className="flex items-center gap-2 bg-white text-zinc-900 font-dm-sans font-semibold text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full shadow-md">
                 <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#15C679' }} />
@@ -407,7 +407,7 @@ function QuantiveSignalsContent() {
             </div>
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 flex-1 min-w-0">
               {[
-                { label: 'Problem', text: 'Analysts left the product to discuss chart anomalies — screenshotting to Slack broke context and buried decisions in threads with no link to the actual data.' },
+                { label: 'Problem', text: 'Analysts left the product to discuss chart anomalies - screenshotting to Slack broke context and buried decisions in threads with no link to the actual data.' },
                 { label: 'What I did', text: "Designed an in-chart annotation layer: threaded comments anchored to data points, with a gesture system that didn't conflict with existing pan/zoom controls." },
                 { label: 'Outcome', text: 'Conversations stayed inside the product. VP-requested feature shipped to the full internal team at Quantive.' },
               ].map((item) => (
@@ -437,17 +437,17 @@ function QuantiveSignalsContent() {
             <div className="space-y-5">
               <FadeIn delay={0.08}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  Quantive Signals was Quantive&apos;s analytics product — a platform for monitoring KPIs, detecting anomalies, and surfacing signals in business data. I was a Product Designer at Quantive when the VP of Product flagged a recurring workflow breakdown they kept seeing in user behaviour data.
+                  Quantive Signals was Quantive&apos;s analytics product - a platform for monitoring KPIs, detecting anomalies, and surfacing signals in business data. I was a Product Designer at Quantive when the VP of Product flagged a recurring workflow breakdown they kept seeing in user behaviour data.
                 </p>
               </FadeIn>
               <FadeIn delay={0.14}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  The brief was internal and direct: analysts were doing their actual investigation work outside the product. When they spotted something anomalous in a chart, the conversation about it — what caused it, what was ruled out, what the conclusion was — happened in Slack and email. <span className="text-zinc-900 dark:text-zinc-200 font-medium">Quantive Signals was the place where the data lived, but not the place where the thinking happened.</span>
+                  The brief was internal and direct: analysts were doing their actual investigation work outside the product. When they spotted something anomalous in a chart, the conversation about it - what caused it, what was ruled out, what the conclusion was - happened in Slack and email. <span className="text-zinc-900 dark:text-zinc-200 font-medium">Quantive Signals was the place where the data lived, but not the place where the thinking happened.</span>
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  My job was to design a way to bring those conversations back into the tool — anchored to the specific data they were about, without getting in the way of the analysis itself.
+                  My job was to design a way to bring those conversations back into the tool - anchored to the specific data they were about, without getting in the way of the analysis itself.
                 </p>
               </FadeIn>
             </div>
@@ -482,12 +482,12 @@ function QuantiveSignalsContent() {
               </FadeIn>
               <FadeIn delay={0.18}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
-                  The Slack screenshot workflow had three compounding failure modes. First, context decay — a screenshot of a chart is a frozen moment; anyone joining the thread later couldn&apos;t zoom out, change the date range, or see what happened before and after the anomaly. Second, thread fragmentation — the same anomaly would spawn multiple independent Slack threads as different analysts noticed it. Third, no audit trail — once the investigation reached a conclusion, that conclusion lived in a Slack thread that would be impossible to find three months later.
+                  The Slack screenshot workflow had three compounding failure modes. First, context decay - a screenshot of a chart is a frozen moment; anyone joining the thread later couldn&apos;t zoom out, change the date range, or see what happened before and after the anomaly. Second, thread fragmentation - the same anomaly would spawn multiple independent Slack threads as different analysts noticed it. Third, no audit trail - once the investigation reached a conclusion, that conclusion lived in a Slack thread that would be impossible to find three months later.
                 </p>
               </FadeIn>
               <FadeIn delay={0.24}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  The investigation and the evidence were in different places. That gap was the problem. Decisions were being made disconnected from the data that justified them — and there was no record connecting the two.
+                  The investigation and the evidence were in different places. That gap was the problem. Decisions were being made disconnected from the data that justified them - and there was no record connecting the two.
                 </p>
               </FadeIn>
             </div>
@@ -514,7 +514,7 @@ function QuantiveSignalsContent() {
             <div>
               <FadeIn delay={0.08}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-6">
-                  Adding comments to a product is straightforward. Adding comments to an analytics chart — where the chart already has its own drag interaction for zooming and panning — is an interaction design problem.
+                  Adding comments to a product is straightforward. Adding comments to an analytics chart - where the chart already has its own drag interaction for zooming and panning - is an interaction design problem.
                 </p>
               </FadeIn>
 
@@ -530,7 +530,7 @@ function QuantiveSignalsContent() {
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <span className="font-dm-sans text-[12px] font-medium text-[#417AEA] bg-blue-50 dark:bg-blue-900/20 px-2.5 py-1 rounded-full flex-shrink-0 mt-0.5">Existing</span>
-                      <p className="font-dm-sans text-[14px] text-zinc-600 dark:text-zinc-400 leading-relaxed">Click + drag on a chart = zoom into a date range. This was core to the analytics workflow — analysts used it constantly.</p>
+                      <p className="font-dm-sans text-[14px] text-zinc-600 dark:text-zinc-400 leading-relaxed">Click + drag on a chart = zoom into a date range. This was core to the analytics workflow - analysts used it constantly.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="font-dm-sans text-[12px] font-medium text-[#15C679] bg-green-50 dark:bg-green-900/20 px-2.5 py-1 rounded-full flex-shrink-0 mt-0.5">New</span>
@@ -545,12 +545,12 @@ function QuantiveSignalsContent() {
 
               <FadeIn delay={0.2}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
-                  I explored several gesture disambiguation strategies: a mode toggle (annotation mode vs. explore mode), a modifier key (hold Alt + drag to annotate), a toolbar switch, and a press-hold before drag. Mode toggles and toolbars added too much intentionality friction — you&apos;d have to actively decide to switch modes before every annotation. Modifier keys worked on desktop but not touch.
+                  I explored several gesture disambiguation strategies: a mode toggle (annotation mode vs. explore mode), a modifier key (hold Alt + drag to annotate), a toolbar switch, and a press-hold before drag. Mode toggles and toolbars added too much intentionality friction - you&apos;d have to actively decide to switch modes before every annotation. Modifier keys worked on desktop but not touch.
                 </p>
               </FadeIn>
               <FadeIn delay={0.26}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  The solution was <span className="text-zinc-900 dark:text-zinc-200 font-medium">press-hold before drag-to-annotate</span>. A standard drag triggered zoom as before. A brief press-hold (300ms) before dragging entered annotation mode, showing a visual affordance that the chart had shifted state. This matched established gesture patterns from mobile and required no mode switching. Engineering flagged it as the trickiest implementation challenge — and they were right — but it was the correct interaction.
+                  The solution was <span className="text-zinc-900 dark:text-zinc-200 font-medium">press-hold before drag-to-annotate</span>. A standard drag triggered zoom as before. A brief press-hold (300ms) before dragging entered annotation mode, showing a visual affordance that the chart had shifted state. This matched established gesture patterns from mobile and required no mode switching. Engineering flagged it as the trickiest implementation challenge - and they were right - but it was the correct interaction.
                 </p>
               </FadeIn>
             </div>
@@ -595,31 +595,31 @@ function QuantiveSignalsContent() {
                 tag: 'Anchor Model',
                 title: 'Range-level anchoring over point-level or event-level',
                 summary: 'Analysts discuss trends, not coordinates. The annotation should match the actual unit of analysis.',
-                detail: 'I tested three anchor models: point-level (pin a single datapoint), event-level (pin a tagged event), and range-level (select a date window). Point-level seemed the most precise, but it failed quickly in user testing — analysts almost never care about a single moment, they care about what happened over a period. "Revenue dropped between the 14th and the 22nd" is a range-level insight, not a point. Event-level was too rigid — not every anomaly has a tagged event. Range-level won because it matched the natural language of how analysts actually described what they were investigating.',
-                impact: 'Annotations were immediately legible to anyone reading them — the selected range made the subject of the conversation visible without reading the comment.',
+                detail: 'I tested three anchor models: point-level (pin a single datapoint), event-level (pin a tagged event), and range-level (select a date window). Point-level seemed the most precise, but it failed quickly in user testing - analysts almost never care about a single moment, they care about what happened over a period. "Revenue dropped between the 14th and the 22nd" is a range-level insight, not a point. Event-level was too rigid - not every anomaly has a tagged event. Range-level won because it matched the natural language of how analysts actually described what they were investigating.',
+                impact: 'Annotations were immediately legible to anyone reading them - the selected range made the subject of the conversation visible without reading the comment.',
               },
               {
                 number: '02',
                 tag: 'Interaction Design',
                 title: 'Two coexisting modes: tap for point, press-hold + drag for range',
                 summary: 'The gesture design had to solve the zoom conflict without adding a mode toggle or removing existing behaviour.',
-                detail: 'Rather than choosing between single-point and range annotation, I kept both. Quick tap on a datapoint = add a point comment. Press-hold + drag = select a date range and add a range comment. The press-hold threshold (300ms) was short enough to feel immediate but long enough to clearly distinguish intent from an accidental touch. The visual affordance — a faint highlight appearing during the hold — confirmed the mode shift before the drag began. Engineering confirmed the implementation was complex, but the user experience was seamless on both desktop and touch.',
+                detail: 'Rather than choosing between single-point and range annotation, I kept both. Quick tap on a datapoint = add a point comment. Press-hold + drag = select a date range and add a range comment. The press-hold threshold (300ms) was short enough to feel immediate but long enough to clearly distinguish intent from an accidental touch. The visual affordance - a faint highlight appearing during the hold - confirmed the mode shift before the drag began. Engineering confirmed the implementation was complex, but the user experience was seamless on both desktop and touch.',
                 impact: 'Both annotation types available with no mode switching, no toolbar changes, no lost existing functionality.',
               },
               {
                 number: '03',
                 tag: 'Collaboration',
-                title: 'Threaded comments with a "resolved" state — not a flat feed',
+                title: 'Threaded comments with a "resolved" state - not a flat feed',
                 summary: 'Anomaly investigations have a lifecycle. The structure should reflect that.',
-                detail: 'Flat comment threads treat investigation and social conversation as the same thing — a stream of messages. But anomaly investigation has a clear structure: hypothesis → evidence → conclusion. Threading preserved that lifecycle. A top-level comment could represent the hypothesis; replies added evidence and counter-evidence; a "resolved" status closed the thread when a conclusion was reached. The resolved state was the most important detail — it created an audit trail. Six months later, anyone looking at a chart could see what had been investigated, what the conclusion was, and who reached it.',
+                detail: 'Flat comment threads treat investigation and social conversation as the same thing - a stream of messages. But anomaly investigation has a clear structure: hypothesis → evidence → conclusion. Threading preserved that lifecycle. A top-level comment could represent the hypothesis; replies added evidence and counter-evidence; a "resolved" status closed the thread when a conclusion was reached. The resolved state was the most important detail - it created an audit trail. Six months later, anyone looking at a chart could see what had been investigated, what the conclusion was, and who reached it.',
                 impact: 'Every investigation left a permanent audit trail anchored to the exact data it was about.',
               },
               {
                 number: '04',
                 tag: 'Layout',
-                title: 'Right-side collapsible panel — never a modal, never full-screen',
+                title: 'Right-side collapsible panel - never a modal, never full-screen',
                 summary: 'Commentary on data is only useful when you can still see the data.',
-                detail: 'Early explorations used a modal for comment creation — you clicked a datapoint, a modal appeared, you typed, you submitted. It tested poorly immediately: analysts couldn\'t reference the chart while writing because the modal covered it. A bottom drawer was slightly better but compressed the chart uncomfortably. A right-side collapsible panel — the same pattern used in code review tools — solved it cleanly. The chart stayed fully visible at all times. The panel could be collapsed entirely for analysis-only work. The panel width was fixed (not resizable in V1) to keep scope tight.',
+                detail: 'Early explorations used a modal for comment creation - you clicked a datapoint, a modal appeared, you typed, you submitted. It tested poorly immediately: analysts couldn\'t reference the chart while writing because the modal covered it. A bottom drawer was slightly better but compressed the chart uncomfortably. A right-side collapsible panel - the same pattern used in code review tools - solved it cleanly. The chart stayed fully visible at all times. The panel could be collapsed entirely for analysis-only work. The panel width was fixed (not resizable in V1) to keep scope tight.',
                 impact: 'Chart never obscured during annotation. Zero layout shift when opening or closing the panel.',
               },
             ].map((decision, i) => (
@@ -670,7 +670,7 @@ function QuantiveSignalsContent() {
                     The hardest interaction design problem wasn&apos;t the comment UI. It was making a drag gesture for annotation coexist with an existing drag gesture for zooming.
                   </blockquote>
                   <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-4">
-                    — On designing the annotation layer for Quantive Signals
+                    - On designing the annotation layer for Quantive Signals
                   </p>
                 </div>
                 <div className="font-plus-jakarta font-extrabold text-[56px] text-blue-200 dark:text-blue-400/20 leading-none flex-shrink-0 select-none self-end hidden md:block">"</div>
@@ -691,7 +691,7 @@ function QuantiveSignalsContent() {
           <FadeIn className="mb-12">
             <p className="section-label mb-3">05 / The Feature</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
-              What shipped —
+              What shipped -
               <br />
               <span
                 className="text-transparent bg-clip-text"
@@ -710,22 +710,22 @@ function QuantiveSignalsContent() {
               {
                 icon: '◎',
                 title: 'Point-level quick-tap commenting',
-                desc: 'Tap any datapoint on a KPI chart to anchor a comment to that exact coordinate. The comment pin persists on the chart so anyone viewing it later can see where the annotation is anchored — and what the value was at that point.',
+                desc: 'Tap any datapoint on a KPI chart to anchor a comment to that exact coordinate. The comment pin persists on the chart so anyone viewing it later can see where the annotation is anchored - and what the value was at that point.',
               },
               {
                 icon: '◉',
                 title: 'Range-level drag-to-annotate',
-                desc: 'Press-hold then drag across a date range to select a window for a comment. The selected range is highlighted on the chart and persists as a shaded region under the annotation — keeping the visual connection between comment and context intact.',
+                desc: 'Press-hold then drag across a date range to select a window for a comment. The selected range is highlighted on the chart and persists as a shaded region under the annotation - keeping the visual connection between comment and context intact.',
               },
               {
                 icon: '◈',
                 title: 'Threaded discussion with resolved state',
-                desc: 'Every annotation supports a threaded reply chain. A "Resolve" action closes the thread and marks it with a concluded status — creating a permanent audit trail of every investigation that ever happened on that chart.',
+                desc: 'Every annotation supports a threaded reply chain. A "Resolve" action closes the thread and marks it with a concluded status - creating a permanent audit trail of every investigation that ever happened on that chart.',
               },
               {
                 icon: '◇',
                 title: 'Searchable, persistent comment layer',
-                desc: 'All annotations are indexed and searchable by keyword, author, and date range. They persist across sessions, across users, and across time — so the work done in an investigation six months ago is still findable and legible today.',
+                desc: 'All annotations are indexed and searchable by keyword, author, and date range. They persist across sessions, across users, and across time - so the work done in an investigation six months ago is still findable and legible today.',
               },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.07}>
@@ -759,7 +759,7 @@ function QuantiveSignalsContent() {
           <FadeIn className="mb-14">
             <p className="section-label mb-3">06 / Screens</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
-              The comment feature —{' '}
+              The comment feature -{' '}
               <span style={{ background: GRADIENT, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>shipped.</span>
             </h2>
           </FadeIn>
@@ -775,7 +775,7 @@ function QuantiveSignalsContent() {
                 { src: '/qs-screen-1-all-kpis.png', alt: 'All KPIs screen' },
                 { src: '/qs-screen-2-datapoint-click.png', alt: 'Right-click context menu on data point' },
                 { src: '/qs-screen-3-write-comment.png', alt: 'Writing a comment on the data point' },
-                { src: '/qs-screen-4-comment-added.png', alt: 'Comment added — tooltip with view all comments' },
+                { src: '/qs-screen-4-comment-added.png', alt: 'Comment added - tooltip with view all comments' },
                 { src: '/qs-screen-5-comment-thread.png', alt: 'Comment thread in side drawer' },
               ].map((screen) => (
                 <div
@@ -871,9 +871,9 @@ function QuantiveSignalsContent() {
               <FadeIn delay={0.2}>
                 <div className="space-y-4">
                   {[
-                    '35% increase in investigation activity measured by comment thread creation rate per detected anomaly — showing that analysts were engaging with anomalies more systematically, not just faster.',
-                    '28% reduction in Slack and email usage for data discussions in the first eight weeks. This was the VP of Product\'s primary metric — the one that motivated the feature request.',
-                    'Root cause identification time dropped from 4.1 hours to 2.9 hours average. This was the most important metric to the product team — it validated that the annotation layer was functioning as an investigation tool, not just a social layer.',
+                    '35% increase in investigation activity measured by comment thread creation rate per detected anomaly - showing that analysts were engaging with anomalies more systematically, not just faster.',
+                    '28% reduction in Slack and email usage for data discussions in the first eight weeks. This was the VP of Product\'s primary metric - the one that motivated the feature request.',
+                    'Root cause identification time dropped from 4.1 hours to 2.9 hours average. This was the most important metric to the product team - it validated that the annotation layer was functioning as an investigation tool, not just a social layer.',
                     'Feature tested clean immediately after implementation. No design revisions requested by engineering or stakeholders post-handoff.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -917,12 +917,12 @@ function QuantiveSignalsContent() {
               </FadeIn>
               <FadeIn delay={0.14}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
-                  V1 notifications were event-triggered — every comment in a thread you were part of sent an individual alert. In normal usage, this was fine. But during active anomaly investigations — when a spike in revenue or a dip in conversion had multiple analysts piling in simultaneously — the notification volume became its own problem. People started ignoring the alerts entirely, which undermined the whole point of the threading model.
+                  V1 notifications were event-triggered - every comment in a thread you were part of sent an individual alert. In normal usage, this was fine. But during active anomaly investigations - when a spike in revenue or a dip in conversion had multiple analysts piling in simultaneously - the notification volume became its own problem. People started ignoring the alerts entirely, which undermined the whole point of the threading model.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
-                  What I&apos;d do differently: a digest model from day one. A daily summary email: &quot;Here&apos;s what changed across the annotations you&apos;re following today.&quot; Immediate alerts only for direct @mentions or when a thread you&apos;re in moves to resolved. This would provide ambient awareness — you&apos;re informed without being interrupted. The annotation layer was designed to reduce noise by pulling conversations out of Slack. The notification system, in its first version, brought some of that noise back through a different channel. That&apos;s the lesson: ambient information tools need ambient notification models to match.
+                  What I&apos;d do differently: a digest model from day one. A daily summary email: &quot;Here&apos;s what changed across the annotations you&apos;re following today.&quot; Immediate alerts only for direct @mentions or when a thread you&apos;re in moves to resolved. This would provide ambient awareness - you&apos;re informed without being interrupted. The annotation layer was designed to reduce noise by pulling conversations out of Slack. The notification system, in its first version, brought some of that noise back through a different channel. That&apos;s the lesson: ambient information tools need ambient notification models to match.
                 </p>
               </FadeIn>
             </div>

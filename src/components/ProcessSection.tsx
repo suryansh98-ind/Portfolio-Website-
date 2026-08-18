@@ -12,7 +12,7 @@ const steps = [
   },
   {
     number: '02', title: 'Define', icon: '◉',
-    description: 'What\'s actually the problem — not the symptom they described, but the real thing underneath it.',
+    description: 'What\'s actually the problem - not the symptom they described, but the real thing underneath it.',
   },
   {
     number: '03', title: 'Design', icon: '◈',
@@ -117,7 +117,7 @@ export default function ProcessSection() {
               Most design problems turn out to be communication problems. Someone didn&apos;t ask the right question early enough, so now we&apos;re redesigning the wrong thing beautifully.
             </blockquote>
             <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-4">
-              — My approach to product design
+              - My approach to product design
             </p>
           </div>
           <div className="font-plus-jakarta font-extrabold text-[60px] text-blue-200 dark:text-blue-400/20 leading-none flex-shrink-0 select-none">"</div>

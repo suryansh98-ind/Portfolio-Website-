@@ -326,7 +326,7 @@ function KamelionContent() {
               transition={{ duration: 0.7, ease: EASE, delay: 0.36 }}
               className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[620px] mb-10"
             >
-              A student wellbeing platform built around who each teenager actually is —
+              A student wellbeing platform built around who each teenager actually is -
               not who we want them to be. 2 surfaces, 7 modules, personality-driven,
               live on both app stores.
             </motion.p>
@@ -420,7 +420,7 @@ function KamelionContent() {
                 { label: 'Timeline', value: '30 Days' },
                 { label: 'Tools', value: 'Figma' },
                 { label: 'Year', value: '2025' },
-                { label: 'Team', value: 'Solo — no other designers' },
+                { label: 'Team', value: 'Solo - no other designers' },
                 { label: 'Read', value: '7 min' },
                 { label: 'Status', value: 'Live · iOS + Android' },
               ].map((item) => (
@@ -448,8 +448,8 @@ function KamelionContent() {
             </div>
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 flex-1 min-w-0">
               {[
-                { label: 'Problem', text: 'A teen wellbeing AI app had a concept but no product logic — when to show what, how personality tests fed into content, what unlocked when. No design system existed.' },
-                { label: 'What I did', text: 'Designed the full product as sole designer — personalization logic, unlock rules, all screens for iOS and Android. Designed how the product actually thinks.' },
+                { label: 'Problem', text: 'A teen wellbeing AI app had a concept but no product logic - when to show what, how personality tests fed into content, what unlocked when. No design system existed.' },
+                { label: 'What I did', text: 'Designed the full product as sole designer - personalization logic, unlock rules, all screens for iOS and Android. Designed how the product actually thinks.' },
                 { label: 'Outcome', text: 'Shipped live on both app stores. The product logic I designed is what runs the personalization engine today.' },
               ].map((item) => (
                 <div key={item.label} className="flex-1 min-w-0">
@@ -483,7 +483,7 @@ function KamelionContent() {
               </FadeIn>
               <FadeIn delay={0.14}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  The platform needed two surfaces — a student-facing app with AI-personalised learning, gamified growth, and a structured community, plus an admin panel for school staff to monitor wellbeing trends and manage content. I was brought in as the sole designer to own everything: UX architecture, the complete design system, and the interaction logic for how each module actually works — not just what it looks like.
+                  The platform needed two surfaces - a student-facing app with AI-personalised learning, gamified growth, and a structured community, plus an admin panel for school staff to monitor wellbeing trends and manage content. I was brought in as the sole designer to own everything: UX architecture, the complete design system, and the interaction logic for how each module actually works - not just what it looks like.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
@@ -521,7 +521,7 @@ function KamelionContent() {
                   className="font-plus-jakarta font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
                   style={{ borderLeft: '3px solid #258E5B' }}
                 >
-                  "Every competitor — Calm, Headspace, Wysa — tracked feelings without explaining them, gave content without momentum, built community without safety structure. Students had no reason to return."
+                  "Every competitor - Calm, Headspace, Wysa - tracked feelings without explaining them, gave content without momentum, built community without safety structure. Students had no reason to return."
                 </blockquote>
               </FadeIn>
               <FadeIn delay={0.18}>
@@ -533,12 +533,12 @@ function KamelionContent() {
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
                   The real challenge:{' '}
                   <span className="text-zinc-900 dark:text-zinc-200 font-medium">design for return, not just for use.</span>{' '}
-                  A student might open the app once out of curiosity. Getting them to come back the next day — and the day after — requires designing every interaction as a reason to return. The growth has to feel visible. The progress has to feel real. And critically: missing a day can't feel like failure.
+                  A student might open the app once out of curiosity. Getting them to come back the next day - and the day after - requires designing every interaction as a reason to return. The growth has to feel visible. The progress has to feel real. And critically: missing a day can't feel like failure.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  That constraint — design growth as something you can see — shaped every module, every gamification decision, every piece of copy in the app.
+                  That constraint - design growth as something you can see - shaped every module, every gamification decision, every piece of copy in the app.
                 </p>
               </FadeIn>
             </div>
@@ -557,7 +557,7 @@ function KamelionContent() {
           <FadeIn className="mb-14">
             <p className="section-label mb-3">03 / Research</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
-              Secondary research —{' '}
+              Secondary research -{' '}
               <span style={{ color: '#258E5B' }}>what the market told us.</span>
             </h2>
             <p className="font-dm-sans text-[15px] text-zinc-500 dark:text-zinc-500 mt-4 max-w-[560px] leading-relaxed">
@@ -573,7 +573,7 @@ function KamelionContent() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {[
-                { src: '/kamelion-research-1-secondary.png', alt: 'Secondary analysis — mental health trends among teens' },
+                { src: '/kamelion-research-1-secondary.png', alt: 'Secondary analysis - mental health trends among teens' },
                 { src: '/kamelion-research-2-competitor.png', alt: 'Market and competitor analysis' },
                 { src: '/kamelion-research-3-competitor-table.png', alt: 'Competitor feature comparison table' },
               ].map((item) => (
@@ -593,12 +593,12 @@ function KamelionContent() {
           <FadeIn className="mb-10">
             <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">User personas</h3>
             <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-              Two primary personas — a stressed 10-year-old looking for calm, and a goal-driven 12-year-old who needs structure without adult-feeling tools.
+              Two primary personas - a stressed 10-year-old looking for calm, and a goal-driven 12-year-old who needs structure without adult-feeling tools.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { src: '/kamelion-research-4-persona-ethan.png', alt: 'Persona — Ethan Brooks, 10 years old' },
-                { src: '/kamelion-research-5-persona-lily.png', alt: 'Persona — Lily Thompson, 12 years old' },
+                { src: '/kamelion-research-4-persona-ethan.png', alt: 'Persona - Ethan Brooks, 10 years old' },
+                { src: '/kamelion-research-5-persona-lily.png', alt: 'Persona - Lily Thompson, 12 years old' },
               ].map((item) => (
                 <div
                   key={item.src}
@@ -616,12 +616,12 @@ function KamelionContent() {
           <FadeIn>
             <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Empathy & journey mapping</h3>
             <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-              Synthesised research into an empathy map and user journey — highlighting where gamification and personalization could make the biggest difference.
+              Synthesised research into an empathy map and user journey - highlighting where gamification and personalization could make the biggest difference.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { src: '/kamelion-research-6-empathy-map.png', alt: 'Empathy mapping — thoughts, feelings, actions, pain points' },
-                { src: '/kamelion-research-7-user-journey.png', alt: 'User journey mapping — awareness to retention' },
+                { src: '/kamelion-research-6-empathy-map.png', alt: 'Empathy mapping - thoughts, feelings, actions, pain points' },
+                { src: '/kamelion-research-7-user-journey.png', alt: 'User journey mapping - awareness to retention' },
               ].map((item) => (
                 <div
                   key={item.src}
@@ -657,18 +657,18 @@ function KamelionContent() {
             <div>
               <FadeIn delay={0.06}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-8">
-                  Sole designer means there's no hand to pass things to. Every decision — product logic, UX architecture, visual design, interaction states, edge cases, developer handoff — was mine. That scope shapes how you work: you can't design surface-level. You have to design how things actually function.
+                  Sole designer means there's no hand to pass things to. Every decision - product logic, UX architecture, visual design, interaction states, edge cases, developer handoff - was mine. That scope shapes how you work: you can't design surface-level. You have to design how things actually function.
                 </p>
               </FadeIn>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   {
                     title: 'Full UX Architecture',
-                    desc: 'Designed the complete information architecture across both surfaces — from onboarding flow to module-level navigation. Every screen, every state, every edge case.',
+                    desc: 'Designed the complete information architecture across both surfaces - from onboarding flow to module-level navigation. Every screen, every state, every edge case.',
                   },
                   {
                     title: 'Core Module Logic',
-                    desc: 'Designed how mental gyms, quizzes, challenges, and personality tests actually work — the rules, states, conditional flows, and what gets shown in what scenario.',
+                    desc: 'Designed how mental gyms, quizzes, challenges, and personality tests actually work - the rules, states, conditional flows, and what gets shown in what scenario.',
                   },
                   {
                     title: 'AI Personalisation Design',
@@ -676,7 +676,7 @@ function KamelionContent() {
                   },
                   {
                     title: 'Gamification System',
-                    desc: 'Architected the coin economy, leaderboard mechanics, challenge logic, and reward structure — designed to motivate without creating anxiety.',
+                    desc: 'Architected the coin economy, leaderboard mechanics, challenge logic, and reward structure - designed to motivate without creating anxiety.',
                   },
                   {
                     title: 'Design System',
@@ -684,7 +684,7 @@ function KamelionContent() {
                   },
                   {
                     title: 'Dev Handoff',
-                    desc: 'Produced complete developer documentation — interaction specs, state diagrams, conditional logic notes — so engineers could build without constant check-ins.',
+                    desc: 'Produced complete developer documentation - interaction specs, state diagrams, conditional logic notes - so engineers could build without constant check-ins.',
                   },
                 ].map((item, i) => (
                   <FadeIn key={item.title} delay={Math.floor(i / 2) * 0.08 + 0.05}>
@@ -743,23 +743,23 @@ function KamelionContent() {
                 tag: 'Learning Architecture',
                 title: 'Micro-learning in the 12-minute window',
                 summary: 'Lessons designed for a school break, not a study session.',
-                detail: 'The context I was designing for wasn\'t a teenager sitting down to self-improve. It was a 10-minute school break, a lunch queue, a moment between lessons. Once that\'s the mental model, every content decision changes. Lessons were capped at 12 minutes. Quizzes were embedded inline — not bolted on at the end. Completion earned coins immediately. The feedback loop had to close within the break. Designing for a context that doesn\'t actually exist is how apps die.',
-                impact: 'Session length capped at 12 minutes to match observed break-time usage patterns — no bolted-on end-of-lesson quiz.',
+                detail: 'The context I was designing for wasn\'t a teenager sitting down to self-improve. It was a 10-minute school break, a lunch queue, a moment between lessons. Once that\'s the mental model, every content decision changes. Lessons were capped at 12 minutes. Quizzes were embedded inline - not bolted on at the end. Completion earned coins immediately. The feedback loop had to close within the break. Designing for a context that doesn\'t actually exist is how apps die.',
+                impact: 'Session length capped at 12 minutes to match observed break-time usage patterns - no bolted-on end-of-lesson quiz.',
               },
               {
                 number: '02',
                 tag: 'Motivation Design',
                 title: 'Gamification without the anxiety mechanic',
                 summary: 'Coins don\'t disappear when you miss a day. That was the whole point.',
-                detail: 'Streaks are a dark pattern disguised as motivation. They feel like they build momentum, but what they actually build is a fear of breaking the chain. For a 14-year-old with exams, social stress, and an unpredictable life, a broken streak isn\'t a design failure — it\'s a Tuesday. I designed the coin system so accumulation is never punished by absence. Leaderboards rank activity, not raw scores. Challenges cost coins to enter, creating intentional commitment without fear. Motivation through achievement, not avoidance.',
-                impact: 'No mechanic in the system penalizes a missed day — a deliberate move away from the streak-anxiety pattern common in habit apps.',
+                detail: 'Streaks are a dark pattern disguised as motivation. They feel like they build momentum, but what they actually build is a fear of breaking the chain. For a 14-year-old with exams, social stress, and an unpredictable life, a broken streak isn\'t a design failure - it\'s a Tuesday. I designed the coin system so accumulation is never punished by absence. Leaderboards rank activity, not raw scores. Challenges cost coins to enter, creating intentional commitment without fear. Motivation through achievement, not avoidance.',
+                impact: 'No mechanic in the system penalizes a missed day - a deliberate move away from the streak-anxiety pattern common in habit apps.',
               },
               {
                 number: '03',
                 tag: 'Community Architecture',
                 title: 'A community that mostly moderates itself',
-                summary: 'Structure, not surveillance — content safety through design, not policing.',
-                detail: 'Opening community spaces for teenagers is genuinely risky. The standard response is heavy moderation. The design response is structural relevance. Students can only post in topic spaces matching their active growth areas — self-improvement, mental health, stress, relationships. You can\'t wander into a space for a topic you haven\'t engaged with. This filters intent before it becomes a problem. The result is a community that feels personal and relevant, with a moderation burden that\'s a fraction of what open forums require.',
+                summary: 'Structure, not surveillance - content safety through design, not policing.',
+                detail: 'Opening community spaces for teenagers is genuinely risky. The standard response is heavy moderation. The design response is structural relevance. Students can only post in topic spaces matching their active growth areas - self-improvement, mental health, stress, relationships. You can\'t wander into a space for a topic you haven\'t engaged with. This filters intent before it becomes a problem. The result is a community that feels personal and relevant, with a moderation burden that\'s a fraction of what open forums require.',
                 impact: 'Community engagement maintained without reactive moderation overhead.',
               },
               {
@@ -767,7 +767,7 @@ function KamelionContent() {
                 tag: 'Dual Interface Design',
                 title: 'Same data. Two completely different products.',
                 summary: 'A 14-year-old and a school administrator need the same information. They can\'t feel like the same app.',
-                detail: 'The hardest design problem on Kamelion wasn\'t any individual screen. It was that a student and an administrator needed to interact with the same underlying platform in fundamentally incompatible ways. The student app had to feel light, personal, and game-like — something chosen, not assigned. The admin panel had to feel like professional software: dense data tables, clear status indicators, bulk management, no learning curve. Same data model, same backend — architecturally different UX, different visual language, different interaction patterns from the ground up.',
+                detail: 'The hardest design problem on Kamelion wasn\'t any individual screen. It was that a student and an administrator needed to interact with the same underlying platform in fundamentally incompatible ways. The student app had to feel light, personal, and game-like - something chosen, not assigned. The admin panel had to feel like professional software: dense data tables, clear status indicators, bulk management, no learning curve. Same data model, same backend - architecturally different UX, different visual language, different interaction patterns from the ground up.',
                 impact: 'Zero required admin training sessions after launch.',
               },
             ].map((decision, i) => (
@@ -833,7 +833,7 @@ function KamelionContent() {
                 </span>
               </h2>
               <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
-                The invisible layer — conditional logic, interaction rules, and state design that make the product feel personal.
+                The invisible layer - conditional logic, interaction rules, and state design that make the product feel personal.
               </p>
             </div>
           </FadeIn>
@@ -844,28 +844,28 @@ function KamelionContent() {
                 icon: '◎',
                 title: 'Personality Tests',
                 subtitle: 'The foundation of personalisation',
-                desc: 'The personality test isn\'t a feature — it\'s the key that unlocks the rest of the app. I designed the branching logic for what each result combination surfaces: which learning paths appear first, which mental gyms are prioritised, which community spaces are accessible. The test happens once but informs every screen the student sees afterward.',
+                desc: 'The personality test isn\'t a feature - it\'s the key that unlocks the rest of the app. I designed the branching logic for what each result combination surfaces: which learning paths appear first, which mental gyms are prioritised, which community spaces are accessible. The test happens once but informs every screen the student sees afterward.',
                 logic: 'Result combinations → conditional module unlock + content surfacing priority',
               },
               {
                 icon: '◉',
                 title: 'Mental Gyms',
                 subtitle: 'Structured exercises, not generic content',
-                desc: 'Mental gyms are categorised skill-based exercises — resilience, focus, empathy, emotional regulation. I designed which gym is surfaced in which scenario: a student with a stress-dominant profile sees stress management gyms first. A student who\'s been consistently active in the community space sees social confidence gyms elevated. The gym you see isn\'t random — it responds to who you are and what you\'ve done.',
+                desc: 'Mental gyms are categorised skill-based exercises - resilience, focus, empathy, emotional regulation. I designed which gym is surfaced in which scenario: a student with a stress-dominant profile sees stress management gyms first. A student who\'s been consistently active in the community space sees social confidence gyms elevated. The gym you see isn\'t random - it responds to who you are and what you\'ve done.',
                 logic: 'Profile + usage pattern → gym surface order + recommended session type',
               },
               {
                 icon: '◈',
                 title: 'Quizzes',
                 subtitle: 'Inline, not appended',
-                desc: 'Quizzes are embedded inside lessons — not a test you take after. Three formats: multiple choice, true/false, and open reflection prompts. I designed the "no shame" wrong-answer mechanic: a wrong answer shows the correct answer immediately with explanation, then continues. No score deduction, no retry loop. The lesson still completes. Getting something wrong is part of learning, not a reason to stop.',
+                desc: 'Quizzes are embedded inside lessons - not a test you take after. Three formats: multiple choice, true/false, and open reflection prompts. I designed the "no shame" wrong-answer mechanic: a wrong answer shows the correct answer immediately with explanation, then continues. No score deduction, no retry loop. The lesson still completes. Getting something wrong is part of learning, not a reason to stop.',
                 logic: 'Wrong answer → instant explanation → lesson continues. No interruption to completion.',
               },
               {
                 icon: '◇',
                 title: 'Challenges',
                 subtitle: 'Intentional commitment, not passive access',
-                desc: 'Challenges are time-limited activities that cost coins to enter. I designed the full challenge lifecycle: admin creates and schedules on the admin panel; students discover active challenges in the app; entering requires a coin spend (intentional friction); completion triggers coin reward + leaderboard update. The coin cost isn\'t a barrier — it\'s a commitment signal. It makes joining a choice, not a click.',
+                desc: 'Challenges are time-limited activities that cost coins to enter. I designed the full challenge lifecycle: admin creates and schedules on the admin panel; students discover active challenges in the app; entering requires a coin spend (intentional friction); completion triggers coin reward + leaderboard update. The coin cost isn\'t a barrier - it\'s a commitment signal. It makes joining a choice, not a click.',
                 logic: 'Admin creates → student discovers → coin spend to join → completion → reward distribution',
               },
             ].map((module, i) => (
@@ -934,7 +934,7 @@ function KamelionContent() {
                 platform: 'iOS · Android',
                 gradient: 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
                 isLive: true,
-                desc: 'A personal wellbeing companion designed to feel like something a teenager chose — not something a school assigned. Personality-driven, gamified, and built to earn the daily return.',
+                desc: 'A personal wellbeing companion designed to feel like something a teenager chose - not something a school assigned. Personality-driven, gamified, and built to earn the daily return.',
                 tags: ['Personality Engine', 'AI Learning Paths', 'Mental Gyms', 'Challenges', 'Journaling', 'Coins + Leaderboard', 'Community'],
               },
               {
@@ -943,7 +943,7 @@ function KamelionContent() {
                 platform: 'Web',
                 gradient: 'linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #1E40AF 100%)',
                 isLive: true,
-                desc: 'Professional-grade oversight dashboard for school administrators. Dense data, clear status indicators, bulk management — designed to require zero training while giving complete visibility.',
+                desc: 'Professional-grade oversight dashboard for school administrators. Dense data, clear status indicators, bulk management - designed to require zero training while giving complete visibility.',
                 tags: ['Student Overview', 'Wellbeing Analytics', 'Challenge Management', 'Content Management', 'Module Config'],
               },
             ].map((surface, i) => (
@@ -1012,7 +1012,7 @@ function KamelionContent() {
               7 modules. All connected.
             </h3>
             <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 mt-2 max-w-[500px] leading-relaxed">
-              Each module in the student app feeds into the others — the Health Score, the AI engine, the coin system. Nothing is isolated.
+              Each module in the student app feeds into the others - the Health Score, the AI engine, the coin system. Nothing is isolated.
             </p>
           </FadeIn>
 
@@ -1031,12 +1031,12 @@ function KamelionContent() {
               {
                 num: '03',
                 title: 'Mental Gyms',
-                desc: 'Structured skill-building exercises categorised by growth area — resilience, focus, empathy, emotional regulation. Surfaced based on personality profile and recent engagement.',
+                desc: 'Structured skill-building exercises categorised by growth area - resilience, focus, empathy, emotional regulation. Surfaced based on personality profile and recent engagement.',
               },
               {
                 num: '04',
                 title: 'Community Spaces',
-                desc: 'Topic-based discussion spaces accessible only when a student is actively working on that growth area. Relevance is built in — not moderated in.',
+                desc: 'Topic-based discussion spaces accessible only when a student is actively working on that growth area. Relevance is built in - not moderated in.',
               },
               {
                 num: '05',
@@ -1051,7 +1051,7 @@ function KamelionContent() {
               {
                 num: '07',
                 title: 'Growth Dashboard',
-                desc: 'The student\'s personal view of their progress — streaks, completed modules, earned achievements, and a visible record of their growth over time. The "invisible made visible."',
+                desc: 'The student\'s personal view of their progress - streaks, completed modules, earned achievements, and a visible record of their growth over time. The "invisible made visible."',
               },
             ].map((module, i) => (
               <FadeIn key={module.num} delay={Math.floor(i / 3) * 0.07 + 0.05}>
@@ -1086,29 +1086,29 @@ function KamelionContent() {
           <FadeIn className="mb-14">
             <p className="section-label mb-3">08 / Screens</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
-              Kamelion —{' '}
+              Kamelion -{' '}
               <span style={{ color: '#258E5B' }}>shipped.</span>
             </h2>
           </FadeIn>
 
           <FadeIn className="mb-2">
-            <LioNarrator col={1} row={2} quote="A month of calls — here's everything that actually shipped." />
+            <LioNarrator col={1} row={2} quote="A month of calls - here's everything that actually shipped." />
           </FadeIn>
 
           {/* Mascot */}
           <FadeIn className="mb-14">
             <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Meet Lio</h3>
             <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-              The chameleon companion who lives throughout the app — mood check-ins, journal prompts, reward moments. Designed to feel like a friend, not a UI element.
+              The chameleon companion who lives throughout the app - mood check-ins, journal prompts, reward moments. Designed to feel like a friend, not a UI element.
             </p>
             <div
               className="relative max-w-2xl rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/[0.07] bg-zinc-100 dark:bg-zinc-900/60 cursor-zoom-in"
               style={{ aspectRatio: '5/4' }}
-              onClick={() => setLightbox({ src: '/kamelion-mascot.png', alt: 'Lio — the Kamelion mascot character sheet' })}
+              onClick={() => setLightbox({ src: '/kamelion-mascot.png', alt: 'Lio - the Kamelion mascot character sheet' })}
             >
               <Image
                 src="/kamelion-mascot.png"
-                alt="Lio — the Kamelion mascot character sheet"
+                alt="Lio - the Kamelion mascot character sheet"
                 fill
                 className="object-contain p-4"
                 sizes="(max-width: 1200px) 100vw, 1200px"
@@ -1120,18 +1120,18 @@ function KamelionContent() {
           <FadeIn className="mb-14">
             <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Mobile app</h3>
             <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-              Onboarding, Home, Mental Gyms, Journaling, Community, and Challenges — the full mobile experience from first launch to daily use.
+              Onboarding, Home, Mental Gyms, Journaling, Community, and Challenges - the full mobile experience from first launch to daily use.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {[
                 { src: '/kamelion-onboarding-2-welcome.png', alt: 'Welcome / Login screen' },
-                { src: '/kamelion-onboarding-1-intro.png', alt: 'Lio introduction — personality setup begins' },
-                { src: '/kamelion-onboarding-3-quiz.png', alt: 'Personality quiz — Lio asking questions' },
-                { src: '/kamelion-screen-1-home.png', alt: 'Home screen — mood tracking and mental gyms' },
-                { src: '/kamelion-screen-2-mental-gyms.png', alt: 'Mental Gyms — short course browser' },
-                { src: '/kamelion-screen-3-journals.png', alt: 'Journaling — timeline view' },
-                { src: '/kamelion-screen-4-community.png', alt: 'Community — like-minded groups' },
-                { src: '/kamelion-screen-5-challenges.png', alt: 'Challenges — active and categories' },
+                { src: '/kamelion-onboarding-1-intro.png', alt: 'Lio introduction - personality setup begins' },
+                { src: '/kamelion-onboarding-3-quiz.png', alt: 'Personality quiz - Lio asking questions' },
+                { src: '/kamelion-screen-1-home.png', alt: 'Home screen - mood tracking and mental gyms' },
+                { src: '/kamelion-screen-2-mental-gyms.png', alt: 'Mental Gyms - short course browser' },
+                { src: '/kamelion-screen-3-journals.png', alt: 'Journaling - timeline view' },
+                { src: '/kamelion-screen-4-community.png', alt: 'Community - like-minded groups' },
+                { src: '/kamelion-screen-5-challenges.png', alt: 'Challenges - active and categories' },
               ].map((screen) => (
                 <div
                   key={screen.src}
@@ -1149,12 +1149,12 @@ function KamelionContent() {
           <FadeIn className="mb-14">
             <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Admin panel</h3>
             <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-              The school-facing dashboard — login, user management, licenses, content, community moderation, revenue, and support, all in one system.
+              The school-facing dashboard - login, user management, licenses, content, community moderation, revenue, and support, all in one system.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { src: '/kamelion-screen-6-admin-login.png', alt: 'Admin login screen' },
-                { src: '/kamelion-screen-7-admin-dashboard.png', alt: 'Admin dashboard — user overview' },
+                { src: '/kamelion-screen-7-admin-dashboard.png', alt: 'Admin dashboard - user overview' },
                 { src: '/kamelion-screen-8-admin-licenses.png', alt: 'Licenses management' },
                 { src: '/kamelion-screen-9-admin-license-create.png', alt: 'Creating a new license' },
                 { src: '/kamelion-screen-10-admin-mental-gym.png', alt: 'Mental gym content creation with quizzes' },
@@ -1180,7 +1180,7 @@ function KamelionContent() {
           <FadeIn>
             <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Onboarding email</h3>
             <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-              Welcome email sent to new users — consistent with the app's tone, written by the founder, designed to feel warm not transactional.
+              Welcome email sent to new users - consistent with the app's tone, written by the founder, designed to feel warm not transactional.
             </p>
             <div className="max-w-sm">
               <div
@@ -1246,9 +1246,9 @@ function KamelionContent() {
               <FadeIn delay={0.2}>
                 <div className="space-y-4">
                   {[
-                    'App is live on both the App Store and Google Play, with 100+ downloads since launch — shipped within the 30-day timeline without a second designer.',
+                    'App is live on both the App Store and Google Play, with 100+ downloads since launch - shipped within the 30-day timeline without a second designer.',
                     'Design system delivered and documented: the engineering team extended it independently without returning to me for component questions.',
-                    'Conditional logic for all 4 core mechanics (personality tests, mental gyms, quizzes, challenges) fully specced and handed off — no ambiguity in how the product actually behaves.',
+                    'Conditional logic for all 4 core mechanics (personality tests, mental gyms, quizzes, challenges) fully specced and handed off - no ambiguity in how the product actually behaves.',
                     'Admin panel adopted with zero training sessions.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -1292,12 +1292,12 @@ function KamelionContent() {
               </FadeIn>
               <FadeIn delay={0.14}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
-                  Kamelion taught me the difference between designing a product and designing how a product works. Most portfolios show screens. The thing that actually matters — the conditional logic, the interaction rules, the state design for what happens when a 14-year-old gets a quiz wrong at 8am — is invisible. That invisible layer is the real design work.
+                  Kamelion taught me the difference between designing a product and designing how a product works. Most portfolios show screens. The thing that actually matters - the conditional logic, the interaction rules, the state design for what happens when a 14-year-old gets a quiz wrong at 8am - is invisible. That invisible layer is the real design work.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
-                  Working without another designer also clarified what good judgment looks like under pressure. You can't debate every decision. You develop a faster inner framework for what matters and what doesn't. That speed — without losing quality — is something I now carry into every project.
+                  Working without another designer also clarified what good judgment looks like under pressure. You can't debate every decision. You develop a faster inner framework for what matters and what doesn't. That speed - without losing quality - is something I now carry into every project.
                 </p>
               </FadeIn>
             </div>
@@ -1321,7 +1321,7 @@ function KamelionContent() {
                   Kamelion is live on both stores.
                 </p>
                 <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500">
-                  Download it, use it — the product speaks for itself.
+                  Download it, use it - the product speaks for itself.
                 </p>
               </div>
               <div className="flex items-center gap-3 flex-shrink-0">
@@ -1376,7 +1376,7 @@ function KamelionContent() {
                   </span>
                 </h2>
                 <p className="font-dm-sans font-light text-[clamp(15px,1.8vw,17px)] text-zinc-600 dark:text-zinc-400 leading-[1.75] max-w-[480px] mx-auto mb-10">
-                  State diagrams, logic flows, the full design system, and the edge cases that made this product actually work — it&apos;s all in the file. If you want a walkthrough, let&apos;s talk.
+                  State diagrams, logic flows, the full design system, and the edge cases that made this product actually work - it&apos;s all in the file. If you want a walkthrough, let&apos;s talk.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

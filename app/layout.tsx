@@ -34,10 +34,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Suryansh Thakur — Product Designer',
+  title: 'Suryansh Thakur - Product Designer',
   description: 'Product designer shipping end-to-end across B2B, B2C and SaaS. Specializing in design systems, UX strategy, and AI-assisted workflows.',
   openGraph: {
-    title: 'Suryansh Thakur — Product Designer',
+    title: 'Suryansh Thakur - Product Designer',
     description: 'Product designer shipping end-to-end across B2B, B2C and SaaS.',
     type: 'website',
   },

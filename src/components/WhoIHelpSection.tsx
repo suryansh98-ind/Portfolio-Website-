@@ -20,7 +20,7 @@ const audiences = [
   {
     title: 'Product Teams',
     subtitle: 'Scale-ups & growth stage',
-    description: 'You have a product and a roadmap but not enough design bandwidth. I slot in, pick up context fast, and ship — whether that\'s IC work on a feature or helping the team get better at what they do.',
+    description: 'You have a product and a roadmap but not enough design bandwidth. I slot in, pick up context fast, and ship - whether that\'s IC work on a feature or helping the team get better at what they do.',
     bullets: ['IC or lead capacity', 'Design system scaling', 'Cross-functional collaboration'],
     lightGradient: 'from-emerald-50/80 to-teal-50/50',
     darkGradient: 'dark:from-emerald-500/10 dark:to-teal-500/5',
@@ -31,7 +31,7 @@ const audiences = [
   {
     title: 'Founders & Builders',
     subtitle: 'Solo or small teams',
-    description: 'You need something working, not a 40-page deck of mockups. I design it and build it — which is faster than coordinating between two people who\'ve never talked to each other.',
+    description: 'You need something working, not a 40-page deck of mockups. I design it and build it - which is faster than coordinating between two people who\'ve never talked to each other.',
     bullets: ['Design + development', 'AI-assisted workflow', 'Direct, async collaboration'],
     lightGradient: 'from-orange-50/80 to-rose-50/50',
     darkGradient: 'dark:from-orange-500/10 dark:to-rose-500/5',

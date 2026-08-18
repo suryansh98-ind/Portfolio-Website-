@@ -31,7 +31,7 @@ const services = [
       </svg>
     ),
     title: 'Design Systems',
-    description: 'The unglamorous work that makes everything else faster. I build design systems that engineers actually use — mostly by making components match how code works, not how a mood board looks.',
+    description: 'The unglamorous work that makes everything else faster. I build design systems that engineers actually use - mostly by making components match how code works, not how a mood board looks.',
     highlights: ['Figma Variables', 'Component Libraries', 'Design Tokens', 'Documentation'],
   },
   {
@@ -43,7 +43,7 @@ const services = [
       </svg>
     ),
     title: 'AI-Assisted Development',
-    description: 'I use Claude Code to turn my own designs into working front-end code — this portfolio is built with it. It\'s not magic, you still need to know what you\'re doing. But it cuts the handoff in half.',
+    description: 'I use Claude Code to turn my own designs into working front-end code - this portfolio is built with it. It\'s not magic, you still need to know what you\'re doing. But it cuts the handoff in half.',
     highlights: ['Claude Code', 'Figma to Code', 'React Components', 'Rapid Prototyping'],
   },
   {
@@ -56,7 +56,7 @@ const services = [
       </svg>
     ),
     title: 'UX Strategy & Leadership',
-    description: 'Running crits, helping junior designers develop taste, and saying the thing nobody else wants to say — like when a feature doesn\'t actually solve the problem. Leadership in design is mostly about creating space for the team to do good work.',
+    description: 'Running crits, helping junior designers develop taste, and saying the thing nobody else wants to say - like when a feature doesn\'t actually solve the problem. Leadership in design is mostly about creating space for the team to do good work.',
     highlights: ['Design Mentorship', 'Process Setup', 'Stakeholder Alignment', 'Design Critique'],
   },
 ]
@@ -82,7 +82,7 @@ export default function WhatIDoSection() {
               What I actually do.
             </h2>
             <p className="font-dm-sans text-[15px] text-zinc-500 dark:text-zinc-500 max-w-[360px] leading-relaxed md:text-right">
-              Not just wireframes — research, systems, and sometimes the code itself.
+              Not just wireframes - research, systems, and sometimes the code itself.
             </p>
           </div>
         </motion.div>

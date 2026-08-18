@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
-export const alt = 'Suryansh Thakur — Product Designer'
+export const alt = 'Suryansh Thakur - Product Designer'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -31,7 +31,7 @@ export default async function Image() {
         fontFamily: fontData ? "'Plus Jakarta Sans', sans-serif" : 'sans-serif',
       }}>
 
-        {/* Photo — 800px wide, edge at x=400 (inside 47% plateau at x=423) → no seam */}
+        {/* Photo - 800px wide, edge at x=400 (inside 47% plateau at x=423) → no seam */}
         <img src={photo} style={{
           position: 'absolute',
           top: -22, right: 0,
@@ -40,7 +40,7 @@ export default async function Image() {
           objectPosition: '0% center',
         }} />
 
-        {/* Gradient — plateau to x=402 (67%) covers photo edge at x=400; fades fully to 0 at x=600 */}
+        {/* Gradient - plateau to x=402 (67%) covers photo edge at x=400; fades fully to 0 at x=600 */}
         <div style={{
           position: 'absolute',
           left: 0, top: 0, bottom: 0,
@@ -57,7 +57,7 @@ export default async function Image() {
           display: 'flex',
         }} />
 
-        {/* ST monogram — top left */}
+        {/* ST monogram - top left */}
         <div style={{
           position: 'absolute', top: 44, left: 60,
           display: 'flex', alignItems: 'center',

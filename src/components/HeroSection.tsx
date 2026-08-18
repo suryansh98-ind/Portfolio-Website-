@@ -111,7 +111,7 @@ export default function HeroSection() {
           >
             4.5+ years shipping{' '}
             <span className="text-zinc-900 dark:text-zinc-200 font-medium">B2B, B2C and SaaS products</span>{' '}
-            people keep coming back to. I do the research, the systems, the pixels —
+            people keep coming back to. I do the research, the systems, the pixels -
             and the code. One less person in the chain.
           </motion.p>
 

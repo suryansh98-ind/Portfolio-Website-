@@ -14,7 +14,7 @@ const caseStudies = [
     year: '2026',
     type: 'Health Tech · B2C',
     role: 'Product Designer',
-    description: 'Hormone health platform — 3 surfaces designed from scratch in 45 days. The core challenge was making clinical data feel approachable to people who aren\'t doctors.',
+    description: 'Hormone health platform - 3 surfaces designed from scratch in 45 days. The core challenge was making clinical data feel approachable to people who aren\'t doctors.',
     tags: ['UX Strategy', 'Mobile Design', 'User Research', 'B2C'],
     gradient: 'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)',
     image: '/mh tumbnail.png',
@@ -27,7 +27,7 @@ const caseStudies = [
     year: '2025',
     type: 'AI Product',
     role: 'Product Designer',
-    description: 'Teen wellbeing app, sole designer. I designed how the product logic actually works — when to show what, how personality tests feed into content, what gets unlocked when. It\'s live on both stores.',
+    description: 'Teen wellbeing app, sole designer. I designed how the product logic actually works - when to show what, how personality tests feed into content, what gets unlocked when. It\'s live on both stores.',
     tags: ['UX Research', 'Product Design', 'Design System', 'AI'],
     gradient: 'linear-gradient(135deg, #258E5B 0%, #91D16F 100%)',
     image: '/kamelion-thumbnail.png',
@@ -40,7 +40,7 @@ const caseStudies = [
     year: '2023',
     type: 'B2B SaaS · Strategy',
     role: 'Product Designer',
-    description: 'Adobe needed to see OKRs they didn\'t own. The platform had no concept for that. I designed one — from discovery to handoff in 7 days — that separated visibility from accountability.',
+    description: 'Adobe needed to see OKRs they didn\'t own. The platform had no concept for that. I designed one - from discovery to handoff in 7 days - that separated visibility from accountability.',
     tags: ['B2B SaaS', 'Dashboard Design', 'Data Viz', 'OKR'],
     gradient: 'linear-gradient(135deg, #15C679 0%, #0090D0 50%, #0057D7 100%)',
     image: '/qr-thumbnail.png',
@@ -53,7 +53,7 @@ const caseStudies = [
     year: '2023',
     type: 'B2B SaaS · Data',
     role: 'Product Designer',
-    description: 'Analysts were screenshotting charts and pasting them into Slack to discuss anomalies. I brought the conversation back into the tool — in-chart annotations anchored to the actual data.',
+    description: 'Analysts were screenshotting charts and pasting them into Slack to discuss anomalies. I brought the conversation back into the tool - in-chart annotations anchored to the actual data.',
     tags: ['Data Design', 'Feature Design', 'B2B SaaS', 'Analytics'],
     gradient: 'linear-gradient(135deg, #417AEA 0%, #15C679 100%)',
     image: '/qs-thumbnail.png',
@@ -226,13 +226,13 @@ export default function WorkSection() {
               Selected Work
             </h2>
             <p className="font-dm-sans text-[16px] text-zinc-500 dark:text-zinc-500 mt-3 max-w-[420px] leading-relaxed">
-              End-to-end product design across B2B, B2C and SaaS — from research to shipped product.
+              End-to-end product design across B2B, B2C and SaaS - from research to shipped product.
             </p>
           </div>
           <div className="flex items-center gap-3 text-zinc-400 dark:text-zinc-600">
             <span className="font-dm-sans text-[13px]">4 case studies</span>
             <div className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
-            <span className="font-dm-sans text-[13px]">2023 — 2025</span>
+            <span className="font-dm-sans text-[13px]">2023 - 2025</span>
           </div>
         </motion.div>
 

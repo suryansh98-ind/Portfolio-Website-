@@ -300,7 +300,7 @@ function QuantiveResultsContent() {
               transition={{ duration: 0.7, ease: EASE, delay: 0.36 }}
               className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[620px] mb-10"
             >
-              A feature designed from discovery to handoff for Adobe's leadership teams —
+              A feature designed from discovery to handoff for Adobe's leadership teams -
               separating visibility from accountability inside Quantive Results, an enterprise OKR platform.
             </motion.p>
 
@@ -353,7 +353,7 @@ function QuantiveResultsContent() {
               sizes="(max-width: 1200px) 100vw, 1200px"
               priority
             />
-            {/* Website Live button — top right */}
+            {/* Website Live button - top right */}
             <div className="absolute top-5 right-5">
               <div className="flex items-center gap-2 bg-white text-zinc-900 font-dm-sans font-semibold text-[12px] md:text-[13px] px-4 md:px-5 py-2 md:py-2.5 rounded-full shadow-md">
                 <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#15C679' }} />
@@ -405,8 +405,8 @@ function QuantiveResultsContent() {
             </div>
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 flex-1 min-w-0">
               {[
-                { label: 'Problem', text: "Adobe's leaders had to become OKR participants just to monitor strategy — adding unwanted accountability to 10,000-person workflows." },
-                { label: 'What I did', text: 'Defined the Watch participation state from scratch — real data model change, self-serve toggle, bulk panel. 7 days, solo, discovery to handoff.' },
+                { label: 'Problem', text: "Adobe's leaders had to become OKR participants just to monitor strategy - adding unwanted accountability to 10,000-person workflows." },
+                { label: 'What I did', text: 'Defined the Watch participation state from scratch - real data model change, self-serve toggle, bulk panel. 7 days, solo, discovery to handoff.' },
                 { label: 'Outcome', text: '+40% OKR visibility among leadership, −28% unnecessary participant additions. Shipped to Adobe, zero revisions after handoff.' },
               ].map((item) => (
                 <div key={item.label} className="flex-1 min-w-0">
@@ -435,12 +435,12 @@ function QuantiveResultsContent() {
             <div className="space-y-5">
               <FadeIn delay={0.08}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  I was a Product Designer at Quantive, a company that built Quantive Results — an enterprise OKR (Objectives and Key Results) platform used by large organisations to align strategy across hundreds of teams. Adobe was one of those organisations, running Quantive Results across a 10,000-person workforce.
+                  I was a Product Designer at Quantive, a company that built Quantive Results - an enterprise OKR (Objectives and Key Results) platform used by large organisations to align strategy across hundreds of teams. Adobe was one of those organisations, running Quantive Results across a 10,000-person workforce.
                 </p>
               </FadeIn>
               <FadeIn delay={0.14}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  The ask from Adobe was intentionally broad: <span className="text-zinc-900 dark:text-zinc-200 font-medium">they had a problem with how visibility worked in the platform, and they needed it solved.</span> That was the brief. No wireframes, no feature spec, no reference design. Adobe's program managers and leadership were being pulled into OKR structures they had no part in — and they needed a way out. Everything from discovery to solution to handoff was mine to define.
+                  The ask from Adobe was intentionally broad: <span className="text-zinc-900 dark:text-zinc-200 font-medium">they had a problem with how visibility worked in the platform, and they needed it solved.</span> That was the brief. No wireframes, no feature spec, no reference design. Adobe's program managers and leadership were being pulled into OKR structures they had no part in - and they needed a way out. Everything from discovery to solution to handoff was mine to define.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
@@ -485,12 +485,12 @@ function QuantiveResultsContent() {
               </FadeIn>
               <FadeIn delay={0.24}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
-                  Program managers and leadership at Adobe needed to monitor OKRs across teams they didn't directly own — to spot blockers, track cross-functional dependencies, and stay informed on strategy execution. But the only way to see an OKR was to be added as a participant. Which meant they were receiving accountability emails, appearing in responsibility reports, and being treated by the system as owners of work they had nothing to do with.
+                  Program managers and leadership at Adobe needed to monitor OKRs across teams they didn't directly own - to spot blockers, track cross-functional dependencies, and stay informed on strategy execution. But the only way to see an OKR was to be added as a participant. Which meant they were receiving accountability emails, appearing in responsibility reports, and being treated by the system as owners of work they had nothing to do with.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  The system was conflating <span className="text-zinc-900 dark:text-zinc-200 font-medium">visibility with ownership</span> — and Adobe's teams were paying the operational cost every week. What the platform was missing wasn't a feature. It was a concept.
+                  The system was conflating <span className="text-zinc-900 dark:text-zinc-200 font-medium">visibility with ownership</span> - and Adobe's teams were paying the operational cost every week. What the platform was missing wasn't a feature. It was a concept.
                 </p>
               </FadeIn>
             </div>
@@ -517,7 +517,7 @@ function QuantiveResultsContent() {
             <div>
               <FadeIn delay={0.06}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-10">
-                  Adobe gave me a problem, not a solution. That's the ideal brief — but it requires a sharper process. Here's what the 7 days actually looked like.
+                  Adobe gave me a problem, not a solution. That's the ideal brief - but it requires a sharper process. Here's what the 7 days actually looked like.
                 </p>
               </FadeIn>
 
@@ -525,27 +525,27 @@ function QuantiveResultsContent() {
                 {[
                   {
                     step: '01',
-                    title: 'Discovery — understand the system before touching the problem',
-                    desc: 'Before designing anything, I needed to fully understand how Quantive Results modelled participation. What did "participant" mean in the backend data model? What notifications did it trigger? What reports did it feed into? I worked with engineering to map the current participant system — because any new participation state would need to be genuinely separate, not just a UI mask on the same role. This was the most important day of the 7.',
+                    title: 'Discovery - understand the system before touching the problem',
+                    desc: 'Before designing anything, I needed to fully understand how Quantive Results modelled participation. What did "participant" mean in the backend data model? What notifications did it trigger? What reports did it feed into? I worked with engineering to map the current participant system - because any new participation state would need to be genuinely separate, not just a UI mask on the same role. This was the most important day of the 7.',
                   },
                   {
                     step: '02',
-                    title: 'Define — name the missing concept',
-                    desc: 'The design problem wasn\'t "add a read-only mode." It was: define a new participation state that carries no accountability weight. I named this the Watch state. Watchers have full visibility into an OKR — progress, updates, status, commentary — but don\'t appear in responsibility reports, don\'t receive accountability notifications, and don\'t affect the contributor list. Naming it clearly shaped every downstream decision.',
+                    title: 'Define - name the missing concept',
+                    desc: 'The design problem wasn\'t "add a read-only mode." It was: define a new participation state that carries no accountability weight. I named this the Watch state. Watchers have full visibility into an OKR - progress, updates, status, commentary - but don\'t appear in responsibility reports, don\'t receive accountability notifications, and don\'t affect the contributor list. Naming it clearly shaped every downstream decision.',
                   },
                   {
                     step: '03',
-                    title: 'Design — explore the interaction options',
+                    title: 'Design - explore the interaction options',
                     desc: 'With the concept defined, I explored how users would enter the Watch state. Two main paths: owner-managed (a Stakeholders section where owners curate their audience) vs. self-serve (a Watch toggle anyone could activate independently). I prototyped both, stress-tested them against Adobe\'s actual use cases (a VP watching 40 OKRs, a PM monitoring cross-functional dependencies), and evaluated where each broke down.',
                   },
                   {
                     step: '04',
-                    title: 'Validate — test against the real use case',
-                    desc: 'The owner-managed approach added work to OKR owners — they\'d need to manage an audience, which still implied some ownership of who could see their work. Self-serve matched how Adobe\'s teams already behaved in Jira and GitHub. I chose self-serve as the primary pattern, added a watcher management panel for owners (for the bulk-addition use case), and validated the placement with a round of internal feedback before finalising.',
+                    title: 'Validate - test against the real use case',
+                    desc: 'The owner-managed approach added work to OKR owners - they\'d need to manage an audience, which still implied some ownership of who could see their work. Self-serve matched how Adobe\'s teams already behaved in Jira and GitHub. I chose self-serve as the primary pattern, added a watcher management panel for owners (for the bulk-addition use case), and validated the placement with a round of internal feedback before finalising.',
                   },
                   {
                     step: '05',
-                    title: 'Handoff — present to Adobe\'s product team',
+                    title: 'Handoff - present to Adobe\'s product team',
                     desc: 'Final Figma delivery included the full interaction spec, all states (watcher vs. non-watcher, OKR owner view vs. participant view, notification preferences), the watcher management panel, and annotated edge cases. Presented directly to Adobe\'s product team. Feature shipped within the quarter.',
                   },
                 ].map((item, i) => (
@@ -593,7 +593,7 @@ function QuantiveResultsContent() {
                 </span>
               </h2>
               <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
-                Each decision was a trade-off between power and simplicity — in an enterprise system where the wrong choice has real operational cost.
+                Each decision was a trade-off between power and simplicity - in an enterprise system where the wrong choice has real operational cost.
               </p>
             </div>
           </FadeIn>
@@ -603,25 +603,25 @@ function QuantiveResultsContent() {
               {
                 number: '01',
                 tag: 'Systems Thinking',
-                title: 'Separate visibility from responsibility — in the backend, not just the UI',
+                title: 'Separate visibility from responsibility - in the backend, not just the UI',
                 summary: 'A new participation state that carries zero accountability weight.',
-                detail: 'The temptation was to build a UI mask — show the OKR, but hide the notification triggers. That would have been fragile. The right answer was to work with engineering to define the Watch state as a genuinely separate entity in the data model: a Watcher doesn\'t appear in responsibility reports, doesn\'t receive accountability notifications, doesn\'t affect the contributor list, and isn\'t surfaced when OKR ownership is audited. The UI followed from the data model, not the other way around. This is the hardest part of designing inside an existing system — getting the concept right before you draw anything.',
+                detail: 'The temptation was to build a UI mask - show the OKR, but hide the notification triggers. That would have been fragile. The right answer was to work with engineering to define the Watch state as a genuinely separate entity in the data model: a Watcher doesn\'t appear in responsibility reports, doesn\'t receive accountability notifications, doesn\'t affect the contributor list, and isn\'t surfaced when OKR ownership is audited. The UI followed from the data model, not the other way around. This is the hardest part of designing inside an existing system - getting the concept right before you draw anything.',
                 impact: 'Clean separation in the data model: no accountability bleed-through in any downstream report or notification.',
               },
               {
                 number: '02',
                 tag: 'Interaction Design',
                 title: 'Self-serve Watch toggle over owner-managed stakeholders list',
-                summary: 'Match how Adobe\'s teams already behave — in Jira, GitHub, and every tool they use daily.',
-                detail: 'Option A: a Stakeholders section managed by the OKR owner. Option B: a self-serve Watch toggle anyone can activate. Option A gives owners control but creates a management burden — they\'d need to curate an audience, which implies they\'re responsible for who sees their OKR. That\'s the exact dynamic we were trying to eliminate. Option B matched how Adobe\'s teams already operated. A VP who wants to watch 40 OKRs shouldn\'t need to contact 40 owners. I chose self-serve as the primary pattern, and kept an owner-facing management panel for the bulk-addition use case.',
+                summary: 'Match how Adobe\'s teams already behave - in Jira, GitHub, and every tool they use daily.',
+                detail: 'Option A: a Stakeholders section managed by the OKR owner. Option B: a self-serve Watch toggle anyone can activate. Option A gives owners control but creates a management burden - they\'d need to curate an audience, which implies they\'re responsible for who sees their OKR. That\'s the exact dynamic we were trying to eliminate. Option B matched how Adobe\'s teams already operated. A VP who wants to watch 40 OKRs shouldn\'t need to contact 40 owners. I chose self-serve as the primary pattern, and kept an owner-facing management panel for the bulk-addition use case.',
                 impact: 'Zero friction to start watching an OKR. Owners retain visibility into who is watching without managing who can.',
               },
               {
                 number: '03',
                 tag: 'Placement & Hierarchy',
-                title: 'Eye icon in the OKR header — a preference, not an action',
+                title: 'Eye icon in the OKR header - a preference, not an action',
                 summary: 'The placement tells the user what kind of thing this is before they click it.',
-                detail: 'Early explorations put the Watch button in the primary action bar, alongside Edit and Share. It tested as too prominent — it made watching feel like a core workflow rather than a lightweight ambient preference. A Followers section below the OKR description tested as too buried — users missed it. The OKR header — where you\'d find metadata like owner, time period, and status — was the right level of prominence. It says "this is a preference about how you relate to this OKR" rather than "this is something you do to this OKR." The eye icon made it instantly scannable without demanding attention.',
+                detail: 'Early explorations put the Watch button in the primary action bar, alongside Edit and Share. It tested as too prominent - it made watching feel like a core workflow rather than a lightweight ambient preference. A Followers section below the OKR description tested as too buried - users missed it. The OKR header - where you\'d find metadata like owner, time period, and status - was the right level of prominence. It says "this is a preference about how you relate to this OKR" rather than "this is something you do to this OKR." The eye icon made it instantly scannable without demanding attention.',
                 impact: 'Discoverable without interrupting the primary OKR management workflow.',
               },
               {
@@ -629,8 +629,8 @@ function QuantiveResultsContent() {
                 tag: 'Scale & Leadership Use Cases',
                 title: 'Watcher management panel for bulk administration',
                 summary: 'A VP watching 40 OKRs across departments can\'t do it one toggle at a time.',
-                detail: 'The self-serve model works perfectly for individuals. It doesn\'t work for leadership at scale. A chief of staff adding a VP as a watcher across every relevant OKR in a quarter — that\'s 20-50 OKRs, one-by-one, manually. I designed a watcher management panel for OKR owners that showed who was currently watching and allowed bulk additions. This was the feature that made the Watch layer actually usable for Adobe\'s most senior users, who were precisely the ones the whole feature was built for.',
-                impact: 'Made the feature viable for the exact use case that motivated it — leadership visibility at scale.',
+                detail: 'The self-serve model works perfectly for individuals. It doesn\'t work for leadership at scale. A chief of staff adding a VP as a watcher across every relevant OKR in a quarter - that\'s 20-50 OKRs, one-by-one, manually. I designed a watcher management panel for OKR owners that showed who was currently watching and allowed bulk additions. This was the feature that made the Watch layer actually usable for Adobe\'s most senior users, who were precisely the ones the whole feature was built for.',
+                impact: 'Made the feature viable for the exact use case that motivated it - leadership visibility at scale.',
               },
             ].map((decision, i) => (
               <FadeIn key={decision.number} delay={i * 0.08}>
@@ -680,7 +680,7 @@ function QuantiveResultsContent() {
                     The hardest part wasn't the UI. It was defining a new participation state inside a system where every existing state carried accountability weight.
                   </blockquote>
                   <p className="font-dm-sans text-[13px] text-zinc-400 dark:text-zinc-600 mt-4">
-                    — On designing the Watch feature for Quantive Results
+                    - On designing the Watch feature for Quantive Results
                   </p>
                 </div>
                 <div className="font-plus-jakarta font-extrabold text-[56px] text-green-200 dark:text-green-400/20 leading-none flex-shrink-0 select-none self-end hidden md:block">"</div>
@@ -701,7 +701,7 @@ function QuantiveResultsContent() {
           <FadeIn className="mb-12">
             <p className="section-label mb-3">05 / The Feature</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
-              The Watch layer —
+              The Watch layer -
               <br />
               <span
                 style={{ color: '#15C679' }}
@@ -716,7 +716,7 @@ function QuantiveResultsContent() {
               {
                 icon: '◎',
                 title: 'Read-only visibility',
-                desc: 'Watchers see everything a participant sees — progress, updates, status, comments — with no ability to edit, update, or affect the OKR in any way.',
+                desc: 'Watchers see everything a participant sees - progress, updates, status, comments - with no ability to edit, update, or affect the OKR in any way.',
               },
               {
                 icon: '◉',
@@ -731,17 +731,17 @@ function QuantiveResultsContent() {
               {
                 icon: '◇',
                 title: 'Notification preferences',
-                desc: 'Watchers choose their update frequency — real-time, daily digest, or weekly summary. Eliminates inbox noise for people watching multiple OKRs.',
+                desc: 'Watchers choose their update frequency - real-time, daily digest, or weekly summary. Eliminates inbox noise for people watching multiple OKRs.',
               },
               {
                 icon: '○',
                 title: 'Owner visibility',
-                desc: 'OKR owners see a list of current watchers in the management panel. No privacy concerns — watching is transparent to the owner by design.',
+                desc: 'OKR owners see a list of current watchers in the management panel. No privacy concerns - watching is transparent to the owner by design.',
               },
               {
                 icon: '◑',
                 title: 'Bulk watcher management',
-                desc: 'OKR owners and chiefs of staff can add watchers in bulk via the management panel — critical for the leadership use case of watching 40+ OKRs across a quarter.',
+                desc: 'OKR owners and chiefs of staff can add watchers in bulk via the management panel - critical for the leadership use case of watching 40+ OKRs across a quarter.',
               },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={Math.floor(i / 3) * 0.08 + 0.05}>
@@ -782,7 +782,7 @@ function QuantiveResultsContent() {
 
           <div className="flex flex-col gap-6">
             {[
-              { src: '/qr-components-watch-dropdown.png', alt: 'Watch/Unwatch dropdown — 12-state component matrix', caption: 'Watch/Unwatch dropdown states' },
+              { src: '/qr-components-watch-dropdown.png', alt: 'Watch/Unwatch dropdown - 12-state component matrix', caption: 'Watch/Unwatch dropdown states' },
               { src: '/qr-components-watcher-list.png', alt: 'Watcher List, Icons, and Watch/Unwatch option components', caption: 'Watcher list, icons, and watch toggle variants' },
               { src: '/qr-components-notification.png', alt: 'In-app notification banner for watcher events', caption: 'In-app notification banner' },
             ].map((item) => (
@@ -812,7 +812,7 @@ function QuantiveResultsContent() {
           <FadeIn className="mb-14">
             <p className="section-label mb-3">07 / Screens</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
-              The Watch feature —{' '}
+              The Watch feature -{' '}
               <span style={{ color: '#15C679' }}>shipped.</span>
             </h2>
             <p className="font-dm-sans text-[15px] text-zinc-500 dark:text-zinc-500 mt-4 max-w-[540px] leading-relaxed">
@@ -826,7 +826,7 @@ function QuantiveResultsContent() {
             <FadeIn>
               <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Watching an OKR</h3>
               <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-                The Watch toggle lives in the OKR header. One click starts watching — no owner action required. Owners can also add watchers in bulk.
+                The Watch toggle lives in the OKR header. One click starts watching - no owner action required. Owners can also add watchers in bulk.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
@@ -851,7 +851,7 @@ function QuantiveResultsContent() {
             <FadeIn>
               <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Filtering to see watched OKRs</h3>
               <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-                The "OKRs Watched By" filter lets any user surface exactly the OKRs they're watching — across all sessions.
+                The "OKRs Watched By" filter lets any user surface exactly the OKRs they're watching - across all sessions.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {[
@@ -877,7 +877,7 @@ function QuantiveResultsContent() {
             <FadeIn>
               <h3 className="font-plus-jakarta font-bold text-[16px] text-zinc-900 dark:text-zinc-100 mb-1.5">Saving as a custom OKR view</h3>
               <p className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500 mb-5 max-w-[500px] leading-relaxed">
-                Save any filtered view as a named OKR view — persistent, personal, accessible in one click from the sidebar.
+                Save any filtered view as a named OKR view - persistent, personal, accessible in one click from the sidebar.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
@@ -950,9 +950,9 @@ function QuantiveResultsContent() {
               <FadeIn delay={0.2}>
                 <div className="space-y-4">
                   {[
-                    'The metric that mattered most wasn\'t in any dashboard — it was the drop in support tickets tagged "wrong participant added." That was the human problem the feature solved, and it showed up in the first month.',
-                    '+40% increase in OKR visibility among Adobe leadership roles — tracked via Quantive\'s analytics on OKR views by non-participant users.',
-                    '28% reduction in unnecessary participant additions — compared week-on-week before and after launch.',
+                    'The metric that mattered most wasn\'t in any dashboard - it was the drop in support tickets tagged "wrong participant added." That was the human problem the feature solved, and it showed up in the first month.',
+                    '+40% increase in OKR visibility among Adobe leadership roles - tracked via Quantive\'s analytics on OKR views by non-participant users.',
+                    '28% reduction in unnecessary participant additions - compared week-on-week before and after launch.',
                     'Feature presented directly to Adobe\'s product team, shipped within the quarter, no design revisions required after handoff.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -996,12 +996,12 @@ function QuantiveResultsContent() {
               </FadeIn>
               <FadeIn delay={0.14}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
-                  The notification design for watchers was the weakest part of V1. Watchers received the same update digest as participants, just with accountability language removed. In the first two weeks, several users who were watching 15+ OKRs had noisy inboxes — they were getting event-triggered notifications every time any watched OKR had an update, which defeated the "lightweight ambient awareness" the feature was supposed to provide.
+                  The notification design for watchers was the weakest part of V1. Watchers received the same update digest as participants, just with accountability language removed. In the first two weeks, several users who were watching 15+ OKRs had noisy inboxes - they were getting event-triggered notifications every time any watched OKR had an update, which defeated the "lightweight ambient awareness" the feature was supposed to provide.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
-                  In retrospect, I'd have designed a separate watcher digest from the start — a weekly summary format rather than event-triggered notifications. One email on Friday morning: "Here's what's changed across the OKRs you're watching this week." That would have made watching feel genuinely lighter. The feature solves visibility without ownership — the notifications should have felt the same way. This is the lesson: the participation state was right. The communication model should have matched it better.
+                  In retrospect, I'd have designed a separate watcher digest from the start - a weekly summary format rather than event-triggered notifications. One email on Friday morning: "Here's what's changed across the OKRs you're watching this week." That would have made watching feel genuinely lighter. The feature solves visibility without ownership - the notifications should have felt the same way. This is the lesson: the participation state was right. The communication model should have matched it better.
                 </p>
               </FadeIn>
             </div>

@@ -145,6 +145,7 @@ const MH_SECTIONS = [
   { id: 'cs-problem', label: 'Problem' },
   { id: 'cs-role', label: 'My Role' },
   { id: 'cs-decisions', label: 'Decisions' },
+  { id: 'cs-scope', label: 'Scope Cuts' },
   { id: 'cs-process', label: 'Process' },
   { id: 'cs-features', label: 'Features' },
   { id: 'cs-screens', label: 'Screens' },
@@ -309,7 +310,7 @@ function MyHormonzContent() {
               transition={{ duration: 0.7, ease: EASE, delay: 0.35 }}
               className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.7] max-w-[600px] mb-10"
             >
-              A hormone wellness platform built for calm, not confusion — designed so every
+              A hormone wellness platform built for calm, not confusion - designed so every
               data point comes with meaning. 3 surfaces, 10+ modules, one core principle.
             </motion.p>
 
@@ -362,7 +363,7 @@ function MyHormonzContent() {
               sizes="(max-width: 1200px) 100vw, 1200px"
               priority
             />
-            {/* Website Live button — top right */}
+            {/* Website Live button - top right */}
             <div className="absolute top-5 right-5">
               <a
                 href={MYHORMONZ_URL}
@@ -417,7 +418,7 @@ function MyHormonzContent() {
             </div>
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 flex-1 min-w-0">
               {[
-                { label: 'Problem', text: 'A hormone health startup needed 3 product surfaces in 45 days — patient app, practitioner admin, marketing site — with HIPAA compliance designed in from the start.' },
+                { label: 'Problem', text: 'A hormone health startup needed 3 product surfaces in 45 days - patient app, ops admin dashboard, marketing site - with HIPAA compliance designed in from the start.' },
                 { label: 'What I did', text: 'Led design of all 3 surfaces as senior designer, mentoring a junior. Built the design system first so 45 days was possible. Core challenge: make lab data feel approachable without losing clinical credibility.' },
                 { label: 'Outcome', text: '3 surfaces delivered. Marketing site live on Vercel. HIPAA design cleared compliance review without a single revision.' },
               ].map((item) => (
@@ -448,7 +449,7 @@ function MyHormonzContent() {
               <FadeIn delay={0.08}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
                   MyHormonz is a hormone health platform for people who want to understand what
-                  their lab results actually mean — whether they're managing a chronic condition,
+                  their lab results actually mean - whether they're managing a chronic condition,
                   trying to improve energy, or just want to stop Googling their numbers at 2am.
                   It combines health data, an AI layer, and daily habit tracking.
                 </p>
@@ -458,14 +459,15 @@ function MyHormonzContent() {
                   The scope: three surfaces designed from scratch. A consumer wellness app with
                   10+ modules, a backend admin panel for the operations team, and a conversion-focused
                   marketing website. All in 45 days. All HIPAA-compliant. The design challenge
-                  wasn't just output — it was coherence across three very different products with one shared design language.
+                  wasn't just output - it was coherence across three very different products with one shared design language.
                 </p>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85]">
-                  The medical provider panel was scoped and planned but ultimately excluded
-                  from this engagement, allowing full focus on the user product, admin infrastructure,
-                  and the live marketing site.
+  A practitioner panel was in the original scope - a portal for doctors to
+                  review patient hormone data alongside the AI's interpretation. I made the call to
+                  cut it from the MVP. The full reasoning, and anything else that didn't make it,
+                  lives in the Scope Cuts section below.
                 </p>
               </FadeIn>
             </div>
@@ -495,7 +497,7 @@ function MyHormonzContent() {
                   className="font-plus-jakarta font-semibold text-[clamp(20px,3.2vw,32px)] text-zinc-900 dark:text-zinc-100 leading-[1.3] tracking-[-0.02em] mb-8 pl-6 md:pl-8"
                   style={{ borderLeft: '3px solid #CA1670' }}
                 >
-                  "Users weren't failing to understand the data — they were anxious because
+                  "Users weren't failing to understand the data - they were anxious because
                   the data gave no interpretation. A number without meaning is just noise."
                 </blockquote>
               </FadeIn>
@@ -503,7 +505,7 @@ function MyHormonzContent() {
                 <p className="font-dm-sans font-light text-[16px] text-zinc-600 dark:text-zinc-400 leading-[1.85] mb-5">
                   When users viewed their hormone reports, raw clinical values like
                   "23.4 nmol/L" triggered alarm rather than understanding. The platform
-                  had the data. It lacked the interpretive layer between data and meaning —
+                  had the data. It lacked the interpretive layer between data and meaning -
                   the crucial step that turns a number into a decision.
                 </p>
               </FadeIn>
@@ -513,7 +515,7 @@ function MyHormonzContent() {
                   <span className="text-zinc-900 dark:text-zinc-200 font-medium">
                     make clarity the first feeling, not panic.
                   </span>{' '}
-                  Every module — from hormone tracking to sleep, nutrition, and AI correlation —
+                  Every module - from hormone tracking to sleep, nutrition, and AI correlation -
                   had to pass this test before it could ship. Features were secondary. Emotional safety came first.
                 </p>
               </FadeIn>
@@ -542,7 +544,7 @@ function MyHormonzContent() {
               {[
                 {
                   title: 'End-to-end UX',
-                  desc: 'All 3 surfaces from scratch — user flows, IA, high-fidelity screens, handoff. The kind of project where you don\'t get to hand things off to someone else.',
+                  desc: 'All 3 surfaces from scratch - user flows, IA, high-fidelity screens, handoff. The kind of project where you don\'t get to hand things off to someone else.',
                 },
                 {
                   title: 'Design System',
@@ -550,15 +552,15 @@ function MyHormonzContent() {
                 },
                 {
                   title: 'HIPAA-Compliant UX',
-                  desc: 'Designed data-consent interactions, permission flows, and trust moments with HIPAA compliance as a visible design element — not just a legal footnote.',
+                  desc: 'Designed data-consent interactions, permission flows, and trust moments with HIPAA compliance as a visible design element - not just a legal footnote.',
                 },
                 {
                   title: 'AI Module Design',
-                  desc: 'Designed the AI Correlation Engine UX — how the app surfaces symptom-to-hormone insights, predicts trends, and handles AI voice interactions.',
+                  desc: 'Designed the AI Correlation Engine UX - how the app surfaces symptom-to-hormone insights, predicts trends, and handles AI voice interactions.',
                 },
                 {
                   title: 'Design Leadership',
-                  desc: 'Worked with one junior designer — doing reviews, unblocking decisions, explaining the why behind feedback so they could make better calls independently.',
+                  desc: 'Worked with one junior designer - doing reviews, unblocking decisions, explaining the why behind feedback so they could make better calls independently.',
                 },
                 {
                   title: 'Marketing Website',
@@ -605,7 +607,7 @@ function MyHormonzContent() {
                 </span>
               </h2>
               <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[320px] leading-relaxed md:text-right">
-                Each was a deliberate trade-off, made intentionally — not a preference.
+                Each was a deliberate trade-off, made intentionally - not a preference.
               </p>
             </div>
           </FadeIn>
@@ -619,7 +621,7 @@ function MyHormonzContent() {
                 summary:
                   'Show a plain-language interpretation of hormone health before surfacing clinical numbers.',
                 detail:
-                  'Instead of leading with "Cortisol: 23.4 nmol/L", the interface leads with "Your cortisol is slightly elevated — this can affect sleep and stress response." The clinical number is still there, but it\'s context, not the headline. This single architectural decision changed the emotional experience of opening a hormone report from anxiety-inducing to informative. It cascaded through every data-display screen in the app.',
+                  'Instead of leading with "Cortisol: 23.4 nmol/L", the interface leads with "Your cortisol is slightly elevated - this can affect sleep and stress response." The clinical number is still there, but it\'s context, not the headline. This single architectural decision changed the emotional experience of opening a hormone report from anxiety-inducing to informative. It cascaded through every data-display screen in the app.',
                 impact:
                   'Shifted the emotional response at data-reveal moments from anxiety to understanding.',
               },
@@ -628,9 +630,9 @@ function MyHormonzContent() {
                 tag: 'Trust & Compliance',
                 title: 'HIPAA as visible trust design',
                 summary:
-                  'Treat compliance as a design feature — surface it exactly when it matters most.',
+                  'Treat compliance as a design feature - surface it exactly when it matters most.',
                 detail:
-                  'Most health apps bury consent in terms of service. We surfaced it at the precise moment users share sensitive health data — with explicit consent modals, plain-language data explanations, and permission micro-copy written to feel like care, not legal cover. The design passed compliance review without a single revision. For the client, this was a first.',
+                  'Most health apps bury consent in terms of service. We surfaced it at the precise moment users share sensitive health data - with explicit consent modals, plain-language data explanations, and permission micro-copy written to feel like care, not legal cover. The design passed compliance review without a single revision. For the client, this was a first.',
                 impact:
                   'Zero compliance revisions. Users experience consent as trust-building, not friction.',
               },
@@ -639,9 +641,9 @@ function MyHormonzContent() {
                 tag: 'AI Interaction Design',
                 title: 'AI correlation as the core engagement loop',
                 summary:
-                  'The AI engine maps symptoms to hormone patterns — and gets more valuable with each data point.',
+                  'The AI engine maps symptoms to hormone patterns - and gets more valuable with each data point.',
                 detail:
-                  'The AI module was the hardest to design because its value is invisible to new users. The key was designing for the "aha moment" — the first time a user sees a pattern they hadn\'t recognised themselves (e.g., poor sleep correlating with low progesterone). We designed the module to surface these connections proactively, creating a compounding loop: more logging → richer insights → more motivation to log.',
+                  'The AI module was the hardest to design because its value is invisible to new users. The key was designing for the "aha moment" - the first time a user sees a pattern they hadn\'t recognised themselves (e.g., poor sleep correlating with low progesterone). We designed the module to surface these connections proactively, creating a compounding loop: more logging → richer insights → more motivation to log.',
                 impact:
                   'Proactive insight delivery creates a self-reinforcing engagement loop.',
               },
@@ -652,7 +654,7 @@ function MyHormonzContent() {
                 summary:
                   '10 modules needed to feel like one product. A unified metric became the connective tissue.',
                 detail:
-                  'With sleep, nutrition, stress, CBT, gamification, and hormone data all living in one app, the risk was a sprawling feature dump. The Health Score became the design anchor — a single composite wellness metric that pulled from all modules and gave users a central pulse of their overall health. Every module fed into or was informed by this score, making the app feel coherent rather than additive.',
+                  'With sleep, nutrition, stress, CBT, gamification, and hormone data all living in one app, the risk was a sprawling feature dump. The Health Score became the design anchor - a single composite wellness metric that pulled from all modules and gave users a central pulse of their overall health. Every module fed into or was informed by this score, making the app feel coherent rather than additive.',
                 impact:
                   'Cohesive product experience across 10 functionally distinct modules.',
               },
@@ -703,13 +705,104 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          05 / PROCESS
+          05 / SCOPE CUTS
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="cs-scope" className="py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+
+          <FadeIn className="mb-14">
+            <p className="section-label mb-3">05 / Scope Cuts</p>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
+                What didn't<br />
+                <span
+                  className="text-transparent bg-clip-text"
+                  style={{
+                    backgroundImage: 'linear-gradient(135deg, #CA1670 0%, #E02080 60%, #A01258 100%)',
+                  }}
+                >
+                  make the cut.
+                </span>
+              </h2>
+              <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[320px] leading-relaxed md:text-right">
+                Not everything in the brief becomes a shipped feature. What got cut, and why, is part of the design record too.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="space-y-4">
+            {[
+              {
+                number: '01',
+                tag: 'Practitioner Access',
+                title: 'The practitioner panel',
+                status: 'Descoped from MVP',
+                summary:
+                  'A portal for doctors to review patient hormone data alongside the AI\'s interpretation - cut before it reached design.',
+                detail:
+                  'It was in the original brief. I pushed to pull it from the MVP for two reasons. First, trust: a doctor isn\'t going to lean on an AI\'s read of a real patient\'s hormone panel without a track record, and a 45-day build doesn\'t earn one. Second, value: most of what the panel would actually get used for in year one was logging basic patient details - a fraction of what it was scoped to justify, and not enough to earn the surface area in an MVP. The real risk wasn\'t the interface. It\'s a sensitive medical field - if the AI got a real case wrong inside a tool a doctor was relying on, that\'s not a bug, that\'s a liability problem for the client.',
+                revisit:
+                  'Shipping a product doctors trust nothing from yet is safer than shipping one they half-trust and abandon after the first bad call. Shelved until there\'s a version of the panel with a value proposition strong enough to earn that trust properly.',
+              },
+            ].map((cut, i) => (
+              <FadeIn key={cut.number} delay={i * 0.08}>
+                <div className="bg-white dark:bg-zinc-900/60 border border-dashed border-zinc-300 dark:border-white/[0.12] rounded-2xl p-7 md:p-10">
+                  <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+
+                    {/* Number */}
+                    <div className="flex-shrink-0 select-none">
+                      <span className="font-plus-jakarta font-extrabold text-[52px] leading-none text-zinc-100 dark:text-zinc-800 lining-nums">
+                        {cut.number}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <span
+                          className="inline-block font-dm-sans text-[11px] font-medium tracking-[0.08em] uppercase"
+                          style={{ color: '#CA1670' }}
+                        >
+                          {cut.tag}
+                        </span>
+                        <span className="font-dm-sans text-[10px] font-medium tracking-[0.08em] uppercase px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-white/[0.06] text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-white/[0.08]">
+                          {cut.status}
+                        </span>
+                      </div>
+                      <h3 className="font-plus-jakarta font-bold text-[clamp(18px,2.5vw,24px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.02em] mb-3">
+                        {cut.title}
+                      </h3>
+                      <p className="font-dm-sans font-medium text-[15px] text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
+                        {cut.summary}
+                      </p>
+                      <p className="font-dm-sans font-light text-[14px] text-zinc-500 dark:text-zinc-500 leading-[1.85] mb-6">
+                        {cut.detail}
+                      </p>
+                      <div className="flex items-start gap-3 pt-5 border-t border-zinc-100 dark:border-white/[0.05]">
+                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[5px]" style={{ backgroundColor: '#CA1670' }} />
+                        <span className="font-dm-sans text-[13px] text-zinc-500 dark:text-zinc-500">
+                          {cut.revisit}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          06 / PROCESS
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-process" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-12">
-            <p className="section-label mb-3">05 / Process</p>
+            <p className="section-label mb-3">06 / Process</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 Thinking before<br />
@@ -721,12 +814,12 @@ function MyHormonzContent() {
                 </span>
               </h2>
               <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
-                Three surfaces in 45 days — every flow mapped on paper before Figma opened.
+                Three surfaces in 45 days - every flow mapped on paper before Figma opened.
               </p>
             </div>
           </FadeIn>
 
-          {/* All 5 sketches — same grid, same size */}
+          {/* All 5 sketches - same grid, same size */}
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
             {[
               { src: '/mh-sketch-flow-hormone.jpg', label: 'Hormone tracking flow' },
@@ -765,13 +858,13 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          06 / PLATFORM ARCHITECTURE
+          07 / PLATFORM ARCHITECTURE
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-platform" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-12">
-            <p className="section-label mb-3">06 / Platform</p>
+            <p className="section-label mb-3">07 / Platform</p>
             <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
               3 surfaces,<br />
               <span className="text-blue-600 dark:text-blue-400">one design language.</span>
@@ -787,7 +880,7 @@ function MyHormonzContent() {
                 status: 'In Development',
                 isLive: false,
                 gradient: 'linear-gradient(135deg, #CA1670 0%, #E02080 50%, #A01258 100%)',
-                desc: 'The core product. A personal hormone health companion with 10+ modules — hormone tracking, AI correlation, wellness scoring, sleep, nutrition, stress management, CBT, and gamification.',
+                desc: 'The core product. A personal hormone health companion with 10+ modules - hormone tracking, AI correlation, wellness scoring, sleep, nutrition, stress management, CBT, and gamification.',
                 tags: ['Hormone Optimisation', 'AI Correlation', 'Health Score', 'Sleep + Nutrition', 'CBT Toolkit', 'Gamification'],
               },
               {
@@ -879,13 +972,13 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          07 / FEATURE BREAKDOWN
+          08 / FEATURE BREAKDOWN
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-features" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-12">
-            <p className="section-label mb-3">07 / Features</p>
+            <p className="section-label mb-3">08 / Features</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 10+ modules.
@@ -931,7 +1024,7 @@ function MyHormonzContent() {
               {
                 num: '05',
                 title: 'Stress Management',
-                desc: 'Guided stress reduction tools linked to real cortisol data — making the connection between emotional state and hormone levels tangible.',
+                desc: 'Guided stress reduction tools linked to real cortisol data - making the connection between emotional state and hormone levels tangible.',
               },
               {
                 num: '06',
@@ -941,12 +1034,12 @@ function MyHormonzContent() {
               {
                 num: '07',
                 title: 'Health Score',
-                desc: 'The hub. A single composite metric pulling from all modules. Designed as the north star — one number that tells the full wellness picture.',
+                desc: 'The hub. A single composite metric pulling from all modules. Designed as the north star - one number that tells the full wellness picture.',
               },
               {
                 num: '08',
                 title: 'Nutrition Module',
-                desc: 'Tracks dietary patterns relative to hormone-optimal nutrition. Positioned as a guide, not a calorie counter — context over counting.',
+                desc: 'Tracks dietary patterns relative to hormone-optimal nutrition. Positioned as a guide, not a calorie counter - context over counting.',
               },
               {
                 num: '09',
@@ -956,7 +1049,7 @@ function MyHormonzContent() {
               {
                 num: '10',
                 title: 'Gamification',
-                desc: 'Streaks, milestones, and wellness achievements designed to reward consistency. Health isn\'t points — gamification is the engine, not the message.',
+                desc: 'Streaks, milestones, and wellness achievements designed to reward consistency. Health isn\'t points - gamification is the engine, not the message.',
               },
               {
                 num: '11',
@@ -988,13 +1081,13 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          08 / SCREENS
+          09 / SCREENS
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-screens" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
 
           <FadeIn className="mb-12">
-            <p className="section-label mb-3">08 / Screens</p>
+            <p className="section-label mb-3">09 / Screens</p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(30px,5vw,54px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.03em] leading-[1.05]">
                 Structure first,<br />
@@ -1006,14 +1099,14 @@ function MyHormonzContent() {
                 </span>
               </h2>
               <p className="font-dm-sans text-[14px] text-zinc-500 dark:text-zinc-500 max-w-[300px] leading-relaxed md:text-right">
-                The same 5 screens — first as grayscale structure, then as shipped product.
+                The same 5 screens - first as grayscale structure, then as shipped product.
               </p>
             </div>
           </FadeIn>
 
           {/* Mid-fi row */}
           <FadeIn className="mb-4">
-            <p className="section-label">Mid-fi — UX structure</p>
+            <p className="section-label">Mid-fi - UX structure</p>
           </FadeIn>
           <div className="flex gap-3 overflow-x-auto pb-4 mb-12 md:grid md:grid-cols-5 md:overflow-visible">
             {[
@@ -1046,7 +1139,7 @@ function MyHormonzContent() {
 
           {/* Final UI row */}
           <FadeIn className="mb-4">
-            <p className="section-label">Final UI — Shipped design</p>
+            <p className="section-label">Final UI - Shipped design</p>
           </FadeIn>
           <div className="flex gap-3 overflow-x-auto pb-4 md:grid md:grid-cols-5 md:overflow-visible">
             {[
@@ -1079,7 +1172,7 @@ function MyHormonzContent() {
 
           {/* Admin Dashboard row */}
           <FadeIn className="mb-4 mt-14">
-            <p className="section-label">Admin Dashboard — Ops platform</p>
+            <p className="section-label">Admin Dashboard - Ops platform</p>
           </FadeIn>
           <div className="flex gap-3 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
             {[
@@ -1115,14 +1208,14 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          09 / OUTCOME
+          10 / OUTCOME
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-outcome" className="py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">09 / Outcome</p>
+              <p className="section-label mb-3">10 / Outcome</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What shipped
               </h2>
@@ -1166,10 +1259,10 @@ function MyHormonzContent() {
               <FadeIn delay={0.2}>
                 <div className="space-y-4">
                   {[
-                    'Marketing website is live on Vercel — the first user touchpoint for the platform, conversion-optimised and HIPAA-credible.',
+                    'Marketing website is live on Vercel - the first user touchpoint for the platform, conversion-optimised and HIPAA-credible.',
                     'User App and Admin Panel in active development, with complete Figma handoffs and a documented design system ready to extend.',
-                    'Design system built and documented — the junior designer can continue developing new modules independently, without breaking coherence.',
-                    'HIPAA-compliant data interactions passed compliance review without a single revision — a first for the client team on any project.',
+                    'Design system built and documented - the junior designer can continue developing new modules independently, without breaking coherence.',
+                    'HIPAA-compliant data interactions passed compliance review without a single revision - a first for the client team on any project.',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[8px]" style={{ backgroundColor: '#CA1670' }} />
@@ -1188,14 +1281,14 @@ function MyHormonzContent() {
       <SectionDivider />
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          10 / REFLECTION
+          11 / REFLECTION
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="cs-reflection" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 md:gap-20">
 
             <FadeIn>
-              <p className="section-label mb-3">10 / Reflection</p>
+              <p className="section-label mb-3">11 / Reflection</p>
               <h2 className="font-plus-jakarta font-extrabold text-[clamp(22px,3vw,30px)] text-zinc-900 dark:text-zinc-50 tracking-[-0.025em] leading-[1.15]">
                 What I learned
               </h2>
@@ -1214,9 +1307,9 @@ function MyHormonzContent() {
               <FadeIn delay={0.14}>
                 <p className="font-dm-sans font-light text-[16px] text-zinc-500 dark:text-zinc-500 leading-[1.85]">
                   Designing for health changes what "good" means. Visual sophistication mattered
-                  far less than emotional safety. Every decision — typography scale, colour choice,
-                  copy tone — had to answer one question first: <em>does this feel safe?</em> That
-                  constraint, when you internalize it, actually makes design decisions faster — you
+                  far less than emotional safety. Every decision - typography scale, colour choice,
+                  copy tone - had to answer one question first: <em>does this feel safe?</em> That
+                  constraint, when you internalize it, actually makes design decisions faster - you
                   have a clear north star for every debate.
                 </p>
               </FadeIn>
@@ -1225,7 +1318,7 @@ function MyHormonzContent() {
                   Mentoring through a high-output engagement also sharpened my ability to articulate
                   decisions rather than just make them. When you have to explain why "insight before
                   data" isn't just a nice principle but a structural choice that affects every screen
-                  in the app — your own thinking gets more precise. Teaching made me a better designer.
+                  in the app - your own thinking gets more precise. Teaching made me a better designer.
                 </p>
               </FadeIn>
             </div>
@@ -1267,7 +1360,7 @@ function MyHormonzContent() {
                 </h2>
                 <p className="font-dm-sans font-light text-[clamp(15px,1.8vw,17px)] text-zinc-600 dark:text-zinc-400 leading-[1.75] max-w-[480px] mx-auto mb-10">
                   If you&apos;re a recruiter or client who wants to walk through the full Figma
-                  files, see the research artefacts, or dig into the design decisions — I&apos;m happy
+                  files, see the research artefacts, or dig into the design decisions - I&apos;m happy
                   to talk through it.
                 </p>
 
@@ -1370,7 +1463,7 @@ function MyHormonzContent() {
   )
 }
 
-// ─── Default export — wraps everything in ThemeProvider ───────────────────────
+// ─── Default export - wraps everything in ThemeProvider ───────────────────────
 export default function MyHormonzCaseStudy() {
   return (
     <ThemeProvider>
