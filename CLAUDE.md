@@ -53,6 +53,12 @@ The preview server is configured in `.claude/launch.json` as `"portfolio-dev"` a
   - All rows lightbox-enabled
 - Section tracker (`MH_SECTIONS`) includes `cs-process` and `cs-screens`; Platform section (`cs-platform`) is intentionally excluded from the tracker
 
+**MyHormonz Scope Cuts section** (`id="cs-scope"`, section `05`, between Design Decisions `04` and Process `06`) — documents features that were scoped but deliberately not shipped, as a companion to Design Decisions rather than a mixed-in entry there:
+- Rendered from a mapped array (currently one entry: the practitioner panel) with fields `{ number, tag, title, status, summary, detail, revisit }` — add more objects to extend it
+- Visually distinct from shipped Design Decision cards: `border-dashed` instead of solid, plus a muted "status" pill (e.g. "Descoped from MVP") next to the category tag
+- Included in `MH_SECTIONS` as `{ id: 'cs-scope', label: 'Scope Cuts' }`
+- If you insert or remove a numbered section anywhere in this file, renumber every `section-label` (e.g. `05 / ...`) and JSX comment banner (`{/* 05 / ... */}`) that follows it — sections are numbered sequentially with no gaps
+
 **Case study hero images** — each case study uses a real cover image instead of a gradient banner:
 - Images live in `public/` and are rendered with `next/image` (`fill`, `object-cover`, `object-left-top`)
 - `object-left-top` is intentional — landscape cover images have important content on the left; centering clips it on narrow viewports
@@ -79,6 +85,8 @@ The preview server is configured in `.claude/launch.json` as `"portfolio-dev"` a
 - `font-inter` — body, labels, metadata
 - `clamp()` used for responsive type sizes (e.g. `text-[clamp(32px,6.5vw,76px)]`)
 - `.section-label` utility class in `globals.css` — small uppercase tracking label used consistently across all sections
+
+**Content style:** no em dashes (—) anywhere in site copy — they read as AI-generated. Use a regular hyphen with spaces instead (`word - word`). Applies to headings, body copy, meta descriptions, and OG/title tags alike.
 
 **Adding a new case study:**
 1. Create `src/components/CaseStudy<Name>.tsx` — copy the structure from an existing one; include local `FadeIn`, `CaseStudyNavbar`, inline footer, and `ThemeProvider` wrapper
