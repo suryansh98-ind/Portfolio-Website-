@@ -109,7 +109,7 @@ export default function HeroSection() {
             transition={{ duration: 0.65, ease: EASE, delay: 0.7 }}
             className="font-dm-sans font-light text-[clamp(16px,2vw,20px)] text-zinc-600 dark:text-zinc-400 leading-[1.65] max-w-[560px]"
           >
-            4.5+ years shipping{' '}
+            4 years shipping{' '}
             <span className="text-zinc-900 dark:text-zinc-200 font-medium">B2B, B2C and SaaS products</span>{' '}
             people keep coming back to. I do the research, the systems, the pixels -
             and the code. One less person in the chain.
@@ -152,7 +152,7 @@ export default function HeroSection() {
             className="flex flex-wrap gap-x-8 gap-y-2 mt-16 pt-8 border-t border-zinc-100 dark:border-white/[0.06]"
           >
             {[
-              { label: 'Experience', value: '4.5+ years' },
+              { label: 'Experience', value: '4 years' },
               { label: 'Focus', value: 'B2B, B2C & SaaS' },
               { label: 'Based in', value: 'India' },
               { label: 'Skills', value: 'Design · Systems · AI' },
